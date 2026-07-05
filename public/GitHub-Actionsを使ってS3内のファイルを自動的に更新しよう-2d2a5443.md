@@ -246,7 +246,7 @@ commit履歴を見て追加、変更されたテンプレートファイルの�
 
 ```yaml
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 ```
@@ -265,7 +265,7 @@ diffコマンドを使って変更されたテンプレート数を検知して�
 ```yaml
       - name: configure aws credentials
         if: ${{ steps.templates.outputs.changed_templates > 0 }};
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ secrets.UPLOAD_TEMPLATE_ROLE }}
           aws-region: ${{ env.REGION_NAME }}
@@ -309,7 +309,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Check how many templates changed
@@ -319,7 +319,7 @@ jobs:
           echo changed_templates=$changed_templates >> "$GITHUB_OUTPUT"
       - name: configure aws credentials
         if: ${{ steps.templates.outputs.changed_templates > 0 }};
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ secrets.UPLOAD_TEMPLATE_ROLE }}
           aws-region: ${{ env.REGION_NAME }}

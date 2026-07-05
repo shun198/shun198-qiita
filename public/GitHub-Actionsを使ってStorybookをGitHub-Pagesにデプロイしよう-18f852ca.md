@@ -54,7 +54,7 @@ StorybookをGitHub Pagesにデプロイするワークフローを作成しま�
 まず、Node.jsのセットアップを行います
 ```yaml
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version-file: ${{ env.WORKING_DIRECTORY }}/package.json
           cache: 'npm'
@@ -92,9 +92,9 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Chekcout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version-file: ${{ env.WORKING_DIRECTORY }}/package.json
           cache: 'npm'

@@ -141,7 +141,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       - name: Set Environment Variables
         uses: ./.github/actions/set-up-env
       - name: Setup Poetry
@@ -201,7 +201,7 @@ jobs:
       github.event.pull_request.draft == false
       && !startsWith(github.head_ref, 'release')
       && !startsWith(github.head_ref, 'doc')
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     defaults:
       run:
         working-directory: ${{ env.WORKING_DIRECTORY }}
@@ -222,7 +222,7 @@ jobs:
           --health-retries 5
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       - name: Set Environment Variables
         uses: ./.github/actions/set-up-env
       - name: Grant privileges to user

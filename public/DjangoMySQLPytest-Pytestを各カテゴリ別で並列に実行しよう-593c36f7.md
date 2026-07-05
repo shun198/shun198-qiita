@@ -82,7 +82,7 @@ jobs:
     strategy:
       matrix:
         test-path: ['models', 'serializers', 'utils', 'views']
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     defaults:
       run:
         working-directory: application
@@ -103,13 +103,13 @@ jobs:
           --health-retries 5
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       - name: Grant privileges to user
         run: mysql --protocol=tcp -h 127.0.0.1 -P 3306 -u root -p$MYSQL_ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'%'; FLUSH PRIVILEGES;"
       - name: Install poetry
         run: pipx install poetry
       - name: Use cache dependencies
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
           python-version: '3.10'
           cache: 'poetry'

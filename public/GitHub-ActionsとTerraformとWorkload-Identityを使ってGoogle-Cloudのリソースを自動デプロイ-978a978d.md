@@ -92,7 +92,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Authenticate to Google Cloud with Workload Identity
         uses: google-github-actions/auth@v3
         with:
@@ -100,7 +100,7 @@ jobs:
           service_account: ${{ secrets.SERVICE_ACCOUNT }}
           create_credentials_file: true
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+        uses: hashicorp/setup-terraform@v4
         with:
           terraform_version: ">1.11.0"
       - name: Terraform Init

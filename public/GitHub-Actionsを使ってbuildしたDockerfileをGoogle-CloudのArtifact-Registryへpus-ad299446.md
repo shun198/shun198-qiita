@@ -106,7 +106,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       # https://github.com/google-github-actions/auth
       - name: Authenticate to Google Cloud with Workload Identity
         uses: google-github-actions/auth@v3
@@ -116,7 +116,7 @@ jobs:
           create_credentials_file: true
       # https://github.com/google-github-actions/setup-gcloud
       - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v2
+        uses: google-github-actions/setup-gcloud@v3
       - name: Configure Docker for Artifact Registry
         run: gcloud auth configure-docker us-central1-docker.pkg.dev
       - name: Docker Build

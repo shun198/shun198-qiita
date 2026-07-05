@@ -53,9 +53,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # リポジトリのチェックアウト
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
       # label-syncerを使用
-      - uses: micnncim/action-label-syncer@v0.3.1
+      - uses: micnncim/action-label-syncer@v1.3.0
         env:
           # GITHUB_TOKENはデフォルトで使用できるため、secretsへの追記は不要
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -113,8 +113,8 @@ jobs:
     name: Sync labels
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: micnncim/action-label-syncer@v0.3.1
+      - uses: actions/checkout@v6
+      - uses: micnncim/action-label-syncer@v1.3.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

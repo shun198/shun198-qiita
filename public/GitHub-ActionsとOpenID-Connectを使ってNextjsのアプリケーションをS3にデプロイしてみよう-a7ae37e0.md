@@ -269,19 +269,19 @@ jobs:
         working-directory: frontend
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       - name: configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: arn:aws:iam::XXXXXXXXXXXX:role/github-actions-deploy-s3-bucket
           role-session-name: samplerolesession
           aws-region: ${{ env.REGION_NAME }}
       - name: Setup NodeJS
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
           node-version: '16'
       - name: Cache NodeJS
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: '**/node_modules'
           key: node-modules-${{ hashFiles('**/package-lock.json') }}
@@ -311,11 +311,11 @@ https://github.com/aws-actions/configure-aws-credentials
 role-to-assumeに自身で作成されたIAM Roleを記載します
 今回は東京リージョンを使用するのでaws-regionはap-northeast-1に設定します
 デフォルトのrole-session-nameはGitHubActionsですが、任意の名前に設定しても大丈夫です
-また、ワークフロー内で複数回`aws-actions/configure-aws-credentials@v2`を使用する際は一意の名前にする必要があります
+また、ワークフロー内で複数回`aws-actions/configure-aws-credentials@v6`を使用する際は一意の名前にする必要があります
 
 ```yml
       - name: configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: arn:aws:iam::XXXXXXXXXXXX:role/github-actions-deploy-s3-bucket
           role-session-name: samplerolesession

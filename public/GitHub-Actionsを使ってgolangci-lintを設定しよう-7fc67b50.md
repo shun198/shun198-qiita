@@ -65,9 +65,9 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Setup Golang
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version-file: ${{ env.WORKING_DIRECTORY }}/go.mod
           cache: true
@@ -77,9 +77,9 @@ jobs:
       - name: Install Dependencies
         run: go mod download
       - name: Lint Code
-        uses: golangci/golangci-lint-action@v6
+        uses: golangci/golangci-lint-action@v9
         with:
-          version: v1.60
+          version: v2.12
           working-directory: ${{ env.WORKING_DIRECTORY }}
 ```
 
@@ -93,7 +93,7 @@ https://github.com/actions/setup-go
 
 ```yml
       - name: Setup Golang
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version-file: ${{ env.WORKING_DIRECTORY }}/go.mod
           cache: true
@@ -110,9 +110,9 @@ https://golangci-lint.run/welcome/install/#github-actions
 
 ```yml
       - name: Lint Code
-        uses: golangci/golangci-lint-action@v6
+        uses: golangci/golangci-lint-action@v9
         with:
-          version: v1.60
+          version: v2.12
           working-directory: ${{ env.WORKING_DIRECTORY }}
 ```
 
