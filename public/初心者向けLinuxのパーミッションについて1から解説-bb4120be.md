@@ -106,5 +106,3 @@ chmod +x
 sh shellscript.sh
 ```
 
-## 参考
-https://www.infraeye.com/study/linuxz26.html

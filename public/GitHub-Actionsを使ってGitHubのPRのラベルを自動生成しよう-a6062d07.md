@@ -125,11 +125,6 @@ schedule及びcronの使い方は以下の公式ドキュメントを参照し�
 
 https://docs.github.com/ja/actions/using-workflows/events-that-trigger-workflows#scheduled-events
 
-## 記事の紹介
-下記の記事も書きましたのでよかったら読んでみてください
-
-https://qiita.com/shun198/items/15d8947a1a5642154392
-
 ## 参考
 https://github.com/micnncim/action-label-syncer
 

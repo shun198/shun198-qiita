@@ -775,8 +775,6 @@ DATABASES = {
 
 https://qiita.com/shun198/items/f6864ef381ed658b5aba
 
-https://qiita.com/shun198/items/a23996581e1ae3574af2
-
 https://qiita.com/shun198/items/ab6eca4bbe4d065abb8f
 
 ## 参考文献

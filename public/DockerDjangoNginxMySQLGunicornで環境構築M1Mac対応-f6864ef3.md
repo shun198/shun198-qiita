@@ -834,8 +834,6 @@ https://qiita.com/shun198/items/23c6baa450ba37a5fd66
 
 https://qiita.com/shun198/items/ee93c50eac2f7c77e443
 
-https://qiita.com/shun198/items/a23996581e1ae3574af2
-
 https://qiita.com/shun198/items/ab6eca4bbe4d065abb8f
 
 

@@ -121,8 +121,6 @@ https://qiita.com/shun198/items/f6864ef381ed658b5aba
 
 https://qiita.com/shun198/items/35c97c95079ecbe80e9d
 
-https://qiita.com/shun198/items/b0196630bc58660b97c3
-
 https://qiita.com/shun198/items/a66d6214cdab5629029d
 
 https://qiita.com/shun198/items/9e4fcb4479385217c323
