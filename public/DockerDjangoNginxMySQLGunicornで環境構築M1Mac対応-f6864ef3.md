@@ -198,9 +198,6 @@ server {
 
 ### docker-compose.yml(開発用)
 ```docker-compose.yml
-# docker-composeのバージョンを指定
-version: "3.9"
-
 # db(MySQL),app(Django)のコンテナを作成
 services:
   db:
@@ -267,8 +264,6 @@ volumes:
 
 ### docker-compose.prod.yml(本番用)
 ```docker-compose.prod.yml
-version: "3.9"
-
 # db(MySQL),app(Django),web(Nginx)のコンテナを作成
 services:
   db:
@@ -372,7 +367,7 @@ MYSQL_PASSWORD=django-prod
 # SECRET_KEYについては本番環境では推測されない値に変更しておきましょう
 SECRET_KEY=xdmjx=9l@x)-jitznpb^%yjn6h=7g)$%e8_+1s)o+8o79csa4d
 ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
-# 開発環境のためFalse
+# 本番環境のためFalse
 DEBUG=False
 ```
 
@@ -433,7 +428,7 @@ https://github.com/github/gitignore
 プロジェクトを新規作成する際はプロジェクト名と作成するディレクトリを指定して以下のコマンドを実行します
 今回はdjangopjのプロジェクトをカレントディレクトリに作成します
 ```terminal:terminal
-docker-compose -f docker-compose.prod.yml run app django-admin startproject djangopj .
+docker compose -f docker-compose.prod.yml run app django-admin startproject djangopj .
 ```
 
 実行するとローカルのディレクトリ構成は以下のようになります
@@ -472,7 +467,7 @@ tree
 ### すでにプロジェクトがある場合
 GitHubにあるソースコードをcloneする場合など、プロジェクトが作成済みの時は以下のコマンドを実行します
 ```
-docker-compose -f docker-compose.prod.yml build
+docker compose -f docker-compose.prod.yml build
 ```
 
 ### settings.pyのDATABASESを変更
@@ -534,7 +529,7 @@ STATIC_URL = "/static/"
 コンテナをデタッチモードで起動する
 デタッチモード起動することでコンテナの中に入らずにバックグラウンドで起動させることができます
 ```terminal:terminal
-docker-compose -f docker-compose.prod.yml up -d
+docker compose -f docker-compose.prod.yml up -d
 ```
 
 ### 127.0.0.1:80にアクセスしてみよう
@@ -563,7 +558,7 @@ DEBUG=Trueに設定した場合は下記の画像が表示されます
 
 上記のような画面が表示されない場合は初回起動時にMySQL側のコンテナがうまく立ち上がってない可能性があるので
 ```terminal
-docker-compose -f docker-compose.prod.yml down
+docker compose -f docker-compose.prod.yml down
 ```
 でコンテナを停止させた後に
 ```terminal
@@ -642,7 +637,7 @@ authors = ["shun198"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.14"
 Django = "^4.2.3"
 djangorestframework = "^3.14.0"
 mysqlclient = "^2.1.1"
@@ -651,7 +646,7 @@ gunicorn = "^20.1.0"
 
 ### Dockerfile(Django)
 ```Dockerfile:containers/django/Dockerfile
-FROM python:3.11
+FROM python:3.14
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
@@ -668,7 +663,7 @@ RUN chmod 755 entrypoint.sh
 ### 新規プロジェクトの作成
 新規プロジェクトを作成する際は以下のコマンドを入力します
 ```
-docker-compose -f docker-compose.prod.yml run app poetry run django-admin startproject djangopj .
+docker compose -f docker-compose.prod.yml run app poetry run django-admin startproject djangopj .
 ```
 
 以下のようになれば成功です
@@ -726,7 +721,7 @@ authors = ["shun198"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.14"
 Django = "^4.2.3"
 djangorestframework = "^3.14.0"
 mysqlclient = "^2.1.1"
