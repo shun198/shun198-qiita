@@ -1,0 +1,12 @@
+{
+  "globs": [
+    "README.md",
+    "CONTRIBUTING.md",
+    "public/**/*.md"
+  ],
+  "config": {
+    "default": true,
+    "MD013": false,
+    "MD024": false
+  }
+}

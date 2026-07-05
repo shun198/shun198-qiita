@@ -1,0 +1,15 @@
+{
+  "rules": {
+    "preset-ja-technical-writing": {
+      "max-kanji-continuous-len": {
+        "allow": [
+          "GitHub",
+          "Qiita",
+          "Markdown",
+          "Pull Request",
+          "GitHub Actions"
+        ]
+      }
+    }
+  }
+}
