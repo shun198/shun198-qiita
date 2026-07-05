@@ -11,9 +11,6 @@ updated_at: '2025-03-23T13:41:31+09:00'
 id: 841c41b44b204b206dcc
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 Cloud Runはコンテナイメージをビルド・実行するためのGoogle Cloudが提供するサーバレスプラットフォームです

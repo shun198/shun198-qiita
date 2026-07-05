@@ -11,9 +11,6 @@ updated_at: '2023-09-02T22:00:39+09:00'
 id: 18014c46901f256af9ee
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## はじめに
 - Dockerfile

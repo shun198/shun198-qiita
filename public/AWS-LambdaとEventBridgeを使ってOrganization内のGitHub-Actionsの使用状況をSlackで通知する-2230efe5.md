@@ -11,9 +11,6 @@ updated_at: '2024-06-24T11:39:12+09:00'
 id: 2230efe50007cb54dbfa
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: 16baee61b1d8bd4aac5a
-agreed_posting_campaign_term: true
 ---
 ## 概要
 AWS LambdaとEventBridgeを使ってOrganization内のGitHub Actionsの使用状況をSlackで通知する方法について解説します

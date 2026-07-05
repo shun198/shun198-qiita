@@ -10,9 +10,6 @@ updated_at: '2025-09-15T17:13:03+09:00'
 id: 978a978d6f4715dc9451
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 GitHub ActionsとTerraformとWorkload Identityを使ってコードベースでインフラ周りのデプロイを自動化できるので実装方法について解説します

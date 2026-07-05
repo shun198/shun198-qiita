@@ -9,9 +9,6 @@ updated_at: '2024-06-18T13:41:17+09:00'
 id: c823b63868cfa4d4b8b5
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: 16baee61b1d8bd4aac5a
-agreed_posting_campaign_term: true
 ---
 ## 概要
 AmplifyのNodeのVersionをコンソール画面から手動で変更するのは手間なので

@@ -10,9 +10,6 @@ updated_at: '2024-05-10T14:23:20+09:00'
 id: bfe56542a9e5bf1302cb
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 S3へzipファイルがアップロードされたことをトリガーにzipファイルを解凍するLambdaを作成する方法について解説していきたいと思います

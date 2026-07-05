@@ -11,9 +11,6 @@ updated_at: '2024-01-09T10:23:24+09:00'
 id: 35c97c95079ecbe80e9d
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 前提
 - docker-compose.ymlを使用

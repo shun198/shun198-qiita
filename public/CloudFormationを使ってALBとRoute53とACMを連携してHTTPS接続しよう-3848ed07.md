@@ -10,9 +10,6 @@ updated_at: '2024-01-26T08:38:57+09:00'
 id: 3848ed073235ef106cde
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 CloudFormationを使ってHTTPS用のListnerとTarget Groupを作成し、HTTPS通信できるよう設定する方法について解説します

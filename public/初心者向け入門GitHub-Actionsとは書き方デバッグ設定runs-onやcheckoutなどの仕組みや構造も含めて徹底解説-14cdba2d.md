@@ -9,9 +9,6 @@ updated_at: '2025-08-15T19:42:09+09:00'
 id: 14cdba2d8e58ab96cf95
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 GitHub Actionsの

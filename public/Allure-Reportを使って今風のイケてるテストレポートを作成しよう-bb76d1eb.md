@@ -11,9 +11,6 @@ updated_at: '2024-05-29T13:48:57+09:00'
 id: bb76d1eb98bb7290a6a8
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 Allure Reportをローカル上で使用する方法について解説します

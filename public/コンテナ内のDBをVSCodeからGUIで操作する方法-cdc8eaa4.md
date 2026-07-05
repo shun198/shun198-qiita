@@ -10,9 +10,6 @@ updated_at: '2023-07-28T11:31:16+09:00'
 id: cdc8eaa457c1dc202e1b
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ![スクリーンショット 2023-07-28 11.28.05.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/a1eca4bf-246d-d098-de4a-b856ca99116c.png)
 ## 前提

@@ -10,9 +10,6 @@ updated_at: '2025-09-15T11:27:28+09:00'
 id: 41f905d40aab2ec8ea1e
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 複数人でTerraformを使ってGoogle Cloudを操作する際はtfstateファイルをGoogle Cloud Storage上で管理して競合を防ぐ必要があります

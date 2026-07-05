@@ -8,9 +8,6 @@ updated_at: '2023-11-12T14:37:46+09:00'
 id: 6f64541565ae4057f942
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 Django Rest Frameworkを使って

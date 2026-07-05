@@ -10,9 +10,6 @@ updated_at: '2024-06-12T10:25:02+09:00'
 id: 3f3b8d40f550059bea25
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: 16baee61b1d8bd4aac5a
-agreed_posting_campaign_term: true
 ---
 ## 概要
 AWS SESの初期設定の方法について説明していきます

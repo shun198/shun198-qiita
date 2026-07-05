@@ -9,9 +9,6 @@ updated_at: '2023-01-09T16:06:53+09:00'
 id: 06d2c9cb6eb553278ff3
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 AWS SAA合格へ向けてAWSについて１から勉強した際に学んだことを定期的にアウトプットしたいと思います

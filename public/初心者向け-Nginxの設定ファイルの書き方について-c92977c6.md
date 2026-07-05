@@ -9,9 +9,6 @@ updated_at: '2023-10-08T19:16:54+09:00'
 id: c92977c6cd31eb2187fc
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 Webアプリケーション開発でNginxをWebサーバとして使用しているプロジェクトが多いので今回は

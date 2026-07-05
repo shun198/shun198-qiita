@@ -9,9 +9,6 @@ updated_at: '2023-07-31T11:32:20+09:00'
 id: 9af6911457ad43a6c237
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## aws-vaultとは
 AWSのシークレットキーとアクセスキーを暗号化して保存できるツールです

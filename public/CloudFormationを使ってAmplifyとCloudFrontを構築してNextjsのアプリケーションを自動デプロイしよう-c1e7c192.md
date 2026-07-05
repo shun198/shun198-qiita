@@ -11,9 +11,6 @@ updated_at: '2024-02-27T15:04:02+09:00'
 id: c1e7c192a98e2c42000c
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 CloudFormationを使ってAmplifyを構築する方法について解説します

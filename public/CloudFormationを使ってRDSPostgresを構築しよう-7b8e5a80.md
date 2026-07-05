@@ -10,9 +10,6 @@ updated_at: '2024-04-10T16:01:03+09:00'
 id: 7b8e5a80a40d7c9fb125
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 今回はCloudFormationを使ってRDS(Postgres)を構築する方法について解説していきたいと思います

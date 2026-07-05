@@ -10,9 +10,6 @@ updated_at: '2025-04-19T09:13:28+09:00'
 id: 2ed2affa5e7b197d17ce
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 Pub/Subに入ったメッセージをSubscriberへ何かしらの理由で送信できなかったことを想定してDLQ(Dead Letter Queue)を作成するケースがあるかと思います

@@ -9,9 +9,6 @@ updated_at: '2025-03-09T12:11:23+09:00'
 id: 51eb079068511309243c
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 BigQueryのMerge関数の使用方法について解説します

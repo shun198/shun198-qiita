@@ -10,9 +10,6 @@ updated_at: '2023-12-28T15:41:07+09:00'
 id: 45216fc983cace043bed
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 React/Next.jsを使って画面を作成し、Django Rest Frameworkを使ってAPIと疎通した上でスライダーのオン/オフの切り替えに応じて表示内容を変える方法について解説します

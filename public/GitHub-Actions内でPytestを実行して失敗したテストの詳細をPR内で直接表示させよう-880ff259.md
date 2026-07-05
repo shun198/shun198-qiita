@@ -9,9 +9,6 @@ updated_at: '2023-06-10T21:58:27+09:00'
 id: 880ff25977866c30c1a4
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 GitHub Actionsを使ってテストを実行する際に失敗したテストはログを見るかと思います

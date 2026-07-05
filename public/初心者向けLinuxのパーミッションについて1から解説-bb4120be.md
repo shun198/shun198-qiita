@@ -9,9 +9,6 @@ updated_at: '2023-03-20T21:18:34+09:00'
 id: bb4120be13365228b48a
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## パーミッション
 パーミッションは簡単に言うと該当するファイルやフォルダが与えられた権限

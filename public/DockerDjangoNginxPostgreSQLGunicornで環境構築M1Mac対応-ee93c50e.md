@@ -11,9 +11,6 @@ updated_at: '2023-10-08T19:25:13+09:00'
 id: ee93c50eac2f7c77e443
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 前提
 - フレームワークはDjango

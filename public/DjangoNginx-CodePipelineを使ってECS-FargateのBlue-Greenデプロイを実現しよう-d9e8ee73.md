@@ -11,9 +11,6 @@ updated_at: '2024-01-31T14:49:01+09:00'
 id: d9e8ee7372c3ccaddfeb
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 AWSのコンソール上でCodePipelineを構築し、ECS FargateをBlue/Greenデプロイを使ってデプロイする方法について解説していきたいと思います

@@ -9,9 +9,6 @@ updated_at: '2023-09-13T15:43:03+09:00'
 id: 078771acfa959d138b12
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 AWS Secrets Manager内でキーローテーションの設定をしてうまくいかなかった際に下記画像のように

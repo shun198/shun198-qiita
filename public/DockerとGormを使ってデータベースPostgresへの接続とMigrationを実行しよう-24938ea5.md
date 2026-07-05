@@ -11,9 +11,6 @@ updated_at: '2024-05-25T09:02:07+09:00'
 id: 24938ea52a71e39b00f3
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 Docker環境でGormを使ってデータベースへの接続とマイグレーションを行う方法について解説します

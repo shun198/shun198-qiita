@@ -11,9 +11,6 @@ updated_at: '2025-04-29T01:13:18+09:00'
 id: 8c45d60254f4338a8650
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 - FastAPI

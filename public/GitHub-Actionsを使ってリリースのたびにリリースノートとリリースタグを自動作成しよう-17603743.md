@@ -10,9 +10,6 @@ updated_at: '2023-11-22T16:46:18+09:00'
 id: 176037432f7efc8fde26
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## はじめに
 何かしらのプロダクトをリリースする際に

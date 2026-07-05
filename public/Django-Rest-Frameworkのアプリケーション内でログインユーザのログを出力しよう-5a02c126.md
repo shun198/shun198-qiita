@@ -10,9 +10,6 @@ updated_at: '2023-06-14T16:56:12+09:00'
 id: 5a02c126b18009152cee
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 Djangoのアプリケーション内でログインユーザの

@@ -8,9 +8,6 @@ updated_at: '2025-01-18T10:52:28+09:00'
 id: f980cdf98d05ef7df05d
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 Djangoの便利メソッドであるget_object_or_404について使用する際の注意点について解説していきたいと思います

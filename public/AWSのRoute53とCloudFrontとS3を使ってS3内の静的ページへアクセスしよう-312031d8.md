@@ -10,9 +10,6 @@ updated_at: '2024-01-12T13:20:52+09:00'
 id: 312031d80455418d1e8d
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 AWSのCloudFrontのディストリビューションまたはRoute53のドメインからアクセスする際にS3バケット内の静的ファイルが表示されるようにする設定方法について解説します

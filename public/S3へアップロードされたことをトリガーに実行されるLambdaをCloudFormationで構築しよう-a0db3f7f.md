@@ -11,9 +11,6 @@ updated_at: '2024-06-26T08:01:40+09:00'
 id: a0db3f7fe445b1293ac8
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 今回はS3へzipファイルがアップロードされたことをトリガーにzipファイルをLambdaで解凍する時に使用するS3とLambdaをCloudFormationを使って構築していきたいと思います
