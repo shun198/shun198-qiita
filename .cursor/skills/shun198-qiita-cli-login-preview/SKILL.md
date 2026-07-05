@@ -28,6 +28,7 @@ npx qiita pull
 - 公開操作は自動実行しない（`publish` / `push` はユーザー確認後のみ）
 - API操作時は下書き運用を優先し、公開可否を明示する
 - 認証情報ファイル（`credentials.json`）はコミット対象から除外する
+- 記事Front Matterの `id` は絶対に更新しない
 
 ## Config And Options
 

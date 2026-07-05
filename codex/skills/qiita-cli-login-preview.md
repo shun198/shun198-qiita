@@ -18,6 +18,7 @@ Set up reliable Qiita article writing workflow with login and preview using Qiit
 - Never auto-publish without user confirmation
 - Keep credentials out of git history
 - Prefer draft-first operation until final manual publish
+- Never update article front matter `id`
 
 ## Useful Options
 

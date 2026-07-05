@@ -55,6 +55,7 @@ pnpm exec qiita preview
 - 投稿系コマンド（`qiita publish` / `qiita push`）は必ず事前承認を取る
 - `--all` は対象を明確化できる場合だけ使う
 - 認証情報ファイルはコミットしない
+- 既存記事のFront Matterにある `id` は絶対に更新しない
 
 ## CI
 

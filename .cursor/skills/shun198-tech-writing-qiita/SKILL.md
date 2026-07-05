@@ -18,6 +18,7 @@ description: Qiita向け技術記事を作成する。記事構成案、下書�
 - 公開投稿（`private: false`）は絶対に行わない
 - Qiita APIで作成する場合は常に下書き（`private: true`）のみ
 - 公開操作はユーザーがQiita画面で最終確認して実施する
+- 記事Front Matterの `id` は既存値を絶対に変更しない（`null` から投稿で付与された値も含む）
 
 ## Writing Style
 

@@ -13,6 +13,7 @@ Publish Qiita articles safely, with explicit user approval before any publish ac
    - Exact command to run
 3. Do not execute until the user clearly approves
 4. If approval is ambiguous, ask again
+5. Never change article front matter `id`
 
 ## Covered Commands
 

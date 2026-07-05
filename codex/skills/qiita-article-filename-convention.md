@@ -25,3 +25,4 @@ Create Qiita article files with human-readable names instead of UUID-like names.
 - Do not create new articles with UUID-like names
 - Do not use spaces or Japanese characters in file names
 - Do not rename existing published files casually
+- Do not edit existing article front matter `id`

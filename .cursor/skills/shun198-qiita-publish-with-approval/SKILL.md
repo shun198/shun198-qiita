@@ -14,6 +14,7 @@ description: Qiitaへの投稿・反映を実行する。publish/push実行前�
    - 実行コマンド（例: `npx qiita publish xxx`）
 3. ユーザーが明示的に「実行してよい」と回答するまで、投稿系コマンドは実行しない
 4. 承認が曖昧な場合は再確認する（推測で実行しない）
+5. 記事Front Matterの `id` は承認有無に関わらず絶対に変更しない
 
 ## Safe Workflow
 
@@ -29,6 +30,7 @@ description: Qiitaへの投稿・反映を実行する。publish/push実行前�
 - [ ] `private` の意図（公開 or 限定共有）が明確
 - [ ] 誤って `--all` を使わないことを確認
 - [ ] 実行前にユーザー承認を取得した
+- [ ] 記事の `id` を編集していない
 
 ## Postflight Checklist
 
@@ -41,3 +43,4 @@ description: Qiitaへの投稿・反映を実行する。publish/push実行前�
 - ユーザー承認前に投稿系コマンドを実行しない
 - 「たぶんOK」などの推測で公開しない
 - 対象が不明なまま `--all` を使わない
+- 記事Front Matterの `id` を手動で変更しない

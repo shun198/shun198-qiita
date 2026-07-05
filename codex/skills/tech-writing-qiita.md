@@ -9,6 +9,7 @@ Write a Qiita-ready technical article for beginner-to-mid readers, with reproduc
 - Never publish publicly (`private: false`)
 - Create drafts only (`private: true`) when using Qiita API
 - Let the user do the final public publish step manually
+- Never modify article front matter `id` values
 
 ## Steps
 
