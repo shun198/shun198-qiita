@@ -9,6 +9,9 @@ updated_at: '2025-02-22T15:05:13+09:00'
 id: d5c23497318523899fae
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Webアプリケーション作成時にmodelの定義を反映させたり、管理する場合はマイグレーションファイルを使用するのが一般的です

@@ -9,6 +9,9 @@ updated_at: '2023-12-19T13:19:06+09:00'
 id: d5276f9dd5d717d3544d
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 DjangoのAbstractUser内のis_activeフラグをTrue,Falseに切り替えるAPIの作成方法について解説します

@@ -7,10 +7,13 @@ tags:
   - GitHubActions
   - EventBridge
 private: false
-updated_at: '2024-06-24T11:39:12+09:00'
+updated_at: '2026-07-05T20:53:20+09:00'
 id: 2230efe50007cb54dbfa
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 AWS LambdaとEventBridgeを使ってOrganization内のGitHub Actionsの使用状況をSlackで通知する方法について解説します

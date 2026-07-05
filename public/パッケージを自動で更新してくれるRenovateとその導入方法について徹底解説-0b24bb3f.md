@@ -10,6 +10,9 @@ updated_at: '2024-03-23T08:07:46+09:00'
 id: 0b24bb3f1660fb726ddb
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 今回はRenovateの概要、導入方法、renovate.jsonの書き方について解説していきます

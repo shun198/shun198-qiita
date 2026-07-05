@@ -11,6 +11,9 @@ updated_at: '2025-05-09T07:24:40+09:00'
 id: 0f9c874c11acb08f67ce
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Pub/Subへメッセージを送る際にSubscriberでat-least-onceのオプションを有効にしていると稀にメッセージを再配信する可能性があります

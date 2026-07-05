@@ -11,6 +11,9 @@ updated_at: '2024-04-17T15:40:25+09:00'
 id: 6c481a3aeaf6c8c7d7ad
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Nest.jsでSession認証を実装した記事が思ってたより少なかったのでSessionを使ったログイン/ログアウトAPIの実装方法について解説したいと思います

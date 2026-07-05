@@ -9,6 +9,9 @@ updated_at: '2024-01-23T15:42:57+09:00'
 id: 0c235b90df96c894b5f0
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 django-rest-frameworkでトークン認証を実装する際はdjango-rest-knoxを使うと便利なので実装方法について解説します

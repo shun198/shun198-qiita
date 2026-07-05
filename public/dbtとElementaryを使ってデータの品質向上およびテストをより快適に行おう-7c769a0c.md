@@ -9,6 +9,9 @@ updated_at: '2025-02-24T18:41:42+09:00'
 id: 7c769a0c2e0056954bd4
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Elementaryを使用することでdbtプロジェクトのデータの可視化、テスト実行、Slackによるアラート送信を行うことができます

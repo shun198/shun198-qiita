@@ -9,6 +9,9 @@ updated_at: '2023-01-23T21:24:46+09:00'
 id: 7352a5c67bb3284583d1
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## pre-commitとは？
 Git hookを使ってコミット時にPylint等のlinterやBlack等のformatterを実行するツールです

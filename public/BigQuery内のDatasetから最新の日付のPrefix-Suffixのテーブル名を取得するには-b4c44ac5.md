@@ -10,6 +10,9 @@ updated_at: '2025-04-13T08:39:36+09:00'
 id: b4c44ac564799fc08a7c
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Dataset内の履歴テーブルから最新のPreffixもしくはSuffixのテーブル名(例えば、history_20250202)を取得したいニーズがあるかと思います

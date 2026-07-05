@@ -11,6 +11,9 @@ updated_at: '2023-08-21T11:57:51+09:00'
 id: 74883e06d3a8d2bc98c3
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Djangoで定期実行機能を実装する際はCeleryを使うのが一般的です

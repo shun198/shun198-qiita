@@ -8,6 +8,9 @@ updated_at: '2023-11-12T13:30:07+09:00'
 id: c3d500701acf0d34fae6
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Django Rest Frameworkを使って一覧のAPIにソート機能を実装する方法について解説します

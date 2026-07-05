@@ -8,6 +8,9 @@ updated_at: '2024-03-19T21:15:24+09:00'
 id: 53c79bf2c17f8787fd26
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Prismaを使ってDBにテストデータを入れる方法について解説します

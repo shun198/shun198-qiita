@@ -11,6 +11,9 @@ updated_at: '2025-04-06T19:25:16+09:00'
 id: 8d8ddea271faccf11d24
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Pub/Subからきたメッセージを受け取るCloud Run Serviceのアプリケーションの作成方法について解説します

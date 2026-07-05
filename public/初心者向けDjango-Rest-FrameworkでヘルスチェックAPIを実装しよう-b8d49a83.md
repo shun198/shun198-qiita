@@ -9,6 +9,9 @@ updated_at: '2024-07-10T08:04:34+09:00'
 id: b8d49a830528addfae56
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## ヘルスチェックとは？
 システムが正常に稼働しているかどうかを確認することです

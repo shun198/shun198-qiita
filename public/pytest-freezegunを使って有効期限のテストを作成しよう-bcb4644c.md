@@ -9,6 +9,9 @@ updated_at: '2023-11-23T18:25:55+09:00'
 id: bcb4644c54946a62d8d9
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 pytest-freezegunを使うと特定の日付や時間に設定してテストを実行することができます

@@ -10,6 +10,9 @@ updated_at: '2025-10-01T13:53:17+09:00'
 id: 98687818d7ea08b1b06e
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Google CloudではCloud StorageサブスクリプションというGoogle Cloud Storageにファイルなどのオブジェクトを新規でアップロードしたり更新したりしたことをトリガーにイベントをPub/Subに連携する仕組みがあります

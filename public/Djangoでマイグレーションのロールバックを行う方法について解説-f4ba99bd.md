@@ -7,6 +7,9 @@ updated_at: '2024-05-07T10:25:14+09:00'
 id: f4ba99bd4e546b8f165a
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 間違えてマイグレーションした際のロールバック方法について解説します

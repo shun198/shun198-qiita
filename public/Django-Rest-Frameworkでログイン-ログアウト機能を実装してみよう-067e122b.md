@@ -9,6 +9,9 @@ updated_at: '2024-01-19T15:52:15+09:00'
 id: 067e122bb291fed2c839
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 カスタムユーザで

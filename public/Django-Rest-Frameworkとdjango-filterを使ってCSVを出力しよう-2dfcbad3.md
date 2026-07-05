@@ -10,6 +10,9 @@ updated_at: '2023-12-19T09:10:00+09:00'
 id: 2dfcbad319775715cfe7
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Django Rest Frameworkを使ってCSVを出力する方法について解説します

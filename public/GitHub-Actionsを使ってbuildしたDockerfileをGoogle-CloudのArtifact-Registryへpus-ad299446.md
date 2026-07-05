@@ -10,6 +10,9 @@ updated_at: '2025-09-15T17:11:44+09:00'
 id: ad299446f3fda0b23ce3
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 開発環境検証時に最新のソースコードをCloud RunやGKEに反映させる際、commitなどをトリガーにArtifact Registryへpushできたら便利なので今回はGitHub Actionsを使ってbuildとArtifact Registryへのpushまで自動化させる方法について解説します

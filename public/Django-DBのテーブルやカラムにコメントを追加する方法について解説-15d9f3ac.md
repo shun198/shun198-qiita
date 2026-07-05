@@ -7,6 +7,9 @@ updated_at: '2024-07-10T07:58:44+09:00'
 id: 15d9f3ac280ef2f044bf
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Django4.2からDB内のテーブルやカラムにコメントを追加できるようになリました

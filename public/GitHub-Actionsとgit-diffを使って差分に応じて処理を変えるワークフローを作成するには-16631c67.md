@@ -7,10 +7,13 @@ tags:
   - checkout
   - GitHubActions
 private: false
-updated_at: '2024-08-17T14:05:44+09:00'
+updated_at: '2026-07-05T20:53:20+09:00'
 id: 16631c6720ec7c2b1a26
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 GitHub Actionsを使って例えばModelを追加したときのみModelのテストも行いたいなど、gitを使って差分に応じてテストする項目を変更したい場合(実行時間を短縮したい)場面があるかと思うので今回はその方法について解説したいと思います

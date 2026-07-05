@@ -11,6 +11,9 @@ updated_at: '2023-12-27T10:43:18+09:00'
 id: 89b2e020fa554233aa4c
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 GitHub Actionsを使ってPythonの必要なパッケージとソースコードをzipファイルに圧縮してLambdaに自動デプロイする方法について解説します

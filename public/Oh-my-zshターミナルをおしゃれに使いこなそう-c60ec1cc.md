@@ -10,6 +10,9 @@ updated_at: '2024-02-28T13:30:12+09:00'
 id: c60ec1cce9c9bf1e8c26
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 ターミナルをスタイリッシュにカスタマイズする方法について解説したいと思います

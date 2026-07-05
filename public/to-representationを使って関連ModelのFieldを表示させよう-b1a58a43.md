@@ -11,6 +11,9 @@ updated_at: '2024-01-07T09:16:03+09:00'
 id: b1a58a438e3256ab6ec7
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Modelの一覧を表示させたい時にFKと繋がってる一部Fieldも合わせて表示させたい場面では

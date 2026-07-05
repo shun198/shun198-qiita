@@ -9,6 +9,9 @@ updated_at: '2024-04-17T16:52:22+09:00'
 id: 7880160597096af11cda
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Nest.jsのguardを使ってセッションで認証したユーザの

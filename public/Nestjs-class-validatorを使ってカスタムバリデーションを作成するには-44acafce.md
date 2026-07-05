@@ -8,6 +8,9 @@ updated_at: '2024-03-31T08:51:22+09:00'
 id: 44acafce057b4baf8486
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Nest.jsでバリデーションを行う際はdtoを作成し、class-validatorのデコレータを使って行うのが一般的です

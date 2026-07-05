@@ -11,6 +11,9 @@ updated_at: '2024-03-14T07:36:36+09:00'
 id: 23c6baa450ba37a5fd66
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## はじめに
 今回はDjangoでもSwaggerUIを使えるようにする方法について説明したいと思います

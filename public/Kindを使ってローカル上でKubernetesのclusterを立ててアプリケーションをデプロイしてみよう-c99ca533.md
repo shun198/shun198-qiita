@@ -9,6 +9,9 @@ updated_at: '2025-09-13T16:03:53+09:00'
 id: c99ca533fb2d4a408cb3
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Kubernetesをローカル上で検証する際にKindもしくはminikubeを使うのが一般的です

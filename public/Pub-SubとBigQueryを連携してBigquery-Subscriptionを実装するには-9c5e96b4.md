@@ -11,6 +11,9 @@ updated_at: '2026-02-28T09:36:03+09:00'
 id: 9c5e96b415d43c670fc4
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Pub/SubとBigQueryを連携することでBigQuery Subscriptionという機能を使用することができます

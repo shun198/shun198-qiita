@@ -10,6 +10,9 @@ updated_at: '2025-06-12T08:48:20+09:00'
 id: c983c713452c041ef787
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## READMEとは
 READMEはアプリケーションの

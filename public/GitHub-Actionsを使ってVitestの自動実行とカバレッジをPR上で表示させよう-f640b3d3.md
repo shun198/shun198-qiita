@@ -9,6 +9,9 @@ updated_at: '2024-05-22T16:34:07+09:00'
 id: f640b3d3bf73d2cc3510
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 GitHub Actions内でVitestを使って単体テストを実行し、PRにカバレッジを表示させることができれば便利なのでその方法について解説していきたいと思います

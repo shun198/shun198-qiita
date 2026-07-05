@@ -10,6 +10,9 @@ updated_at: '2023-12-24T14:23:12+09:00'
 id: b8de1c3597a75093f8c0
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Django Rest Frameworkを使ってファイルのアップロードと削除のAPIを実装する方法について解説します

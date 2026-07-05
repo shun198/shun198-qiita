@@ -11,6 +11,9 @@ updated_at: '2025-04-06T19:34:47+09:00'
 id: 49e8dab0ff553f6f4c56
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Cloud Run Jobsを使ってPub/Subへメッセージを送る方法について解説します

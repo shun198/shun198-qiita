@@ -9,6 +9,9 @@ updated_at: '2023-08-25T21:07:08+09:00'
 id: a3bc837d8a8af5831323
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 今回はTerraformを使って

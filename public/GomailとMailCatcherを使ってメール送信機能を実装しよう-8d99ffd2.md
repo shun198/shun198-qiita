@@ -10,6 +10,9 @@ updated_at: '2024-06-03T07:21:38+09:00'
 id: 8d99ffd27f1ec81c8210
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 GomailとMailCatcherのコンテナを使ってローカル上でメール送信機能を使用する方法について解説していきたいと思います
