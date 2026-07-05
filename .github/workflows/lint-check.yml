@@ -42,7 +42,6 @@ jobs:
           args: >-
             --no-progress
             --verbose
-            --exclude-mail
             --accept 200,206,301,302,429
             README.md
             CONTRIBUTING.md
