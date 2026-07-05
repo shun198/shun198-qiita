@@ -359,7 +359,7 @@ def test_delete_todo_unauthorized(client, test_todo_one):
 
 
 ## まとめ
-FastAPIでテストする際は依存性の注入を比較的少ない記述量でできるのでテストを直感的に書けるのははいいですね
+FastAPIでテストする際は依存性の注入を比較的少ない記述量でできるのでテストを直感的に書けるのはいいですね
 
 ## 参考
 https://fastapi.tiangolo.com/advanced/testing-dependencies/
