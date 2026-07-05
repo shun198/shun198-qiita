@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "pnpm run lint:md && pnpm run lint:text",
     "lint:md": "markdownlint-cli2",
-    "lint:text": "textlint \"README.md\" \"CONTRIBUTING.md\" \"public/**/*.md\"",
+    "lint:text": "textlint \"README.md\" \"CONTRIBUTING.md\"",
+    "lint:articles:text": "textlint \"public/**/*.md\"",
     "qiita:pull": "bash ./scripts/qiita-pull.sh"
   },
   "devDependencies": {

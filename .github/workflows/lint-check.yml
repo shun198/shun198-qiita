@@ -44,11 +44,11 @@ jobs:
             --verbose
             --exclude-mail
             --accept 200,206,301,302,429
-            --format markdown
-            --output lychee-report.md
             README.md
             CONTRIBUTING.md
             public/**/*.md
+          format: markdown
+          output: lychee-report.md
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
