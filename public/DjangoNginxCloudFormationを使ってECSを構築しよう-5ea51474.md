@@ -889,7 +889,7 @@ Terraformのタスク定義にも記載しましたがentrypoint.shを使って�
 タスク定義に記載されている内容と統一しないとECSが起動しないので注意です
 
 ```Dockerfile:containers/django/Dockerfile.prd
-FROM --platform=linux/x86_64 python:3.11
+FROM --platform=linux/x86_64 python:3.14
 
 # 公開するポートを明示的に定義
 EXPOSE 8000
