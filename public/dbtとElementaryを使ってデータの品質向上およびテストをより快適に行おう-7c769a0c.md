@@ -39,7 +39,7 @@ name = "application"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.14"
 dependencies = [
     "dbt-core>=1.9.2",
     "dbt-postgres>=1.9.0",
@@ -291,7 +291,7 @@ profiles.ymlのelementaryのschema名を一度確認してみてください
 
 詳細はdbt-artifactsに記載されています
 
-https://docs.elementary-data.com/dbt/dbt-artifacts
+https://docs.elementary-data.com/data-tests/dbt/dbt-artifacts
 
 ## 参考
 https://www.elementary-data.com/

@@ -149,5 +149,5 @@ Prisma Studio is up on http://localhost:5555
 ## 参考
 https://www.prisma.io/docs/orm/prisma-migrate/workflows/seeding
 
-https://github.com/prisma/prisma-examples/blob/latest/typescript/rest-nestjs/prisma/seed.ts
+https://github.com/prisma/prisma-examples/blob/latest/orm/nest/prisma/seed.ts
 

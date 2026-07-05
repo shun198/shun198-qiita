@@ -295,6 +295,6 @@ limit=10、offsetのクエリパラメータを追加した状態でAPIを実行
 ![スクリーンショット 2025-07-21 10.28.59.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/fd70bd25-f021-4d6a-b7cb-f0e7101b17ea.png)
 
 ## 参考
-https://gin-gonic.com/ja/docs/examples/only-bind-query-string/
+https://gin-gonic.com/ja/docs/binding/only-bind-query-string/
 
 https://gorm.io/ja_JP/docs/query.html#Limit-Offset

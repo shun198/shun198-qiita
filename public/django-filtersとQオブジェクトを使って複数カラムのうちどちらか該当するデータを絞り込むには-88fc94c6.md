@@ -253,7 +253,7 @@ print(name)
 querysetにCustomerのオブジェクトが入っていることがわかったのでShellで確認してみましょう
 django-debug-toolbarを使えばDjangoのORMで発行されたSQLが簡単にわかるので使い方を知らない方は以下の記事を参考にしてください
 
-https://qiita.com/shun198/items/ce1f1d17b9e6b49d0965
+https://qiita.com/shun198/items/637c05e0701114ae5b3d
 
 ```
 python manage.py debugsqlshell
@@ -294,7 +294,7 @@ nameに"大阪"を入れても"オオサカ"を入れても該当するお客様
 ![スクリーンショット 2023-05-14 10.41.01.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/04a6308e-d8e0-ac33-1696-1cdfb0138e0d.png)
 
 ## 参考
-https://codor.co.jp/django/about-qobject
+https://django.codor.co.jp/about-qobject
 
 https://stackoverflow.com/questions/57270470/django-filter-how-to-make-multiple-fields-search-with-django-filter
 

@@ -130,7 +130,7 @@ python manage.py loaddata fixture.json
 DjangoのORMを使用する際はdjango-debug-toolbarを使うと発行されているSQLがわかるので非常に便利です
 詳細は以下の記事を参照してください
 
-https://qiita.com/shun198/items/ce1f1d17b9e6b49d0965
+https://qiita.com/shun198/items/637c05e0701114ae5b3d
 
 以下のコマンドを実行するとShellが起動します
 ```
