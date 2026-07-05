@@ -33,12 +33,12 @@ RUN poetry install
 
 imageのbuild時のログを見る際は
 ```terminal
-docker-compose build --progress=plain 
+docker compose build --progress=plain 
 ```
 を実行すると下記のようにログが流れずに表示されます
 
 ```
-docker-compose build --progress=plain
+docker compose build --progress=plain
 #1 [<image名>-nginx internal] load build definition from Dockerfile.dev
 #1 transferring dockerfile: 35B 0.0s done
 #1 DONE 0.0s
@@ -58,7 +58,7 @@ docker-compose build --progress=plain
 ### ビルドコンテキストがわからなくなる時
 例えば指定したディレクトリが間違っていたせいでrequirements.txtやpoetry.tomlがないよ！というエラーが出た際に上記の
 ```
-docker-compose build --progress=plain 
+docker compose build --progress=plain 
 ```
 とLinuxの`ls`コマンドと組み合わせて使うとデバッグが容易になります
 
@@ -79,7 +79,7 @@ RUN poetry install
 
 ### 実際にbuildしてみよう！
 ```
-docker-compose build --progress=plain 
+docker compose build --progress=plain 
 ```
 を実行すると下記のようにWORKDIR内のファイル構成を確認できます
 ```terminal
