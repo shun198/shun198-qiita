@@ -89,8 +89,6 @@ MailCatcherのイメージを指定して
 の2種類のポートを解放します
 
 ```docker-compose.yml
-version: '3.9'
-
 services:
   mail:
     container_name: mail

@@ -34,7 +34,7 @@ https://docs.github.com/ja/rest
 
 - Twitter API
 
-https://developer.twitter.com/en/products/twitter-api
+https://developer.x.com/en/docs
 
 など
 

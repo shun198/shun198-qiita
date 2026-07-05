@@ -44,7 +44,6 @@ RUN npm install
 
 ### docker-compose.yml
 ```yml:docker-compose.yml
-version: '3.8'
 services:
   # サービス名はfront
   front:
@@ -82,7 +81,7 @@ https://github.com/github/gitignore/blob/main/Node.gitignore
 npx create-react-appコマンドを使うと作成できます
 後ろに作成するアプリケーション名(今回はapp)を指定します
 ```terminal
-docker-compose run --rm front sh -c "npx create-react-app app"
+docker compose run --rm front sh -c "npx create-react-app app"
 ```
 
 少なくとも3,4分は作成に時間がかかるので気長に待ちましょう
@@ -113,7 +112,7 @@ tree
 └── docker-compose.yml
 ```
 
-このようなログが出ますが、docker-compose.ymlのcommandにすでに記載されているので`docker-compose up -d`を実行すれば下記のコマンドは実行されます
+このようなログが出ますが、docker-compose.ymlのcommandにすでに記載されているので`docker compose up -d`を実行すれば下記のコマンドは実行されます
 ```terminal
 We suggest that you begin by typing:
 
@@ -125,7 +124,7 @@ Happy hacking!
 
 ## 起動させよう！
 ```terminal
-docker-compose up -d
+docker compose up -d
 ```
 を実行してreactのコンテナを起動させます
 ```terminal

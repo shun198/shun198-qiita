@@ -172,8 +172,6 @@ Django、MySQLのコンテナの作成方法について詳細に知りたい方
 https://qiita.com/shun198/items/f6864ef381ed658b5aba
 
 ```docker-compose.yml
-version: "3.9"
-
 services:
   db:
     container_name: mysql
@@ -377,7 +375,7 @@ app.conf.beat_schedule = {
 
 ## タスクを実行しよう！
 ```
-docker-compose up -d --build
+docker compose up -d --build
 ```
 でコンテナを立ち上げます
 

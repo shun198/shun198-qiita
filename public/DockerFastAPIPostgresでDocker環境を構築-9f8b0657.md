@@ -128,8 +128,6 @@ POSTGRES_PORT=5432
 ### docker-compose.yml
 
 ```docker-compose.yml
-version: "3.9"
-
 services:
   db:
     container_name: db

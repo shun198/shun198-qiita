@@ -63,7 +63,7 @@ runs:
   using: 'composite'
   steps:
       - name: Setup NodeJS
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version-file: ${{ inputs.working-directory }}/package.json
       - name: Install dependencies
@@ -165,7 +165,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       - name: Setup Node.js
         uses: ./.github/actions/set-up-node
         with:
@@ -197,7 +197,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Check out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       - name: Setup Node.js
         uses: ./.github/actions/set-up-node
         with:

@@ -57,9 +57,9 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Install and cache nodejs
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
           node-version-file: ${{ env.WORKING_DIRECTORY }}/package.json
           cache: 'npm'
@@ -122,7 +122,7 @@ Node.jsのインストールと次回以降にワークフローを実行する�
 今回はパッケージマネージャーとしてnpmを使用しているので以下のように記載します
 ```yml:.github/workflows/test.yml
       - name: Install and cache nodejs
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
           node-version-file: ${{ env.WORKING_DIRECTORY }}/package.json
           cache: 'npm'

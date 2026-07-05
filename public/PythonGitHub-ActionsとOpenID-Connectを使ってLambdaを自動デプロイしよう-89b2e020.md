@@ -217,19 +217,19 @@ jobs:
         working-directory: ${{ env.LAMBDA_WORKING_DIRECTORY }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       # Poetryのインストール
       - name: Install poetry
         run: pipx install poetry
       # Python3.11を使用したいので設定
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
           python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"
           cache: 'poetry'
       - name: Configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ env.LAMBDA_EXECUTION_ROLE }}
           role-session-name: samplerolesession
@@ -285,7 +285,7 @@ JWTトークンを使って認証を行いますがGitHub Actionsのid-tokenの�
         run: pipx install poetry
       # Python3.11を使用したいので設定
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
           python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"
@@ -300,11 +300,11 @@ https://github.com/aws-actions/configure-aws-credentials
 role-to-assumeに自身で作成されたIAM Roleを記載します
 今回は東京リージョンを使用するのでaws-regionはap-northeast-1に設定します
 デフォルトのrole-session-nameはGitHubActionsですが、任意の名前に設定しても大丈夫です
-また、ワークフロー内で複数回`aws-actions/configure-aws-credentials@v2`を使用する際は一意の名前にする必要があります
+また、ワークフロー内で複数回`aws-actions/configure-aws-credentials@v6`を使用する際は一意の名前にする必要があります
 
 ```yml
       - name: Configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ env.LAMBDA_EXECUTION_ROLE }}
           role-session-name: samplerolesession

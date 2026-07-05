@@ -52,8 +52,6 @@ Docker環境でGormを使ってデータベースへの接続とマイグレー�
 GolangとPostgresのコンテナを用意します
 
 ```docker-compose.yml
-version: '3.9'
-
 services:
   app:
     container_name: app

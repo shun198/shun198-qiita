@@ -21,7 +21,7 @@ agreed_posting_campaign_term: false
 ## エラーが発生するまでの流れ
 カスタムユーザを作成後、makemigrationsでmigrationファイルを作成し、migrateします
 ```terminal:terminal
-docker-compose exec app python manage.py makemigrations
+docker compose exec app python manage.py makemigrations
 Migrations for '<アプリケーション名>':
   <アプリケーション名>/migrations/0001_initial.py
     - Create model User
@@ -52,7 +52,7 @@ django_session
 ## 永続volumeを削除しよう
 まずはコンテナをdownします
 ```terminal:terminal
-docker-compose down
+docker compose down
 ```
 
 下記のコマンドでvolume名を調べます
@@ -68,13 +68,13 @@ docker volume rm <ボリューム名>
 
 コンテナを再起動します
 ```terminal:terminal
-docker-compose up -d
+docker compose up -d
 ```
 
 すでにmigratationファイルがあるのでmigrateするとカスタムユーザのmigrationがうまく反映されます
 以下のような出力結果が表示されたら成功です
 ```yaml:terminal
-docker-compose exec app python manage.py migrate
+docker compose exec app python manage.py migrate
 Operations to perform:
   Apply all migrations: admin, auth, contenttypes, <アプリケーション名>, sessions
 Running migrations:

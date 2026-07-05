@@ -408,7 +408,7 @@ fetchDataという関数を使って関数内にAPIを実行し、response.okの
 - ステータスコードが404の時
     - 404ページへリダイレクト
 
-今回404エラー時にrouter.replace()を使用しているのは、指定したURL(/404)をアクセスしたURLの履歴として残さずににページ遷移できるからです
+今回404エラー時にrouter.replace()を使用しているのは、指定したURL(/404)をアクセスしたURLの履歴として残さずにページ遷移できるからです
 
 > router.replace will prevent adding a new URL entry into the history stack.
 

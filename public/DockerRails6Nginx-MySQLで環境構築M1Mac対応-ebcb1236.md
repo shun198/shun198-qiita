@@ -172,10 +172,7 @@ server {
 ```
 
 ### docker-compose.yml(開発用)
-# docker-composeのバージョンを指定
 ```docker-compose.yml
-version: "3.9"
-
 # db(MySQL),app(Rails)のコンテナを作成
 services:
   db:
@@ -234,8 +231,6 @@ volumes:
 
 ### docker-compose.yml(本番用)
 ```docker-compose.prod.yml
-version: "3.9"
-
 services:
   db:
     container_name: mysql
@@ -324,7 +319,7 @@ MYSQL_PASSWORD=rails
 今回はデータベースをMySQLにするので`--force --database=mysql`も指定します
 初回はyarnのインストールも含めると時間がかかるので気長に待ちます
 ```terminal:terminal
-docker-compose run app rails new . --force --database=mysql
+docker compose run app rails new . --force --database=mysql
 ```
 
 実行するとローカルのディレクトリ構成は以下のようになります
@@ -400,7 +395,7 @@ rails newで.gitignoreが自動生成されましたが、.envが記載されて
 コンテナをデタッチモードで起動する
 デタッチモード起動することでコンテナの中に入らずにバックグラウンドで起動させることができます
 ```terminal:terminal
-docker-compose -f docker-compose.prod.yml up -d
+docker compose -f docker-compose.prod.yml up -d
 ```
 
 ### 127.0.0.1/80にアクセスしてみよう

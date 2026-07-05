@@ -87,7 +87,7 @@ authors = ["shun198"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.14"
 Django = "^4.1.2"
 psycopg2 = "^2.9.6"
 
@@ -226,7 +226,7 @@ CI_MAKING_DOCS=1 poetry run pdoc -o docs application/tests/
 
 docker-composeを使用される方は下記のコマンドを実行してください
 ```
-docker-compose exec app env CI_MAKING_DOCS=1 poetry run pdoc -o docs application/tests/
+docker compose exec app env CI_MAKING_DOCS=1 poetry run pdoc -o docs application/tests/
 ```
 
 下記のようにdocsフォルダができたら成功です
@@ -285,11 +285,11 @@ jobs:
         working-directory: application
     steps:
       - name: Chekcout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Install poetry
         run: pipx install poetry
       - name: Use cache dependencies
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
           python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"
@@ -368,11 +368,11 @@ jobs:
         working-directory: application
     steps:
       - name: Chekcout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Install poetry
         run: pipx install poetry
       - name: Use cache dependencies
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
           python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"

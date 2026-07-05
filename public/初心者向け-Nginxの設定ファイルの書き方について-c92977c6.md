@@ -56,8 +56,6 @@ Webアプリケーション開発でNginxをWebサーバとして使用してい
 今回はtestnetというネットワークを作成します
 
 ```docker-compose.yml
-version: '3.9'
-
 services:
   app:
     container_name: app

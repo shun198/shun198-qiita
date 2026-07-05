@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Chekcout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Install swagger-cli
         run: npm install -g swagger-cli
       - name: Generate Swagger UI

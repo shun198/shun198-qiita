@@ -367,7 +367,7 @@ annotationを使う際はModelの既存のカラムと被らないようにし�
 querysetにCustomerのオブジェクトが入っていることがわかったのでShellで確認してみましょう
 django-debug-toolbarを使えばDjangoのORMで発行されたSQLが簡単にわかるので使い方を知らない方は以下の記事を参考にしてください
 
-https://qiita.com/shun198/items/ce1f1d17b9e6b49d0965
+https://qiita.com/shun198/items/637c05e0701114ae5b3d
 
 ```
 python manage.py debugsqlshell
@@ -416,8 +416,8 @@ https://www.javadrive.jp/mysql/function/index35.html
 
 https://docs.djangoproject.com/en/1.8/ref/models/database-functions/
 
-https://codor.co.jp/django/how-to-use-annotate
+https://django.codor.co.jp/how-to-use-annotate
 
 https://www.northtorch.co.jp/archives/1308
 
-https://codor.co.jp/django/how-to-use-annotate
+https://django.codor.co.jp/how-to-use-annotate

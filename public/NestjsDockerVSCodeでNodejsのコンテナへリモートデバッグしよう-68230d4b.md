@@ -59,8 +59,6 @@ VSCodeのブレークポイントやウォッチが使えるとかなり開発�
 リモートデバッグする際にデバッグ用のポート(今回は9229)を開放します
 
 ```yaml:docker-compose.yml
-version: '3.9'
-
 services:
   db:
     container_name: db

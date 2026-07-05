@@ -36,8 +36,6 @@ Debug Toolbarの静的ファイルを共有できるようdocker-compose.ymlのN
 その際はstaticのvolumeを作成します
 
 ```docker-compose.yml
-version: '3.9'
-
 services:
   db:
     container_name: db

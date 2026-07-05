@@ -240,4 +240,4 @@ if __name__ == "__main__":
 ![スクリーンショット 2024-06-16 13.20.29.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/baec38a0-6dcc-30f9-c720-b626fde1586e.png)
 
 ## 参考
-https://slack.dev/bolt-python/ja-jp/tutorial/getting-started
+https://docs.slack.dev/tools/bolt-python/ja-jp/getting-started

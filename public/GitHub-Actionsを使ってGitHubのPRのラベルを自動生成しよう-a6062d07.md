@@ -53,9 +53,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # リポジトリのチェックアウト
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
       # label-syncerを使用
-      - uses: micnncim/action-label-syncer@v0.3.1
+      - uses: micnncim/action-label-syncer@v1.3.0
         env:
           # GITHUB_TOKENはデフォルトで使用できるため、secretsへの追記は不要
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -113,8 +113,8 @@ jobs:
     name: Sync labels
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: micnncim/action-label-syncer@v0.3.1
+      - uses: actions/checkout@v6
+      - uses: micnncim/action-label-syncer@v1.3.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -124,11 +124,6 @@ jobs:
 schedule及びcronの使い方は以下の公式ドキュメントを参照してください
 
 https://docs.github.com/ja/actions/using-workflows/events-that-trigger-workflows#scheduled-events
-
-## 記事の紹介
-下記の記事も書きましたのでよかったら読んでみてください
-
-https://qiita.com/shun198/items/15d8947a1a5642154392
 
 ## 参考
 https://github.com/micnncim/action-label-syncer

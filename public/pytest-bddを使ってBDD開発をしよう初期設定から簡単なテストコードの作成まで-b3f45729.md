@@ -77,10 +77,6 @@ pip install pytest_bdd
 
 ### ヘルスチェックの実装
 
-詳細は以下の記事を参考にしてください
-
-https://qiita.com/shun198/items/be6be8453723d0887ba4
-
 ```application/views/health_check.py
 from django.http import JsonResponse
 from rest_framework import status

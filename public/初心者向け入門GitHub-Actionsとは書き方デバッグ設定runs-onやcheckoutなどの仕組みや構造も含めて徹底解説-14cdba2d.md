@@ -108,24 +108,24 @@ runs-on: ubuntu-latest
 
 |  使用できるランナー(OS)  |  記述方法  |  メモ  |
 |-----|-----|-----|
-|  Windows Server 2022  |  windows-latest/windows-2022  |  windows-latestと記述してもWindows Server 2022を指定できる  |
-|  Windows Server 2019  |  windows-2019  |  -  |
-|  Ubuntu 22.04  |  ubuntu-latest/ubuntu-22.04  |  ubuntu-latestと記述してもUbuntu 22.04を指定できる  |
-|  Ubuntu 20.04  |  ubuntu-20.04  |  -  |
-|  macOS 13 |  macos-13  |  Beta版  |
-|  macOS 12  |  macos-latest/macos-12  |  macos-latestと記述してもmacOS 12を指定できる  |
-|  macOS 11 |  macos-11  |   -  |
+|  Windows Server 2025  |  windows-latest/windows-2025  |  windows-latestと記述してもWindows Server 2025を指定できる  |
+|  Windows Server 2022  |  windows-2022  |  -  |
+|  Ubuntu 24.04  |  ubuntu-latest/ubuntu-24.04  |  ubuntu-latestと記述してもUbuntu 24.04を指定できる  |
+|  Ubuntu 22.04  |  ubuntu-22.04  |  -  |
+|  Ubuntu 26.04 |  ubuntu-26.04  |  Preview版  |
+|  macOS 15  |  macos-latest/macos-15  |  macos-latestと記述してもmacOS 15を指定できる  |
+|  macOS 14 |  macos-14  |   -  |
 
 ### uses
 
 第三者もしくはGitHubが作成したActionsをyml内に記載することで実行することもできます
-よく使われているのがGitHubが用意している`actions/checkout@v5`です
+よく使われているのがGitHubが用意している`actions/checkout@v6`です
 
 https://github.com/actions/checkout
 
 ```yml:.github/workflows/checkout.yml
   - name: Checkout
-    uses: actions/checkout@v5
+    uses: actions/checkout@v6
 ```
 
 usesに見たことない文字列が表示されていることが多いのでそういう時は下記のmarketplaceから検索してみましょう
@@ -156,7 +156,7 @@ on: [push]
 jobs:
   command:
     name: Use Linux commands
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Show ubuntu details
         run: lsb_release -a
@@ -165,7 +165,7 @@ jobs:
       - name: show current directory before checkout
         run: pwd
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Inspect files after checkout
         run: ls -la
       - name: show current directory after checkout
@@ -189,7 +189,7 @@ Release:	20.04
 Codename:	focal
 ```
 
-次に`actions/checkout@v5`を実行する前のファイル構成とパスを確認します
+次に`actions/checkout@v6`を実行する前のファイル構成とパスを確認します
 ```yml:.github/workflows/linux-command.yml
   - name: Inspect files before checkout
     run: ls -la
@@ -216,14 +216,14 @@ GITHUB_WORKSPACE=/home/runner/work/<リポジトリ名>/<リポジトリ名>
 
 `/home/runner/work/`までは一緒ですがその後はWorkflowを実行するリポジトリ名がディレクトリ名として指定されます
 
-`actions/checkout@v5`を実行します
+`actions/checkout@v6`を実行します
 ```yml:.github/workflows/linux-command.yml
   - name: Checkout
-    uses: actions/checkout@v5
+    uses: actions/checkout@v6
 ```
 
 ```terminal:logs
-Run actions/checkout@v5
+Run actions/checkout@v6
 Syncing repository: shun198/***-<リポジトリ名>
 Getting Git version info
 Temporarily overriding HOME='/home/runner/work/_temp/da727d01-5e2c-459c-b8db-380fb0265762' before making global git config changes
@@ -249,7 +249,7 @@ Checking out the ref
 しています。要するにランナー内にリモートリポジトリにあるソースコードをクローンに限りなく近い形(厳密には違う)で複製していることになります。
 クローンだとデフォルトのブランチ(main、develop)のソースコードしか抽出できず、作業する際に使うfeatureブランチのソースコードだけテストできないからfetchとcheckoutをしているのだと筆者は考えています
 これについて詳しい方がいましたらぜひご教授いただけると幸いです
-`actions/checkout@v5`の詳細を知りたい方は実際にログを確認してみてください
+`actions/checkout@v6`の詳細を知りたい方は実際にログを確認してみてください
 
 実行した後のファイル構成、パス、ブランチ一覧を確認します
 ```yml:.github/workflows/linux-command.yml
@@ -301,15 +301,15 @@ checkoutにはコミット履歴を取得する機能も存在します
 jobs:
   command:
     name: Use Linux commands
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 ```
 
-`actions/checkout@v5`の説明は以上です
+`actions/checkout@v6`の説明は以上です
 
 ### steps
 図でも説明した通り一つのjobsは1つ以上のstepsで構成されており、stepsの中にrunコマンドが1つ以上構成されています
@@ -318,10 +318,10 @@ jobs:
 jobs:
   command:
     name: Use Linux commands
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 ```
 
 ### run
@@ -404,7 +404,7 @@ https://github.com/aws-actions/configure-aws-credentials
 
 ```yaml:.github/workflows/secrets.yml
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v2
+      uses: aws-actions/configure-aws-credentials@v6
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
@@ -490,11 +490,11 @@ GitHub Actionsの公式もしくは各言語の公式が出しているactionを
 
 ```yaml:.github/workflows/setup-python.yml
 steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
 
-    - uses: actions/setup-python@v5
+    - uses: actions/setup-python@v6
       with:
-        python-version: '3.11' 
+        python-version: '3.14' 
     - run: python my_script.py
 ```
 
@@ -503,19 +503,19 @@ Cacheを使うことで2回目以降ワークフローを実行する際にpoetr
 
 ```yaml:.github/workflows/setup-python.yml
 steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     - name: Install poetry
       run: pipx install poetry
-    - uses: actions/setup-python@v5
+    - uses: actions/setup-python@v6
       with:
-        python-version: '3.11'
+        python-version: '3.14'
         cache: 'poetry'
     - run: poetry install
 ```
 
 また、python-version-fileのオプションを使うことでpyproject.toml内に記載されたPythonのversionを自動的に適用させることもできます
 ```yml
-    - uses: actions/setup-python@v5
+    - uses: actions/setup-python@v6
       with:
         python-version-file: "pyproject.toml"
         cache: 'poetry'
@@ -533,8 +533,8 @@ Nodeのversionについては16,18,20をサポートしています
 
 ```yaml:.github/workflows/setup-node.yml
 steps:
-    - uses: actions/checkout@v5
-    - uses: actions/setup-node@v4
+    - uses: actions/checkout@v6
+    - uses: actions/setup-node@v6
       with:
         node-version: 16
         cache: 'npm'
@@ -545,8 +545,8 @@ steps:
 npm以外にyarnを使ったCacheのワークフローも実装できます
 ```yaml:.github/workflows/setup-node.yml
 steps:
-    - uses: actions/checkout@v5
-    - uses: actions/setup-node@v4
+    - uses: actions/checkout@v6
+    - uses: actions/setup-node@v6
       with:
         node-version: 16
         cache: 'yarn'
@@ -560,8 +560,8 @@ steps:
 
 ```yaml:.github/workflows/setup-node.yml
 steps:
-    - uses: actions/checkout@v5
-    - uses: actions/setup-node@v4
+    - uses: actions/checkout@v6
+    - uses: actions/setup-node@v6
       with:
         node-version-file: 'package.json'
     - run: npm ci
@@ -633,9 +633,9 @@ jobs:
       contents: read
     steps:
     - name: Checkout
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
     - name: Configure AWS credentials from Test account
-      uses: aws-actions/configure-aws-credentials@v4
+      uses: aws-actions/configure-aws-credentials@v6
       with:
         role-to-assume: arn:aws:iam::111111111111:role/my-github-actions-role-test
         aws-region: us-east-1
@@ -643,7 +643,7 @@ jobs:
       run: |
         aws s3 sync . s3://my-s3-test-website-bucket
     - name: Configure AWS credentials from Production account
-      uses: aws-actions/configure-aws-credentials@v4
+      uses: aws-actions/configure-aws-credentials@v6
       with:
         role-to-assume: arn:aws:iam::222222222222:role/my-github-actions-role-prod
         aws-region: us-west-2
@@ -721,7 +721,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Install swagger-cli
         run: npm install -g swagger-cli
       - name: Generate Swagger UI
@@ -859,13 +859,13 @@ jobs:
           --health-retries 5
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Grant privileges to user
         run: mysql --protocol=tcp -h 127.0.0.1 -P 3306 -u root -p$MYSQL_ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'%'; FLUSH PRIVILEGES;"
       - name: Install poetry
         run: pipx install poetry
       - name: Use cache dependencies
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'poetry'
@@ -985,7 +985,7 @@ runs:
   using: 'composite'
   steps:
       - name: Setup NodeJS
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version-file: ${{ inputs.working-directory }}/package.json
       - name: Install dependencies
@@ -1088,7 +1088,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Setup Node.js
         uses: ./.github/actions/set-up-node
         with:
@@ -1120,7 +1120,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Check out
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Setup Node.js
         uses: ./.github/actions/set-up-node
         with:
@@ -1196,15 +1196,15 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ secrets.S3_DEPLOY_ROLE }}
           role-session-name: deploy_role_session
           aws-region: ${{ env.REGION_NAME }}
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version-file: ${{ env.WORKING_DIRECTORY }}/package.json
       - name: Build and Export
