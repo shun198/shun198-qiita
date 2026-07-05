@@ -7,7 +7,7 @@ tags:
   - FastAPI
   - uvicorn
 private: false
-updated_at: '2024-12-13T18:20:08+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: 9f8b0657cf5eed1af4f3
 organization_url_name: null
 slide: false

@@ -7,7 +7,7 @@ tags:
   - GitHubActions
   - Allure
 private: false
-updated_at: '2024-05-29T13:48:57+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: bb76d1eb98bb7290a6a8
 organization_url_name: null
 slide: false

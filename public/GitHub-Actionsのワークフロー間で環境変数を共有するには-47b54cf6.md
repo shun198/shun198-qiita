@@ -3,7 +3,7 @@ title: GitHub Actionsのワークフロー間で環境変数を共有するに�
 tags:
   - GitHubActions
 private: false
-updated_at: '2023-07-11T17:38:15+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: 47b54cf6a48d33b239b4
 organization_url_name: null
 slide: false

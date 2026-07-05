@@ -6,7 +6,7 @@ tags:
   - VSCode
   - FastAPI
 private: false
-updated_at: '2025-07-21T12:15:54+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: 5491f9712a1041ee1ee1
 organization_url_name: null
 slide: false

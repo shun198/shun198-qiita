@@ -7,7 +7,7 @@ tags:
   - docker-compose
   - LocalStack
 private: false
-updated_at: '2023-08-21T11:57:51+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: 74883e06d3a8d2bc98c3
 organization_url_name: null
 slide: false

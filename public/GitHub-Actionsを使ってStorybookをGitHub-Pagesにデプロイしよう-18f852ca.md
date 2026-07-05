@@ -6,7 +6,7 @@ tags:
   - storybook
   - GitHubActions
 private: false
-updated_at: '2024-05-22T13:57:22+09:00'
+updated_at: '2026-07-05T22:24:14+09:00'
 id: 18f852caea2b4068ebaf
 organization_url_name: null
 slide: false

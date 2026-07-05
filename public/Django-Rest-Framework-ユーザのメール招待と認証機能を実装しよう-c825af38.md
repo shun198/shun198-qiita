@@ -6,7 +6,7 @@ tags:
   - mailcatcher
   - django-rest-framework
 private: false
-updated_at: '2024-01-09T09:15:25+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: c825af382a9be8c2fec7
 organization_url_name: null
 slide: false

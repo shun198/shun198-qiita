@@ -6,7 +6,7 @@ tags:
   - django-rest-framework
   - Next.js
 private: false
-updated_at: '2023-12-13T22:35:31+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: 4604360a3af39e6f086d
 organization_url_name: null
 slide: false
