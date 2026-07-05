@@ -8,6 +8,9 @@ updated_at: '2023-09-02T21:01:10+09:00'
 id: dd4b68c7401f45137530
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 前提
 - コード例は全てJavascriptです

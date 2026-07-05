@@ -9,6 +9,9 @@ updated_at: '2023-02-20T19:13:59+09:00'
 id: c63b06f6d47329844e04
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Modelが肥大化してしまった際は1つのmodels.pyを分割したい場面があるかと思います

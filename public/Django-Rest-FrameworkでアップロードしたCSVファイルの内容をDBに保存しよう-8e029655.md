@@ -9,6 +9,9 @@ updated_at: '2022-11-27T12:31:46+09:00'
 id: 8e029655a029eb8a8d5a
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 今回はPOSTする際にrequestの中のCSVファイルのデータをデータベースにINSERTする方法について記載していきます

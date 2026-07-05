@@ -7,6 +7,9 @@ updated_at: '2023-07-11T17:38:15+09:00'
 id: 47b54cf6a48d33b239b4
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 複数以上のワークフローで同じ環境変数を使用することがあるかと思います

@@ -11,6 +11,9 @@ updated_at: '2024-05-16T15:47:16+09:00'
 id: 9c992e54fb656a0e9dfe
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 CloudFormationマクロの一つであるPyplateを使うことでCloudFormationテンプレート(yaml)内にPythonのコードを実行することができます

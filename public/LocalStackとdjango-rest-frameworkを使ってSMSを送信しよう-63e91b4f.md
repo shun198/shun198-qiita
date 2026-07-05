@@ -11,6 +11,9 @@ updated_at: '2024-01-17T17:38:47+09:00'
 id: 63e91b4f96a2e9b78988
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 AWSのマネージドサービスをローカル上で実行できるLocalStackとdjango-rest-frameworkを使ってSMSを送信する方法について解説していきたいと思います

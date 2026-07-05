@@ -9,6 +9,9 @@ updated_at: '2025-07-20T10:52:29+09:00'
 id: c83252ec41b457257764
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 GO+Gormを使ったローカル上で検証する時のテストデータを自動で作成する方法について解説します

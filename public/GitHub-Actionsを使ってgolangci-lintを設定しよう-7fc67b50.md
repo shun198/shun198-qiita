@@ -9,6 +9,9 @@ updated_at: '2024-12-03T08:17:26+09:00'
 id: 7fc67b50b409d70a576c
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 GitHub Actions内でLinterを使用することでGOのソースコードを解析して、バグの検出や、言語のルールに沿ってコードが書かれているかをチェックすることができます

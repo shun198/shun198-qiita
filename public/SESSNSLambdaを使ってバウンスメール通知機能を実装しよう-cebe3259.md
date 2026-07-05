@@ -11,6 +11,9 @@ updated_at: '2024-08-30T11:06:51+09:00'
 id: cebe32599233e1e89372
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 SESを使ってメールを送信した際に存在しないメールアドレスの場合に検知できる機能をSES+SNS+Lambdaを使って実装する方法について解説します

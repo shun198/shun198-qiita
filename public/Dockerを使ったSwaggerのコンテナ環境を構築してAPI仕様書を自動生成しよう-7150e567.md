@@ -9,6 +9,9 @@ updated_at: '2023-08-19T19:51:49+09:00'
 id: 7150e567c87d6a85a8b5
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 APIの検証、ドキュメント化およびドキュメント化にSwaggerを使っているプロダクトが多いかと思います

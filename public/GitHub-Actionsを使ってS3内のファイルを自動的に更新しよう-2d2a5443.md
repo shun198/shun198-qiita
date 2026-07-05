@@ -11,6 +11,9 @@ updated_at: '2024-08-27T10:30:27+09:00'
 id: 2d2a54434b84a809bb92
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 GitHub Actionsを使ってS3内のファイルを自動更新する方法についてNested Stackを使用する際に使用するS3内のCloudFormationテンプレートの自動更新を例に解説します

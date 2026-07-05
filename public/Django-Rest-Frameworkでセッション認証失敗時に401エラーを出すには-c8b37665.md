@@ -8,6 +8,9 @@ updated_at: '2024-09-27T16:23:11+09:00'
 id: c8b376657471b7e29f99
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Django Rest Frameworkでセッション認証失敗時に403ではなく、401エラーを出す方法について解説します

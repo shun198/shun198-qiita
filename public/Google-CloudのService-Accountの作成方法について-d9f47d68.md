@@ -10,6 +10,9 @@ updated_at: '2025-03-23T13:56:19+09:00'
 id: d9f47d68a407cd3d1883
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 前提
 - 今回はBigQueryのScheduled Queryのリソースを例に説明します

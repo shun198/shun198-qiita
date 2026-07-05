@@ -9,6 +9,9 @@ updated_at: '2024-03-23T14:34:46+09:00'
 id: a66d6214cdab5629029d
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 前提
 - docker-composeおよびDockerfileに関する基礎知識がある

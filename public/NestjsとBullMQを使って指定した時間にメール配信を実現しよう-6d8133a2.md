@@ -11,6 +11,9 @@ updated_at: '2026-04-19T11:36:31+09:00'
 id: 6d8133a28b6f30e62cea
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Nest.jsで指定した時間にジョブを実行したい場合はBullMQと一緒に実装するのが一般的です

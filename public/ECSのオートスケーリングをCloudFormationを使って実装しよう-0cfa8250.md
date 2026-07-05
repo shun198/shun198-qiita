@@ -6,10 +6,13 @@ tags:
   - CloudFormation
   - ECS
 private: false
-updated_at: '2024-07-03T15:41:35+09:00'
+updated_at: '2026-07-05T20:53:20+09:00'
 id: 0cfa825010035245c4cf
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 AWS ECSにはアクセス数の増減に応じてECSサービスのタスクの数を自動的に増減するオートスケーリング機能があります

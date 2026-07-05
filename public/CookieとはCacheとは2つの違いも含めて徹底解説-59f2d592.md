@@ -10,6 +10,9 @@ updated_at: '2023-10-22T21:32:38+09:00'
 id: 59f2d59263930b30d1bd
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## Cookieとは？
 

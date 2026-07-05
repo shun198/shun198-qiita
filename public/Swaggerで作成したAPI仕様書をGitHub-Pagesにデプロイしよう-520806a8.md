@@ -9,6 +9,9 @@ updated_at: '2024-02-15T16:30:14+09:00'
 id: 520806a86a14a4bd64a8
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Swaggerで作成したAPI仕様書をGitHub Actionsを使ってGitHub Pagesにデプロイする方法について解説します

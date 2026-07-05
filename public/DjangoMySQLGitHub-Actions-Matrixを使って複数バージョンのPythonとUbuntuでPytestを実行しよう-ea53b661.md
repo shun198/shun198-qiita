@@ -10,6 +10,9 @@ updated_at: '2023-08-18T17:33:29+09:00'
 id: ea53b6614cea777b3130
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 前提
 今回はMatrixを使用する例としてDjangoとMySQLとPytestを使用します

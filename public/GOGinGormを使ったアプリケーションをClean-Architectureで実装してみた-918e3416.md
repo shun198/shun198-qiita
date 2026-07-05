@@ -10,6 +10,9 @@ updated_at: '2025-07-21T09:39:26+09:00'
 id: 918e3416caefd7d43e9e
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 GO/Gin/GormでTODOアプリを作る際にClean Architectureを意識して実装してみたので解説します

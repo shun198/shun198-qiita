@@ -11,6 +11,9 @@ updated_at: '2023-12-08T16:46:07+09:00'
 id: 59c388f3b7f731d28985
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Django Debug Toolbarを使うと実行されたSQL、シグナル、APIの実行履歴などがわかりやすく表示されて便利です

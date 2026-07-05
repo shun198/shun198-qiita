@@ -9,6 +9,9 @@ updated_at: '2022-12-24T16:20:20+09:00'
 id: 9a7fa7ba9e834767081b
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 前提
 - カスタムユーザを作成済み

@@ -10,6 +10,9 @@ updated_at: '2024-05-22T13:57:22+09:00'
 id: 18f852caea2b4068ebaf
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 StorybookをGitHub Actionsを使ってGitHub Pagesにデプロイする方法について解説します

@@ -8,6 +8,9 @@ updated_at: '2023-03-21T19:50:39+09:00'
 id: 744c07cefb5d043737ad
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Mermaidは公式ドキュメントに記載されているようにマークダウンで図を簡単に作成できるツールです

@@ -4,10 +4,13 @@ tags:
   - AWS
   - CloudFormation
 private: false
-updated_at: '2024-07-12T16:41:40+09:00'
+updated_at: '2026-07-05T20:53:20+09:00'
 id: ce9ff58229933d7b13b9
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## CloudFormation Rainとは
 CloudFormationのテンプレートやスタックをcliで操作するツールです

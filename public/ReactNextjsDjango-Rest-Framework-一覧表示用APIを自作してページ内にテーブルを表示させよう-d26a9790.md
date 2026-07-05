@@ -10,6 +10,9 @@ updated_at: '2023-12-19T09:10:59+09:00'
 id: d26a9790f049bc6383a3
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 React/Next.jsを使って画面を作成し、Django Rest Frameworkを使ってAPIと疎通した上でデータを一覧表示させる方法について解説します

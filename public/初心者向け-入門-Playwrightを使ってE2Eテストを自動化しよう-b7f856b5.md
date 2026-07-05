@@ -9,6 +9,9 @@ updated_at: '2026-06-21T14:01:44+09:00'
 id: b7f856b55f872f5913f5
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Microsoftが開発したWebブラウザの自動操作・テスト用オープンソースフレームワークとしてPlaywrightが有名です

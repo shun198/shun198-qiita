@@ -9,6 +9,9 @@ updated_at: '2024-04-12T14:18:35+09:00'
 id: ab6eca4bbe4d065abb8f
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 前提
 - Linuxの基本的な操作は知っている

@@ -11,6 +11,9 @@ updated_at: '2024-05-29T11:53:33+09:00'
 id: 1231a16dc8e523fb530b
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 GOのDocker環境を使ったPrismaの

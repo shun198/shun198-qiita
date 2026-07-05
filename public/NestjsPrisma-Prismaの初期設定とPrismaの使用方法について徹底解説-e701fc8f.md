@@ -8,6 +8,9 @@ updated_at: '2024-03-30T16:25:19+09:00'
 id: e701fc8f4640e47275b9
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Nest.jsのアプリケーション内にPrismaを使用する際の初期設定の方法と簡単なAPIを使ってPrismaを使用する方法まで解説していきたいと思います

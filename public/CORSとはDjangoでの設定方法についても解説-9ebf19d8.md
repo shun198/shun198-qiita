@@ -8,6 +8,9 @@ updated_at: '2024-02-20T10:05:41+09:00'
 id: 9ebf19d8fd2c412396dd
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## CORSって何？
 オリジン間リソース共有(Cross-Origin Resource Sharing)の略で

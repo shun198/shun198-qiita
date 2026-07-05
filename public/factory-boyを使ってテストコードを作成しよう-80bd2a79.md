@@ -10,6 +10,9 @@ updated_at: '2023-11-23T15:05:24+09:00'
 id: 80bd2a79e483e7a72c6d
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 Pythonでテストコードを書く際にfactory_boyを使うとテスト用のデータの作成と管理を簡単にすることができます

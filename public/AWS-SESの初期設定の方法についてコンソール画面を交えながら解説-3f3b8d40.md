@@ -6,10 +6,13 @@ tags:
   - DMARC
   - DKIM
 private: false
-updated_at: '2024-06-12T10:25:02+09:00'
+updated_at: '2026-07-05T20:53:20+09:00'
 id: 3f3b8d40f550059bea25
 organization_url_name: null
 slide: false
+ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 ## 概要
 AWS SESの初期設定の方法について説明していきます
