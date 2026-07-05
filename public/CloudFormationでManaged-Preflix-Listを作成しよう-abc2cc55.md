@@ -10,9 +10,6 @@ updated_at: '2024-07-05T15:08:56+09:00'
 id: abc2cc555bcd39f65a74
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: 16baee61b1d8bd4aac5a
-agreed_posting_campaign_term: true
 ---
 ## 概要
 CloudFormationでManaged Preflix Listを作成する方法について解説します

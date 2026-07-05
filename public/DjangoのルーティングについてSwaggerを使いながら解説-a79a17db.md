@@ -11,9 +11,6 @@ updated_at: '2023-01-15T10:40:37+09:00'
 id: a79a17db571a461309ea
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 Djangoのルーティングについて

@@ -11,9 +11,6 @@ updated_at: '2023-12-16T18:03:30+09:00'
 id: 9f8f92d91caef0d47727
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 ReactとDjangoを使ってログイン画面を作成し、自作のログインAPIを使ってログインに成功したら別の画面へ遷移する処理まで作成します

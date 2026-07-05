@@ -11,9 +11,6 @@ updated_at: '2025-07-21T12:17:59+09:00'
 id: 9e4fcb4479385217c323
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 【Django+Docker】の開発環境をVSCodeでリモートデバッグする方法について解説します

@@ -11,9 +11,6 @@ updated_at: '2025-04-29T11:51:25+09:00'
 id: 92c4c8eda8a66e78b400
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 Webアプリケーションでログイン認証する際はJWTとOAuthを使って行うのが一般的です

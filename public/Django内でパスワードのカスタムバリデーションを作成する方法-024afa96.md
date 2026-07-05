@@ -9,9 +9,6 @@ updated_at: '2024-01-07T09:03:31+09:00'
 id: 024afa96657937247313
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 ユーザのパスワードなどDjango内で独自のバリデーションを作成する方法について解説したいと思います

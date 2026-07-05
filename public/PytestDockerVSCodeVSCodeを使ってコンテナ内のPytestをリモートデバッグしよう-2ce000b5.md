@@ -11,9 +11,6 @@ updated_at: '2025-07-21T12:25:51+09:00'
 id: 2ce000b5b9f1818a16d5
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## はじめに
 VSCodeでコンテナ内のPytestをリモートデバッグをするには

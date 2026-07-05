@@ -11,9 +11,6 @@ updated_at: '2023-07-21T15:43:39+09:00'
 id: b3f45729f1ed1e7b4167
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 Pytestにはpytest-bddというBDDを実装するためのプラグインがあります

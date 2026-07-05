@@ -10,9 +10,6 @@ updated_at: '2022-10-29T11:40:33+09:00'
 id: 38503195637b2c33fde3
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 前提
 - Dockerおよびdocker-composeを使用

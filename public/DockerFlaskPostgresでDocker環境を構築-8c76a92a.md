@@ -10,9 +10,6 @@ updated_at: '2024-12-13T18:55:56+09:00'
 id: 8c76a92a75c2adc16ca5
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 - Docker

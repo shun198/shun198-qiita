@@ -11,9 +11,6 @@ updated_at: '2024-01-14T16:17:07+09:00'
 id: 09081dd299490f13ef03
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 前提
 - AWSを使用

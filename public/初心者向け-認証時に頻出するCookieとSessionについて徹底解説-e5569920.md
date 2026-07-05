@@ -8,9 +8,6 @@ updated_at: '2023-10-22T21:33:18+09:00'
 id: e5569920f73e213a63f6
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 ログイン認証時に頻出する

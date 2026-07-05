@@ -9,9 +9,6 @@ updated_at: '2023-05-31T20:09:03+09:00'
 id: 0f95ad3e106c791fff3b
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 SQLの

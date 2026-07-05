@@ -10,9 +10,6 @@ updated_at: '2024-09-14T16:04:53+09:00'
 id: 73df699569be24387b1b
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 本番環境でDebug=Falseにすると500エラーの際のログが表示されなくなるのはいいものの、エラーの特定が難しくなります

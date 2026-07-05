@@ -11,9 +11,6 @@ updated_at: '2023-08-25T14:20:44+09:00'
 id: 97c4b71624b168e74c3f
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 今回はTerraformを使ってRDS(Postgres)へ接続する踏み台サーバ(EC2)を構築する方法について解説していきたいと思います

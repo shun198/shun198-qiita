@@ -11,9 +11,6 @@ updated_at: '2024-07-20T21:10:54+09:00'
 id: 1b6dbd667a092a1c0947
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 2024年の2月からGmailとYahooでは1日5000通以上のメールを送信する場合はワンクリックによるメール購読解除機能を実装することが求められるようになりました

@@ -9,9 +9,6 @@ updated_at: '2024-02-05T16:25:29+09:00'
 id: 1e97889942f5da3bec1e
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 前提
 - Djangoのプロジェクトおよびアプリケーションは作成済み

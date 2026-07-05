@@ -10,9 +10,6 @@ updated_at: '2023-03-11T17:00:41+09:00'
 id: 76e57a20e83660cc4a97
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## LocalStackとは
 AWSのマネージドサービスをローカル上で実行できるツールです

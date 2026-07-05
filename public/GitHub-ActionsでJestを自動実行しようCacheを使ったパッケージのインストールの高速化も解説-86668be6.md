@@ -10,9 +10,6 @@ updated_at: '2024-01-12T09:30:38+09:00'
 id: 86668be6a90634f9480c
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 前提
 - GitHub Actionsの基本的な用語についてある程度理解している

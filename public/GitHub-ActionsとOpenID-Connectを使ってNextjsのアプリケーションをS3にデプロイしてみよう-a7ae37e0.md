@@ -11,9 +11,6 @@ updated_at: '2024-07-26T14:53:42+09:00'
 id: a7ae37e0da3eba2c4387
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 GitHub Actionsを使ってNext.jsのアプリケーションをS3バケットにデプロイする方法について

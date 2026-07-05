@@ -10,9 +10,6 @@ updated_at: '2023-07-16T14:30:37+09:00'
 id: 5fd6b29962a8c259ae56
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 今回はTerraformを使ってRDS(Postgres)を構築する方法について解説していきたいと思います

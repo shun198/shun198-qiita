@@ -10,9 +10,6 @@ updated_at: '2022-10-29T11:44:34+09:00'
 id: 6dffbb119a3a133b8e3c
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 エディタ内で書いたコードをAtCoderにコピぺしたり、コピペしたコードをマウス使って手動でテストするのめんどくさいですよね？

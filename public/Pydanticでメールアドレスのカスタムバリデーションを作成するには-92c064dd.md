@@ -9,9 +9,6 @@ updated_at: '2025-05-05T10:04:34+09:00'
 id: 92c064ddc68b2b0a39a4
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 Pydanticでたとえば特定のドメインのみ許可したい、などの要望があるときはPydanticのEmailStrを使うだけでなく、カスタムバリデーションを作成する必要があります

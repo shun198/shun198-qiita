@@ -10,9 +10,6 @@ updated_at: '2024-10-26T21:06:21+09:00'
 id: f1c765e1170924f2bb66
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 コストカットの観点で例えば平日のみECSを起動させたい、などのユースケースがあるかと思います

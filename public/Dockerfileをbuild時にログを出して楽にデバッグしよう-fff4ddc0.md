@@ -9,9 +9,6 @@ updated_at: '2022-11-30T17:14:22+09:00'
 id: fff4ddc0d7ae53665c2c
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 背景
 - docker buildする際にログが高速で流れてしまうため、どこでエラーが起きているか詳しく知りたい

@@ -13,9 +13,6 @@ updated_at: '2024-06-21T08:13:49+09:00'
 id: fc1e9d1250c79c140423
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 ECS FargateのBlue/Greenデプロイを自動化するCodePipelineの構築方法について解説します

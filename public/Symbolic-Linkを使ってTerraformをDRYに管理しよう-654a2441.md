@@ -8,9 +8,6 @@ updated_at: '2025-04-22T08:16:25+09:00'
 id: 654a2441380f11d3033f
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 Terraformを使ってインフラ構築する際にdev、stg、prdと環境を分けるかと思います

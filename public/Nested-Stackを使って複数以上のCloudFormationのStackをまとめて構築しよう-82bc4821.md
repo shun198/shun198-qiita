@@ -9,9 +9,6 @@ updated_at: '2024-07-01T07:40:43+09:00'
 id: 82bc48215924460fb0ba
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: 16baee61b1d8bd4aac5a
-agreed_posting_campaign_term: true
 ---
 ## 概要
 Nested Stackを使うと複数以上のテンプレートを同時に作成できるので開発効率が上がってとても便利です

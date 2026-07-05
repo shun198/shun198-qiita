@@ -8,9 +8,6 @@ updated_at: '2023-05-18T13:39:36+09:00'
 id: d5402d75d739ff17f8c9
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 Djangoのsettings.pyにいろんな設定を書いていくうちに肥大化していくかと思います

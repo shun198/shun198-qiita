@@ -11,9 +11,6 @@ updated_at: '2024-07-04T09:25:52+09:00'
 id: 4f3d120c2f3445cd5c1c
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: 16baee61b1d8bd4aac5a
-agreed_posting_campaign_term: true
 ---
 ## 概要
 Slack（Chatbot）経由でLambdaを使ってChatOpsを実現できるのでその方法について解説します

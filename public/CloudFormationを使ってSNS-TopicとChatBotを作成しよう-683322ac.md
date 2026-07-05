@@ -10,9 +10,6 @@ updated_at: '2024-05-22T09:44:59+09:00'
 id: 683322acfd49496abb0d
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 SNSとChatbotを使ってSlack通知を受け取りたいのでCloudFormationを使って実装する方法について解説していきたいと思います

@@ -9,9 +9,6 @@ updated_at: '2025-05-06T15:46:19+09:00'
 id: c26677d7722b1390f6c4
 organization_url_name: null
 slide: false
-ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
 ---
 ## 概要
 FastAPIでJWTを使った認証機能を作成する際に、JWTをCookieへ保存・削除したいニーズがあるかと思いますので解説します
