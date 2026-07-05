@@ -80,8 +80,6 @@ locustfile.pyをlocust用のworkerとmaster用コンテナにマウントする�
 今回は本番を想定してGunicornを使ってアプリケーションを起動します
 
 ```docker-compose.yml
-version: "3.9"
-
 services:
   db:
     container_name: db
@@ -544,7 +542,7 @@ time.sleep(random.randrange(5, 25))
 
 https://qiita.com/shun198/items/14bac6843a2459b34a34
 
-docker-compose upを実行し、`http://127.0.0.1:8089/`にアクセスします
+docker compose upを実行し、`http://127.0.0.1:8089/`にアクセスします
 以下の画面が出たら成功です
 
 ![スクリーンショット 2024-02-05 16.28.35.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/44372810-2528-20d1-51b7-2607d5a9fe92.png)
@@ -574,7 +572,7 @@ Chartsタブを開くと
 Workerのデフォルトの数は1ですが以下のようにworkerの数を指定することで増やすことができます
 
 ```
-docker-compose up --scale worker=2
+docker compose up --scale worker=2
 ```
 
 以下のように指定したWorkerの数で実行できるようになります

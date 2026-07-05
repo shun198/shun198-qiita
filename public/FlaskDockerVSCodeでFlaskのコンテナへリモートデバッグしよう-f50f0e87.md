@@ -33,8 +33,6 @@ Remote Containersを使うには該当コンテナのイメージをbuildする�
 docker-composeの構成は以下のように設定し、デバッグ用の8080番ポートを開放します
 
 ```yaml:docker-compose.yml
-version: "3.9"
-
 services:
   db:
     container_name: db

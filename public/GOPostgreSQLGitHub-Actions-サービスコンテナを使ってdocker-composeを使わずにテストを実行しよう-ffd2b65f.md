@@ -88,11 +88,11 @@ jobs:
           --health-retries 5
     steps:
       - name: Chekcout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       # GOのセットアップを実行
       # 2回目以降のテスト実行時はrunner内にCacheを生成してGOのセットアップを高速化
       - name: Setup Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version: '1.20'
           cache: true
@@ -233,7 +233,7 @@ cache-dependency-path: ${{ env.WORKING_DIRECTORY }}/go.sum
       # GOのセットアップを実行
       # 2回目以降のテスト実行時はrunner内にCacheを生成してGOのセットアップを高速化
       - name: Setup Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version: '1.20'
           cache: true

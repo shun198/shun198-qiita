@@ -219,7 +219,7 @@ launch.jsonに以下のように記載します
 
 ## 実際に実行してみよう!
 ```
-docker-compose up -d --build
+docker compose up -d --build
 ```
 でコンテナのビルドと起動をした後にブレークポイントを設定し、APIを実行します
 

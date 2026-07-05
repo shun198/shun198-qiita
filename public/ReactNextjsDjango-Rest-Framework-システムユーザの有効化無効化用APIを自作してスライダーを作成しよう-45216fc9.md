@@ -96,8 +96,6 @@ https://qiita.com/shun198/items/ee93c50eac2f7c77e443
 https://qiita.com/shun198/items/c92977c6cd31eb2187fc
 
 ```docker-compose.yml
-version: '3.9'
-
 services:
   db:
     container_name: db

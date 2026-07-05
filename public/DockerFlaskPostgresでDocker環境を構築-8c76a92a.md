@@ -117,8 +117,6 @@ POSTGRES_PASSWORD=postgres
 ### docker-compose.yml
 
 ```docker-compose.yml
-version: "3.9"
-
 services:
   db:
     container_name: db

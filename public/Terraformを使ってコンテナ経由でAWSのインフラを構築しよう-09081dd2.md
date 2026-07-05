@@ -49,17 +49,15 @@ https://github.com/github/gitignore/blob/main/Terraform.gitignore
 ### infra/docker-compose.yml
 以下のようにdocker-compose.ymlを記載します
 
-使用するimageは`hashicorp/terraform:1.3.6`です
+使用するimageは`hashicorp/terraform:1.15.7`です
 
-https://hub.docker.com/layers/hashicorp/terraform/1.3.6/images/sha256-df0e0dd569697f24e8c207c22dbf1ef3ff386af750e9727a8713d4031c450fa3?context=explore
+https://hub.docker.com/r/hashicorp/terraform/tags
 
 ```docker-compose.yml
-version: '3.9'
-
 services:
   terraform:
     container_name: terraform
-    image: hashicorp/terraform:1.3.6
+    image: hashicorp/terraform:1.15.7
     # M1チップでも動くように
     platform: linux/x86_64
     volumes:
@@ -87,7 +85,7 @@ terraform {
     }
   }
 
-  required_version = ">= 1.2.0"
+  required_version = ">= 1.15.0"
 }
 
 provider "aws" {
@@ -116,7 +114,7 @@ aws-vault exec shun198 --duration=12h
 ### Terraformの初期設定
 以下のコマンドを実行してTerraformの初期設定を行います
 ```
-docker-compose -f infra/docker-compose.yml run --rm terraform init
+docker compose -f infra/docker-compose.yml run --rm terraform init
 ```
 
 以下のログが出たら成功です
@@ -146,19 +144,19 @@ commands will detect it and remind you to do so if necessary.
 
 気になる方はterraform fmtコマンドを実行してmain.tfのフォーマットを修正しましょう
 ```
-docker-compose -f infra/docker-compose.yml run --rm terraform fmt
+docker compose -f infra/docker-compose.yml run --rm terraform fmt
 main.tf
 ```
 
 main.tfが有効かどうかvalidateコマンドで確認します
 ```
-docker-compose -f infra/docker-compose.yml run --rm terraform validate
+docker compose -f infra/docker-compose.yml run --rm terraform validate
 Success! The configuration is valid.
 ```
 
 AWSに適用される変更を`plan`コマンドで確認します
 ```
-docker-compose -f infra/docker-compose.yml run --rm terraform plan
+docker compose -f infra/docker-compose.yml run --rm terraform plan
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
@@ -169,7 +167,7 @@ Terraform will perform the following actions:
 AWSに`main.tf`の設定を適用します
 今回は`-auto-approve`を実行してyesを自動的に入力します
 ```
-docker-compose -f infra/docker-compose.yml run --rm terraform apply -auto-approve
+docker compose -f infra/docker-compose.yml run --rm terraform apply -auto-approve
 ```
 
 以下のログが出たら成功です
@@ -190,7 +188,7 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ## 作成したインフラを削除しよう
 EC2インスタンスを削除します
 ```
-docker-compose -f infra/docker-compose.yml run --rm terraform destroy
+docker compose -f infra/docker-compose.yml run --rm terraform destroy
 ```
 
 yesを入力します
@@ -225,12 +223,12 @@ make fmt
 ```
 と打ったたけで
 ```
-docker-compose -f infra/docker-compose.yml run --rm terraform fmt
+docker compose -f infra/docker-compose.yml run --rm terraform fmt
 ```
 を打ったことになるのでとても楽になります
 
 ```Makefile
-RUN_TERRAFORM = docker-compose -f infra/docker-compose.yml run --rm terraform
+RUN_TERRAFORM = docker compose -f infra/docker-compose.yml run --rm terraform
 IAM_USER = shun198
 DURATION = 12h
 

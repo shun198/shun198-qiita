@@ -111,8 +111,6 @@ You can hook into each of these lifecycle phases using custom shell or Python sc
 ```
 
 ```docker-compose.yml
-version: '3.9'
-
 services:
   db:
     container_name: db

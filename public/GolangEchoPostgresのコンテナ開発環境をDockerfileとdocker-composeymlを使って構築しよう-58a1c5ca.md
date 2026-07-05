@@ -136,8 +136,6 @@ FROM postgres:16.2
 ## docker-compose.ymlの作成
 GolangとPostgres両方のコンテナを起動できるようにします
 ```docker-compose.yml
-version: '3.9'
-
 services:
   app:
     container_name: app
@@ -199,7 +197,7 @@ func main() {
 
 ## 実際に起動してみよう！
 ```
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 コマンドを実行し、Dockerfileのbuildとコンテナの起動を行います

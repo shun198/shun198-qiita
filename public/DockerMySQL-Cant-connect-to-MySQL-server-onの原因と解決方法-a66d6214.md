@@ -25,8 +25,6 @@ agreed_posting_campaign_term: false
 のdocker-compose.ymlを例に出します
 
 ```docker-compose.yml
-version: "3.9"
-
 services:
   db:
     container_name: mysql
@@ -130,8 +128,6 @@ depends_onのconditionの種類は以下の通りです
 
 以上の2つを入れると以下の通りになります
 ```docker-compose.yml
-version: "3.9"
-
 services:
   db:
     container_name: mysql
