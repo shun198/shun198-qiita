@@ -4,9 +4,14 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "${ROOT_DIR}"
 
-if ! command -v qiita >/dev/null 2>&1; then
+QIITA_CMD=""
+if command -v qiita >/dev/null 2>&1; then
+  QIITA_CMD="qiita"
+elif command -v pnpm >/dev/null 2>&1; then
+  QIITA_CMD="pnpm exec qiita"
+else
   echo "Error: qiita command is not found."
-  echo "Install it with: npm install -g @qiita/qiita-cli"
+  echo "Install @qiita/qiita-cli or use pnpm in this repository."
   exit 1
 fi
 
@@ -17,5 +22,5 @@ if [ ! -f "qiita.config.json" ]; then
 fi
 
 echo "Pulling articles from Qiita..."
-qiita pull
+${QIITA_CMD} pull
 echo "Done. Articles are synced to this repository."
