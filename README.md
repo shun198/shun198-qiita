@@ -42,6 +42,17 @@ pnpm run qiita:pull
 pnpm exec qiita preview
 ```
 
+## 記事編集後の標準lint
+
+Markdownを作成・更新した直後は、対象ファイルを指定して次を実行します。
+
+```bash
+CI=true pnpm exec markdownlint-cli2 "public/<file>.md"
+CI=true pnpm exec textlint "public/<file>.md"
+```
+
+エラーが出た場合は修正後に同じコマンドを再実行し、両方が成功するまで繰り返します。
+
 ## 執筆から反映まで
 
 1. `public/` 配下の記事を編集
