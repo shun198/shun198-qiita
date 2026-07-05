@@ -5,7 +5,7 @@ tags:
   - GORM
   - gin
 private: false
-updated_at: '2025-07-21T10:31:30+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: d85327614713cd383f67
 organization_url_name: null
 slide: false

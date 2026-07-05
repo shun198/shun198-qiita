@@ -7,7 +7,7 @@ tags:
   - django-rest-framework
   - pytest-bdd
 private: false
-updated_at: '2023-07-21T15:43:39+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: b3f45729f1ed1e7b4167
 organization_url_name: null
 slide: false

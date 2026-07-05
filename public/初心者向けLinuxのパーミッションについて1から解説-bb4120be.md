@@ -5,7 +5,7 @@ tags:
   - permission
   - Linuxコマンド
 private: false
-updated_at: '2023-03-20T21:18:34+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: bb4120be13365228b48a
 organization_url_name: null
 slide: false

@@ -7,7 +7,7 @@ tags:
   - Poetry
   - pdoc
 private: false
-updated_at: '2024-06-02T10:53:07+09:00'
+updated_at: '2026-07-05T22:24:14+09:00'
 id: 85c6c203f4b40abba344
 organization_url_name: null
 slide: false

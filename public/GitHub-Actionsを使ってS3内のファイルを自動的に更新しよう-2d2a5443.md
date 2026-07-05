@@ -7,7 +7,7 @@ tags:
   - IAM
   - GitHubActions
 private: false
-updated_at: '2024-08-27T10:30:27+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: 2d2a54434b84a809bb92
 organization_url_name: null
 slide: false

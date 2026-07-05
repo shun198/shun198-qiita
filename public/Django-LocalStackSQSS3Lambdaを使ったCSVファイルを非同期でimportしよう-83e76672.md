@@ -7,7 +7,7 @@ tags:
   - django-rest-framework
   - LocalStack
 private: false
-updated_at: '2024-08-12T15:49:15+09:00'
+updated_at: '2026-07-05T22:24:12+09:00'
 id: 83e766724ea5c9731cad
 organization_url_name: null
 slide: false

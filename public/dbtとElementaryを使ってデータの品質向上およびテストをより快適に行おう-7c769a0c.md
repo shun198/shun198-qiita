@@ -5,7 +5,7 @@ tags:
   - Elementary
   - dbt
 private: false
-updated_at: '2025-02-24T18:41:42+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: 7c769a0c2e0056954bd4
 organization_url_name: null
 slide: false

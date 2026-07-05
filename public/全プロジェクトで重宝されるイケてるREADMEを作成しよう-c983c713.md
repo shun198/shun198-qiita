@@ -6,7 +6,7 @@ tags:
   - shields.io
   - Readme
 private: false
-updated_at: '2025-06-12T08:48:20+09:00'
+updated_at: '2026-07-05T22:24:14+09:00'
 id: c983c713452c041ef787
 organization_url_name: null
 slide: false

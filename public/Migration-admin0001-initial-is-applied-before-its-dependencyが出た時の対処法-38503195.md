@@ -6,7 +6,7 @@ tags:
   - docker-compose
   - django-admin
 private: false
-updated_at: '2022-10-29T11:40:33+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: 38503195637b2c33fde3
 organization_url_name: null
 slide: false

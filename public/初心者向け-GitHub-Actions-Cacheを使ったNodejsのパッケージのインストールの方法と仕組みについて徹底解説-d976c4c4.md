@@ -5,7 +5,7 @@ tags:
   - npm
   - GitHubActions
 private: false
-updated_at: '2023-07-05T08:19:26+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: d976c4c442ddcabdadfb
 organization_url_name: null
 slide: false
