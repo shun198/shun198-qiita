@@ -332,7 +332,7 @@ POSTGRES_NAME=postgres
 POSTGRES_USER=postgres-prod
 POSTGRES_PASSWORD=postgres-prod
 # SECRET_KEYについては本番環境では推測されない値に変更しておきましょう
-SECRET_KEY="xdmjx=9l@x)-jitznpb^%yjn6h=7g)$%e8_+1s)o+8o79csa4d"
+SECRET_KEY="unpredictable_secret_key"
 DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
 # 本番環境のためFalse
 DEBUG=False
