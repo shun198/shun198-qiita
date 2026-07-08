@@ -7,7 +7,7 @@ tags:
   - GitHubActions
   - Poetry
 private: false
-updated_at: '2024-09-18T13:54:43+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: d03eef4acbb8d8980d1a
 organization_url_name: null
 slide: false
@@ -100,7 +100,7 @@ jobs:
       && !startsWith(github.head_ref, 'release')
       && !startsWith(github.head_ref, 'doc')
     name: Run Test Code
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     # ルート直下にpyproject.tomlを置いている場合は不要
     # 今回はapplication/内にPoetryを含めたDjangoのソースコードが含まれているため、指定する
     defaults:
@@ -126,7 +126,7 @@ jobs:
           --health-retries 5
     steps:
       - name: Chekcout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       # MySQLのユーザに実行権限を付与
       - name: Grant privileges to user
         run: mysql --protocol=tcp -h 127.0.0.1 -P 3306 -u root -p$MYSQL_ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'%'; FLUSH PRIVILEGES;"
@@ -136,7 +136,7 @@ jobs:
       # Pythonのセットアップを実行
       # 2回目以降のテスト実行時はrunner内にPoetryのCacheを生成してPoetryのセットアップを高速化
       - name: Use cache dependencies
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
           python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"
@@ -311,7 +311,7 @@ cache: 'poetry'
       # 2回目以降のテスト実行時はrunner内にPoetryのCacheを生成
       # Poetryのセットアップを高速化
       - name: Use cache dependencies
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
           python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"

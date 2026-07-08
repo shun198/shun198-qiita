@@ -5,7 +5,7 @@ tags:
   - pytest
   - FastAPI
 private: false
-updated_at: '2025-04-29T10:28:57+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: fda83cf4e7d3eefe467f
 organization_url_name: null
 slide: false
@@ -359,7 +359,7 @@ def test_delete_todo_unauthorized(client, test_todo_one):
 
 
 ## まとめ
-FastAPIでテストする際は依存性の注入を比較的少ない記述量でできるのでテストを直感的に書けるのははいいですね
+FastAPIでテストする際は依存性の注入を比較的少ない記述量でできるのでテストを直感的に書けるのはいいですね
 
 ## 参考
 https://fastapi.tiangolo.com/advanced/testing-dependencies/

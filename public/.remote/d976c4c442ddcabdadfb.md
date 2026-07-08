@@ -5,7 +5,7 @@ tags:
   - npm
   - GitHubActions
 private: false
-updated_at: '2023-07-05T08:19:26+09:00'
+updated_at: '2026-07-05T22:24:13+09:00'
 id: d976c4c442ddcabdadfb
 organization_url_name: null
 slide: false
@@ -32,7 +32,7 @@ https://github.com/actions/cache
 以下を例に説明します
 ```yml
       - name: Cache dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: '**/node_modules'
           key: node-modules-${{ hashFiles('**/package-lock.json') }}
@@ -89,7 +89,7 @@ https://docs.npmjs.com/cli/v8/commands/npm-ci
 setup-nodeでも同様のことができます
 ```yml
     - name: Cache Dependencies
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v6
       with:
         node-version: '16'
         cache: 'npm'
