@@ -1,23 +1,23 @@
 # qiita-list-ignore-publish
 
-## Goal
+## 目的
 
-List all Qiita article files whose front matter contains `ignorePublish: true` and present them as a Markdown table.
+Front Matter に `ignorePublish: true` を持つ Qiita 記事を抽出し、Markdown の表で一覧表示する。
 
-## Required Command
+## 実行コマンド
 
 ```bash
 python3 scripts/list_ignore_publish_articles.py
 ```
 
-## Workflow
+## 手順
 
-1. Run the helper script from the repository root
-2. Read `public/*.md`
-3. Filter articles where `ignorePublish: true`
-4. Return a Markdown table with file name, title, private flag, updated date, and tags
+1. リポジトリルートで補助スクリプトを実行する
+2. `public/*.md` を読み取る
+3. `ignorePublish: true` の記事だけを抽出する
+4. ファイル名、タイトル、private、更新日、タグを Markdown 表で返す
 
-## Output Format
+## 出力形式
 
 ```markdown
 | File | Title | Private | Updated | Tags |
@@ -25,8 +25,8 @@ python3 scripts/list_ignore_publish_articles.py
 | ... | ... | ... | ... | ... |
 ```
 
-## Guardrails
+## ガードレール
 
-- Treat this as a read-only inspection task
-- Do not change article contents while listing
-- If no matching files exist, report that clearly instead of failing
+- 一覧化は読み取り専用タスクとして扱う
+- 一覧表示のために記事内容を変更しない
+- 該当記事がない場合は失敗ではなく、その旨を明確に返す
