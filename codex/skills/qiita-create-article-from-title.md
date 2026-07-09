@@ -1,29 +1,29 @@
 # qiita-create-article-from-title
 
-## Goal
+## 目的
 
-Create a new Qiita draft article from a user-provided title, with a title-derived Markdown file name, matching front matter title, a reusable template body, and auto-inferred tags.
+ユーザーが入力した記事タイトルから、タイトル連動の Markdown ファイル名、Front Matter の `title`、テンプレート本文、自動推定タグ付きの Qiita 下書きを作成する。
 
-## Required Command
+## 実行コマンド
 
 ```bash
-python3 scripts/create_qiita_article.py --title "<article title>"
+python3 scripts/create_qiita_article.py --title "<記事タイトル>"
 ```
 
-## Workflow
+## 手順
 
-1. Get the article title from the user
-2. Run the helper script from the repository root
-3. Review the generated file path and inferred tags
-4. Keep the generated draft defaults: `private: true`, `ignorePublish: true`, `id: null`
-5. Run file-scoped lint for the new file
+1. ユーザーから記事タイトルを受け取る
+2. リポジトリルートで補助スクリプトを実行する
+3. 生成されたファイルパスと推定タグを確認する
+4. 生成時の下書き初期値 `private: true`、`ignorePublish: true`、`id: null` を維持する
+5. 生成したファイルに対して対象限定の lint を実行する
 
-## Generated Defaults
+## 生成内容
 
-- File path: `public/<title-derived-name>.md`
-- Front matter `title`: exactly the user-provided title
-- Front matter `tags`: inferred from title keywords
-- Body template:
+- ファイル配置先: `public/<タイトル由来のファイル名>.md`
+- Front Matter の `title`: ユーザー入力タイトルをそのまま反映
+- Front Matter の `tags`: タイトル中のキーワードから自動推定
+- 本文テンプレート:
   - `## 概要`
   - `## 前提`
   - `## 構成`
@@ -32,18 +32,18 @@ python3 scripts/create_qiita_article.py --title "<article title>"
   - `## まとめ`
   - `## 参考`
 
-## Post-Create Checks
+## 作成後チェック
 
-For the generated file `<file>.md`, run:
+生成した `<file>.md` に対して次を実行する。
 
 ```bash
 CI=true pnpm exec markdownlint-cli2 "public/<file>.md"
 CI=true pnpm exec textlint "public/<file>.md"
 ```
 
-## Guardrails
+## ガードレール
 
-- Do not overwrite an existing article file
-- Do not modify `id` in existing articles
-- Do not publish or push to Qiita as part of article creation
-- Only adjust inferred tags when the title context makes them clearly wrong
+- 既存記事ファイルを上書きしない
+- 既存記事の `id` は変更しない
+- 記事作成時に Qiita への publish / push は行わない
+- 推定タグの修正は、タイトル文脈から明らかに不適切な場合だけに留める
