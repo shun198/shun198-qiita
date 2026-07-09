@@ -4,8 +4,8 @@ tags:
   - ArgoCD
   - argoWorkflows
 private: false
-updated_at: ''
-id: null
+updated_at: '2026-07-09T09:51:23+09:00'
+id: 6108f77b0863a8da058d
 organization_url_name: null
 slide: false
 ignorePublish: false
