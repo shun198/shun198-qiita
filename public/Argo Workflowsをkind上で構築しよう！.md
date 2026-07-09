@@ -3,6 +3,7 @@ title: Argo Workflowsをkind上で構築しよう！
 tags:
   - ArgoCD
   - argoWorkflows
+  - kind
 private: false
 updated_at: ''
 id: null
