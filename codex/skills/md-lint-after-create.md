@@ -1,28 +1,28 @@
 # md-lint-after-create
 
-## Goal
+## 目的
 
-Always run lint checks immediately after creating or editing a Markdown file.
+Markdownファイルを作成・更新した直後に、必ずlint checkを実行する。
 
-## Required Commands
+## 実行コマンド
 
-For a changed file `<file>.md`:
+変更対象が `<file>.md` の場合は次を実行する。
 
 ```bash
 CI=true pnpm exec markdownlint-cli2 "<file>.md"
 CI=true pnpm exec textlint "<file>.md"
 ```
 
-## Workflow
+## 手順
 
-1. Identify changed Markdown files
-2. Run markdownlint for each target file
-3. Run textlint for each target file
-4. Fix all violations
-5. Re-run both checks until they pass
+1. 変更したMarkdownファイルを特定する
+2. `markdownlint-cli2` を対象ファイルへ実行する
+3. `textlint` を対象ファイルへ実行する
+4. エラーを修正する
+5. 両方成功するまで再実行する
 
-## Guardrails
+## ガードレール
 
-- Run file-scoped checks instead of whole-repo lint by default
-- Do not ignore lint failures
-- Never modify front matter `id` in existing articles
+- 原則は対象ファイル単位でlintする
+- lint失敗を無視して完了扱いにしない
+- 既存記事の Front Matter `id` は更新しない

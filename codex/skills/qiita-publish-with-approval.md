@@ -1,31 +1,31 @@
 # qiita-publish-with-approval
 
-## Goal
+## 目的
 
-Publish Qiita articles safely, with explicit user approval before any publish action.
+Qiita投稿を安全に実行し、投稿系コマンドの実行前に必ずユーザー承認を取得する。
 
-## Mandatory Approval Gate
+## 承認必須ルール
 
-1. Before running any publish command, ask for explicit approval
-2. Show:
-   - Target article(s)
-   - Visibility scope (public or private/limited)
-   - Exact command to run
-3. Do not execute until the user clearly approves
-4. If approval is ambiguous, ask again
-5. Never change article front matter `id`
+1. 投稿系コマンド実行前に、必ず明示的な承認を取る
+2. 承認確認時は次を必ず提示する
+   - 対象記事
+   - 公開範囲（公開 / 限定共有）
+   - 実行コマンド
+3. 承認が明確になるまで実行しない
+4. あいまいな返答の場合は再確認する
+5. 記事Front Matterの `id` は承認有無に関わらず更新しない
 
-## Covered Commands
+## 対象コマンド
 
 - `npx qiita publish <article>`
 - `npx qiita publish --all`
 - `npx qiita push`
-- Any workflow trigger that results in publishing
+- 投稿につながるワークフロー実行
 
-## Safe Procedure
+## 安全な実行手順
 
-1. Validate front matter (`title`, `tags`, `private`, `id`)
-2. Run preview and final checks
-3. Request approval with target/scope/command
-4. Execute only after approval
-5. Report execution result and affected articles
+1. Front Matter（`title`, `tags`, `private`, `id`）を確認
+2. previewで最終確認
+3. 対象/公開範囲/コマンドを提示して承認取得
+4. 承認後に実行
+5. 実行結果と反映対象を報告

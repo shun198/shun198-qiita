@@ -1,59 +1,45 @@
 # tech-writing-qiita
 
-## Goal
+## 目的
 
-Write a Qiita-ready technical article for beginner-to-mid readers, with reproducible steps and practical value.
+Qiita向け技術記事を、初心者にも届く説明と実務で使える手順を両立して作成する。
 
-## Publication Safety Rules
+## 公開安全ルール
 
-- Never publish publicly (`private: false`)
-- Create drafts only (`private: true`) when using Qiita API
-- Let the user do the final public publish step manually
-- Never modify article front matter `id` values
+- 公開投稿は行わず、下書き（private）までを対象にする
+- API経由の作成は常に `private: true` を使う
+- 公開はユーザー本人の最終確認後に手動で行う
+- 記事Front Matterの `id` は絶対に更新しない
 
-## Steps
+## 手順
 
-1. Set target audience (default: beginner to mid) and expected outcome
-2. Use structure: background -> mechanism -> implementation -> debugging/pitfalls -> summary
-3. Separate minimal repro from production-ready examples and explain design choices
-4. Add one reader-value line per section
-5. Validate assumptions, environment prerequisites, and reproducible steps
+1. 対象読者は初級〜中級を基本に設定し、到達目標を明記
+2. 構成は「背景→仕組み→実装→デバッグ/ハマりどころ→まとめ」
+3. コード例は最小再現と実運用を分離し、設計理由も添える
+4. 各見出しに読者価値を1行で記載
+5. 公開前に前提条件、実行環境、再現手順を確認
 
-## Style Rules
+## 文体ルール
 
-- Use Japanese polite style ("です/ます") consistently
-- Explain technical terms briefly at first mention
-- Pair strong claims with assumptions or rationale
+- 文体は「です/ます調」に固定
+- 専門用語は初出で短く補足
+- 断定時は理由または前提を示す
 
-## Heading Rules
+## 見出しルール
 
-- Use H2/H3 as the default heading depth
-- H2 for main sections, H3 for steps/notes/caveats
-- Avoid H4+ unless absolutely necessary
+- 見出しは H2/H3 を基本にする
+- H2 は主要章、H3 は手順/補足/注意点
+- H4 以降は原則使わない
 
-## Output Sections
-
-- Title
-- What you will learn
-- Target audience
-- Problem statement
-- Mechanism highlights
-- Implementation
-- Verification
-- Debugging / Pitfalls
-- Summary
-- Suggested tags
-- References
-
-## Topic Priorities
+## 優先トピック
 
 - Python / FastAPI
 - Terraform
 - GitHub Actions
-- README / documentation improvements
-- Testing and debugging practices
+- README / ドキュメント改善
+- テストとデバッグ実践
 
-## Tag Priority
+## タグ優先順
 
 1. Python
 2. FastAPI
@@ -62,3 +48,17 @@ Write a Qiita-ready technical article for beginner-to-mid readers, with reproduc
 5. テスト
 6. ドキュメント
 7. Linux
+
+## 出力テンプレート
+
+- タイトル
+- この記事でわかること
+- 対象読者
+- 背景と課題
+- 仕組みの要点
+- 実装
+- 動作確認
+- デバッグ / つまずきポイント
+- まとめ
+- 推奨タグ
+- 参考資料

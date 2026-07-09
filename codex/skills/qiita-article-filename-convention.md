@@ -1,28 +1,28 @@
 # qiita-article-filename-convention
 
-## Goal
+## 目的
 
-Create Qiita article files with human-readable names instead of UUID-like names.
+Qiita記事をUUID風ではなく、内容が分かるファイル名で作成する。
 
-## Naming Rules
+## 命名ルール
 
-1. Use `kebab-case`
-2. Allow only lowercase letters, numbers, and hyphens
-3. No leading/trailing hyphen
-4. No consecutive hyphens
-5. Keep slug reasonably short (about 60 chars)
+1. `kebab-case` を使う
+2. 英小文字・数字・ハイフンのみを使う
+3. 先頭末尾にハイフンを置かない
+4. ハイフンの連続を避ける
+5. 長さはおおむね60文字以内に収める
 
-## Workflow
+## 実行手順
 
-1. Generate 3 slug candidates from the article title
-2. Check duplicates in `public/*.md`
-3. Pick one valid slug
-4. Run `pnpm exec qiita new <slug>`
-5. Update front matter (`title`, `tags`, `private`)
+1. 記事タイトルからslug候補を3案作る
+2. `public/*.md` の重複を確認する
+3. 命名ルールを満たす候補を選ぶ
+4. `pnpm exec qiita new <slug>` を実行する
+5. Front Matter（`title`, `tags`, `private`）を更新する
 
-## Guardrails
+## ガードレール
 
-- Do not create new articles with UUID-like names
-- Do not use spaces or Japanese characters in file names
-- Do not rename existing published files casually
-- Do not edit existing article front matter `id`
+- 新規記事でUUID風ファイル名を使わない
+- 日本語やスペースをファイル名に含めない
+- 既存公開記事のファイル名は安易に変更しない
+- 既存記事のFront Matterにある `id` は絶対に更新しない
