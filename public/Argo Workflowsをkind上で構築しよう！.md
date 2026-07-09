@@ -1,11 +1,11 @@
 ---
 title: Argo Workflowsをkind上で構築しよう！
 tags:
+  - Kind
   - ArgoCD
   - argoWorkflows
-  - kind
 private: false
-updated_at: '2026-07-09T09:51:23+09:00'
+updated_at: '2026-07-09T09:53:26+09:00'
 id: 6108f77b0863a8da058d
 organization_url_name: null
 slide: false
