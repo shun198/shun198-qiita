@@ -1,5 +1,5 @@
 ---
-title: Argo Workflowsをkind上で構築しよう！
+title: ArgoCDとArgo Workflowsをkind上で構築しよう！
 tags:
   - Kind
   - ArgoCD
