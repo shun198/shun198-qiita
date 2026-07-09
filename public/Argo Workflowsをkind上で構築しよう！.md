@@ -220,9 +220,9 @@ paste in this box:
 ```
 の箇所に先ほど作成したトークンを入力します
 
-
 以下のようにUIを表示できれば成功です
 これでArgo Workflowsの設定は一通り完了です
+
 
 ![Screenshot 2026-07-09 at 9.49.12.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/6d5a4f29-4ac2-470b-9374-ca923e817e8b.png)
 
@@ -232,10 +232,46 @@ paste in this box:
 
 ![Screenshot 2026-07-09 at 9.48.55.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/3f96b0f8-777a-4b8c-b171-be2146f75ebc.png)
 
+## Cron Workflowsを構築するには
+こちらも同様に以下のworkflowsをkubectlコマンドで展開します
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: CronWorkflow
+metadata:
+  name: cron-hello-world
+spec:
+  schedules:
+    - "*/5 * * * *"
+  timezone: "Asia/Tokyo"
+  concurrencyPolicy: "Forbid"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+  workflowSpec:
+    entrypoint: main
+    templates:
+      - name: main
+        container:
+          image: alpine:3.20
+          command: [sh, -c]
+          args: ["echo 'hello from cron workflow' && date"]
+```
+
+```
+kubectl create -n argo -f workflows/cron-hello-world.yaml
+cronworkflow.argoproj.io/cron-hello-world created
+```
+
+以下のようにWorkflowsがcronのschedule通りに実行できれば成功です
+
+![Screenshot 2026-07-09 at 13.41.04.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/660b9324-f2ad-4db0-a8f8-a22dbb4de8eb.png)
+
 ## 参考
 https://argo-workflows.readthedocs.io/en/latest/quick-start/
 
 https://argo-workflows.readthedocs.io/en/latest/argo-server/
+
+https://argo-workflows.readthedocs.io/en/latest/cron-workflows/
 
 https://github.com/argoproj/argo-workflows
 
