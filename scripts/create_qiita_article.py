@@ -68,7 +68,7 @@ FRONTMATTER_TEMPLATE = """---
 title: {title}
 tags:
 {tags_block}
-private: true
+private: false
 updated_at: ''
 id: null
 organization_url_name: null

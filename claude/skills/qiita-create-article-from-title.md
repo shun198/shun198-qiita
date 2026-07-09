@@ -15,7 +15,7 @@ python3 scripts/create_qiita_article.py --title "<記事タイトル>"
 1. ユーザーから記事タイトルを受け取る
 2. リポジトリルートで補助スクリプトを実行する
 3. 生成されたファイルパスと推定タグを確認する
-4. 生成時の下書き初期値 `private: true`、`ignorePublish: true`、`id: null` を維持する
+4. 生成時の初期値 `private: false`、`ignorePublish: true`、`id: null` を維持する
 5. 生成したファイルに対して対象限定の lint を実行する
 
 ## 生成内容
