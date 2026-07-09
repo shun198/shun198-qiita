@@ -8,7 +8,7 @@ updated_at: ''
 id: null
 organization_url_name: null
 slide: false
-ignorePublish: true
+ignorePublish: false
 posting_campaign_uuid: null
 agreed_posting_campaign_term: false
 ---
@@ -19,7 +19,8 @@ Argo WorkflowsはKubernetes上でワークフローを自動で実行・管理�
 
 ## 前提
 - kubectl, kindをインストール済み
-
+- ArgoCD v2.12.1を使用
+- Argo Workflows v3.7.10を使用
 
 ## Argo Workflowsの設定
 Argo Workflowsが実行できるクラスタをkindを使って作成します
@@ -57,42 +58,68 @@ namespace/argo created
 ```
 
 その後、Argo Workflowsをinstallします
-今回はversion4.0.6を指定します
-kubectl apply時にデフォルトでclient sideからgit上の設定を実行します
-ただし、今回のversionのようにリソースが272144byte以上ある場合はserver-sideのオプションを付与してkubectl applyを実行することが公式ドキュメントで推奨されています
-
-> By default, Argo CD executes the kubectl apply operation to apply the configuration stored in Git. This is a client side operation that relies on the kubectl.kubernetes.io/last-applied-configuration annotation to store the previous resource state.
-However, there are some cases where you want to use kubectl apply --server-side over kubectl apply:
-Resource is too big to fit in 262144 bytes allowed annotation size. In this case server-side apply can be used to avoid this issue as the annotation is not used in this case.
-
-https://argo-cd.readthedocs.io/en/stable/user-guide/sync-options/#server-side-apply
 
 ```
-kubectl apply --server-side -n argo -f https://github.com/argoproj/argo-workflows/releases/download/v4.0.6/install.yaml
-customresourcedefinition.apiextensions.k8s.io/clusterworkflowtemplates.argoproj.io serverside-applied
-customresourcedefinition.apiextensions.k8s.io/cronworkflows.argoproj.io serverside-applied
-customresourcedefinition.apiextensions.k8s.io/workflowartifactgctasks.argoproj.io serverside-applied
-customresourcedefinition.apiextensions.k8s.io/workfloweventbindings.argoproj.io serverside-applied
-customresourcedefinition.apiextensions.k8s.io/workflows.argoproj.io serverside-applied
-customresourcedefinition.apiextensions.k8s.io/workflowtaskresults.argoproj.io serverside-applied
-customresourcedefinition.apiextensions.k8s.io/workflowtasksets.argoproj.io serverside-applied
-customresourcedefinition.apiextensions.k8s.io/workflowtemplates.argoproj.io serverside-applied
-serviceaccount/argo serverside-applied
-serviceaccount/argo-server serverside-applied
-role.rbac.authorization.k8s.io/argo-role serverside-applied
-clusterrole.rbac.authorization.k8s.io/argo-aggregate-to-admin serverside-applied
-clusterrole.rbac.authorization.k8s.io/argo-aggregate-to-edit serverside-applied
-clusterrole.rbac.authorization.k8s.io/argo-aggregate-to-view serverside-applied
-clusterrole.rbac.authorization.k8s.io/argo-cluster-role serverside-applied
-clusterrole.rbac.authorization.k8s.io/argo-server-cluster-role serverside-applied
-rolebinding.rbac.authorization.k8s.io/argo-binding serverside-applied
-clusterrolebinding.rbac.authorization.k8s.io/argo-binding serverside-applied
-clusterrolebinding.rbac.authorization.k8s.io/argo-server-binding serverside-applied
-configmap/workflow-controller-configmap serverside-applied
-service/argo-server serverside-applied
-priorityclass.scheduling.k8s.io/workflow-controller serverside-applied
-deployment.apps/argo-server serverside-applied
-deployment.apps/workflow-controller serverside-applied
+kubectl apply --server-side -n argo -f https://github.com/argoproj/argo-workflows/releases/download/v3.7.10/install.yaml
+customresourcedefinition.apiextensions.k8s.io/applications.argoproj.io serverside-applied
+customresourcedefinition.apiextensions.k8s.io/applicationsets.argoproj.io serverside-applied
+customresourcedefinition.apiextensions.k8s.io/appprojects.argoproj.io serverside-applied
+serviceaccount/argocd-application-controller serverside-applied
+serviceaccount/argocd-applicationset-controller serverside-applied
+serviceaccount/argocd-dex-server serverside-applied
+serviceaccount/argocd-notifications-controller serverside-applied
+serviceaccount/argocd-redis serverside-applied
+serviceaccount/argocd-repo-server serverside-applied
+serviceaccount/argocd-server serverside-applied
+role.rbac.authorization.k8s.io/argocd-application-controller serverside-applied
+role.rbac.authorization.k8s.io/argocd-applicationset-controller serverside-applied
+role.rbac.authorization.k8s.io/argocd-dex-server serverside-applied
+role.rbac.authorization.k8s.io/argocd-notifications-controller serverside-applied
+role.rbac.authorization.k8s.io/argocd-redis serverside-applied
+role.rbac.authorization.k8s.io/argocd-server serverside-applied
+clusterrole.rbac.authorization.k8s.io/argocd-application-controller serverside-applied
+clusterrole.rbac.authorization.k8s.io/argocd-applicationset-controller serverside-applied
+clusterrole.rbac.authorization.k8s.io/argocd-server serverside-applied
+rolebinding.rbac.authorization.k8s.io/argocd-application-controller serverside-applied
+rolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller serverside-applied
+rolebinding.rbac.authorization.k8s.io/argocd-dex-server serverside-applied
+rolebinding.rbac.authorization.k8s.io/argocd-notifications-controller serverside-applied
+rolebinding.rbac.authorization.k8s.io/argocd-redis serverside-applied
+rolebinding.rbac.authorization.k8s.io/argocd-server serverside-applied
+clusterrolebinding.rbac.authorization.k8s.io/argocd-application-controller serverside-applied
+clusterrolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller serverside-applied
+clusterrolebinding.rbac.authorization.k8s.io/argocd-server serverside-applied
+configmap/argocd-cm serverside-applied
+configmap/argocd-cmd-params-cm serverside-applied
+configmap/argocd-gpg-keys-cm serverside-applied
+configmap/argocd-notifications-cm serverside-applied
+configmap/argocd-rbac-cm serverside-applied
+configmap/argocd-ssh-known-hosts-cm serverside-applied
+configmap/argocd-tls-certs-cm serverside-applied
+secret/argocd-notifications-secret serverside-applied
+secret/argocd-secret serverside-applied
+service/argocd-applicationset-controller serverside-applied
+service/argocd-dex-server serverside-applied
+service/argocd-metrics serverside-applied
+service/argocd-notifications-controller-metrics serverside-applied
+service/argocd-redis serverside-applied
+service/argocd-repo-server serverside-applied
+service/argocd-server serverside-applied
+service/argocd-server-metrics serverside-applied
+deployment.apps/argocd-applicationset-controller serverside-applied
+deployment.apps/argocd-dex-server serverside-applied
+deployment.apps/argocd-notifications-controller serverside-applied
+deployment.apps/argocd-redis serverside-applied
+deployment.apps/argocd-repo-server serverside-applied
+deployment.apps/argocd-server serverside-applied
+statefulset.apps/argocd-application-controller serverside-applied
+networkpolicy.networking.k8s.io/argocd-application-controller-network-policy serverside-applied
+networkpolicy.networking.k8s.io/argocd-applicationset-controller-network-policy serverside-applied
+networkpolicy.networking.k8s.io/argocd-dex-server-network-policy serverside-applied
+networkpolicy.networking.k8s.io/argocd-notifications-controller-network-policy serverside-applied
+networkpolicy.networking.k8s.io/argocd-redis-network-policy serverside-applied
+networkpolicy.networking.k8s.io/argocd-repo-server-network-policy serverside-applied
+networkpolicy.networking.k8s.io/argocd-server-network-policy serverside-applied
 ```
 
 これでArgo Workflowsのインストールが完了しました
@@ -114,7 +141,6 @@ spec:
         image: alpine:3.20
         command: [sh, -c]
         args: ["echo 'hello from argo workflows' && date"]
-
 ```
 
 https://argo-workflows.readthedocs.io/en/latest/workflow-concepts/#workflow-spec
@@ -167,40 +193,12 @@ kubectl create -n "argo" -f cron-hello-world.yaml
 cronworkflow.argoproj.io/cron-hello-world created
 ```
 
+UIへログインできるトークンを作成します
 ```
-kubectl create role jenkins --verb=list,update --resource=workflows.argoproj.io
-role.rbac.authorization.k8s.io/jenkins created
-```
-
-```
-kubectl create sa jenkins
-serviceaccount/jenkins created
+kubectl -n ${ARGOCD_NAMESPACE} get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 --decode; echo
 ```
 
-```
-kubectl create rolebinding jenkins --role=jenkins --serviceaccount=argo:jenkins
-rolebinding.rbac.authorization.k8s.io/jenkins created
-```
-
-```
-kubectl apply -f - <<EOF
-apiVersion: v1
-kind: Secret
-metadata:
-  name: jenkins.service-account-token
-  annotations:
-    kubernetes.io/service-account.name: jenkins
-type: kubernetes.io/service-account-token
-EOF
-secret/jenkins.service-account-token created
-```
-
-```
-ARGO_TOKEN="Bearer $(kubectl get secret jenkins.service-account-token -o=jsonpath='{.data.token}' | base64 --decode)"
-❯ echo $ARGO_TOKEN
-Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRHQUxiT1hxUng4WURMSzIyc1R3TXhnQWljaFQzUnZGUEpWZDhJcVhLODAifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImplbmtpbnMuc2VydmljZS1hY2NvdW50LXRva2VuIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImplbmtpbnMiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI0M2Q1Y2MxYy0zYjhlLTQ5Y2YtYmJkMy03MDdlMzUyOTBjMjMiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpqZW5raW5zIn0.kuLy57knivf-sz5l5iegRJy0w8Xk_BWFzR4-f19XPvcW-EMyQv08KFs3WcvEVMwKMN_o-1Lktz3RvE0FEI6oeVN2X5cPY5t0SugVfA8Qy6znyY9t6Y1jkuTZhC4yuvi787y7gxRwq1mUa3X7PtU7rYxzPBx_s0EE6yTVmwy-T2oonFz2LEkVCJG0ztVzMtDCgzguIvFArMK03GwzDPLpc6EJhCYEwEfzFNtjOuLjPSvEDGOSLk4yAzO_zniaqbFV63543Sd2I4uO3ZxezVhJoxSeoo8i1C5xA1TpIdB2ybT9O9Q54mWr5AiNzSo9shyMI3xyh5d_LhwPU074SO0PQQ
-```
-
+https://argo-workflows.readthedocs.io/en/latest/access-token/#token-creation
 
 自分のローカル上でArgo WorkflowsのUIを閲覧できるようport fowardingします
 ```
@@ -213,17 +211,25 @@ localhost:2746へアクセスすると以下の画面が出ますが、このま
 
 ![Screenshot 2026-06-21 at 22.20.20.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/e0f6bd91-5eaa-486b-9fac-48bf260c90aa.png)
 
+UIへアクセスし、
+```
+If your organisation has configured client authentication,
+get your token following this instructions from here and
+paste in this box:
+```
+の箇所に先ほど作成したトークンを入力します
+
 
 以下のようにUIを表示できれば成功です
-
-
-
-```
-
-```
-
 これでArgo Workflowsの設定は一通り完了です
 
+![Screenshot 2026-07-09 at 9.49.12.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/6d5a4f29-4ac2-470b-9374-ca923e817e8b.png)
+
+![Screenshot 2026-07-09 at 9.47.31.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/27fbb427-93dd-4c17-8e3b-b4b385f1c9e2.png)
+
+![Screenshot 2026-07-09 at 9.48.14.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/d060e9f9-3149-474e-ac40-b7e10f8577be.png)
+
+![Screenshot 2026-07-09 at 9.48.55.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/3f96b0f8-777a-4b8c-b171-be2146f75ebc.png)
 
 ## 参考
 https://argo-workflows.readthedocs.io/en/latest/quick-start/
