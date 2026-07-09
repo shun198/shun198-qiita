@@ -5,7 +5,7 @@ tags:
   - ArgoCD
   - argoWorkflows
 private: false
-updated_at: '2026-07-09T13:43:40+09:00'
+updated_at: '2026-07-09T18:05:19+09:00'
 id: 6108f77b0863a8da058d
 organization_url_name: null
 slide: false
