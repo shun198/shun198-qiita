@@ -25,12 +25,10 @@ python3 scripts/create_qiita_article.py --title "<article title>"
 - Front matter `tags`: inferred from title keywords
 - Body template:
   - `## 概要`
-  - `## 対象読者`
   - `## 前提`
-  - `## やりたいこと`
-  - `## 手順`
-  - `## 確認結果`
-  - `## ハマりどころ`
+  - `## 構成`
+  - `## 実装`
+  - `## 実際に検証してみよう`
   - `## まとめ`
   - `## 参考`
 
