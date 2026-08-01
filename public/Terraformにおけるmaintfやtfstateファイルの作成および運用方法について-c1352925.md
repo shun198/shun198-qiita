@@ -97,7 +97,7 @@ terraform {
   }
 
   # Terraformのバージョン制約
-  required_version = ">= 1.2.0"
+  required_version = ">= 1.15.0"
 }
 
 # ------------------------------

@@ -104,7 +104,7 @@ DjangoのDockerfileを作成します
 今回はPoetryを使用します
 
 ```Dockerfile:containers/django/Dockerfile
-FROM python:3.10
+FROM python:3.14
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
@@ -126,7 +126,7 @@ Celeryを使って定期実行処理をする際は
 
 ```application/pyproject.toml
 [tool.poetry.dependencies]
-python = ">=3.9,<3.11"
+python = "^3.14"
 Django = "^4.1.2"
 mysqlclient = "^2.1.1"
 celery = "^5.2.7"
@@ -401,7 +401,7 @@ Celeryのコンテナを起動するときに下記のように表示された�
 2023-04-28 18:03:32 [tasks]
 2023-04-28 18:03:32   . application.tasks.print_task
 2023-04-28 18:03:33 [2023-04-28 18:03:33,554: INFO/MainProcess] Connected to sqs://localstack:**@localstack:4566//
-2023-04-28 18:03:33 [2023-04-28 18:03:33,791: WARNING/MainProcess] /root/.cache/pypoetry/virtualenvs/api-MATOk_fk-py3.11/lib/python3.11/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+2023-04-28 18:03:33 [2023-04-28 18:03:33,791: WARNING/MainProcess] /root/.cache/pypoetry/virtualenvs/api-MATOk_fk-py3.14/lib/python3.14/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
 2023-04-28 18:03:33             leak, never use this setting in production environments!
 2023-04-28 18:03:33   warnings.warn('''Using settings.DEBUG leads to a memory
 2023-04-28 18:03:33 
