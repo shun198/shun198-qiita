@@ -416,8 +416,4 @@ https://www.javadrive.jp/mysql/function/index35.html
 
 https://docs.djangoproject.com/en/1.8/ref/models/database-functions/
 
-https://django.codor.co.jp/how-to-use-annotate
-
 https://www.northtorch.co.jp/archives/1308
-
-https://django.codor.co.jp/how-to-use-annotate
