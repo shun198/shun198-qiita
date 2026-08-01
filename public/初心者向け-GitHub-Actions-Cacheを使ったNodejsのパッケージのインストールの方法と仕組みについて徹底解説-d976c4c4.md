@@ -32,7 +32,7 @@ https://github.com/actions/cache
 以下を例に説明します
 ```yml
       - name: Cache dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: '**/node_modules'
           key: node-modules-${{ hashFiles('**/package-lock.json') }}
@@ -91,7 +91,7 @@ setup-nodeでも同様のことができます
     - name: Cache Dependencies
       uses: actions/setup-node@v6
       with:
-        node-version: '16'
+        node-version: '24'
         cache: 'npm'
       - name: Install dependencies
         run: npm ci

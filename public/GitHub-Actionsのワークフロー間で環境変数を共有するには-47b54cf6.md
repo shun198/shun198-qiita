@@ -151,7 +151,7 @@ jobs:
       - name: Create documentation
         run: poetry run pdoc -o docs crm
       - name: Upload Documents
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v5
         with:
           # 絶対パスを指定
           path: application/docs/
@@ -169,7 +169,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v5
 
 ```
 

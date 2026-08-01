@@ -132,7 +132,7 @@ usesに見たことない文字列が表示されていることが多いので�
 
 https://github.com/marketplace?type=actions
 
-#### actions/checkout@v5って何してるの？
+#### actions/checkout@v6って何してるの？
 興味のある方だけ見ていただければ幸いです
 簡単なActionを作ってみたので挙動を確認してみましょう
 今までのおさらいで
@@ -145,7 +145,7 @@ https://github.com/marketplace?type=actions
 リモートリポジトリへpushすると
 
 - (チェックアウト前の)ファイル構成とパスを確認するコマンドを実行
-- usesを使ってactions/checkout@v5を実行
+- usesを使ってactions/checkout@v6を実行
 - (チェックアウト後の)ファイル構成とパスを確認するコマンドを実行
 
 するという流れになっています
@@ -411,6 +411,12 @@ https://github.com/aws-actions/configure-aws-credentials
         aws-region: ap-northeast-1
 ```
 
+上記はsecretsの使い方を説明するための例ですが、長期間有効なアクセスキーをGitHub Actions上に保管するのはセキュリティ上のリスクがあります
+実際にAWSへデプロイする際はOpenID Connect(OIDC)を使って一時的な認証情報を発行する方法がより安全なので推奨されています
+詳しくは以下の記事を参考にしてください
+
+https://qiita.com/shun198/items/89b2e020fa554233aa4c
+
 #### デバッグの設定
 Settingsタブのsecretsに
 
@@ -536,7 +542,7 @@ steps:
     - uses: actions/checkout@v6
     - uses: actions/setup-node@v6
       with:
-        node-version: 16
+        node-version: 24
         cache: 'npm'
         cache-dependency-path: '**/package-lock.json'
     - run: npm ci
@@ -548,7 +554,7 @@ steps:
     - uses: actions/checkout@v6
     - uses: actions/setup-node@v6
       with:
-        node-version: 16
+        node-version: 24
         cache: 'yarn'
         cache-dependency-path: '**/package-lock.json'
     - run: npm ci
@@ -730,7 +736,7 @@ jobs:
           output: swagger-ui
           spec-file: doc/openapi.yml
       - name: Upload Documents
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: swagger-ui
 
@@ -747,7 +753,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
 ```
 

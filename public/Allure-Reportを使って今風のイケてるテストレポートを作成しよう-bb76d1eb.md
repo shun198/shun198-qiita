@@ -507,7 +507,7 @@ jobs:
         with:
           allure_results: allure-results
       - name: Upload Documents
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           # 絶対パスを指定
           path: allure-history
@@ -551,12 +551,12 @@ jobs:
           name: github-pages
           workflow: test.yml
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: github-pages
           path: artifact.tar
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
 ```
 
