@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@qiita/qiita-cli':
-        specifier: ^1.9.1
-        version: 1.9.1
+        specifier: ^1.10.0
+        version: 1.10.0
       markdownlint-cli2:
         specifier: ^0.23.1
         version: 0.23.1
@@ -108,9 +108,9 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@qiita/qiita-cli@1.9.1':
-    resolution: {integrity: sha512-u1qnF8Ound6/3ugct+Vcl3C5rIjUGleuXZXVUH/DJfXjCXJGgp2GHgeqEuy7UH0zUSRkYvhce/vmUcm8HU9YRg==}
-    engines: {node: '>=20.0.0'}
+  '@qiita/qiita-cli@1.10.0':
+    resolution: {integrity: sha512-TXRP5uOdadN938MHCJze80BUr0PDSftUHYjYn1FS24VlyQpwocBf66E9qDzeYJwKhaQ6WpSOm9F7SJP7qiUuFA==}
+    engines: {node: '>=22.22.1'}
     hasBin: true
 
   '@sindresorhus/merge-streams@4.0.0':
@@ -1056,8 +1056,8 @@ packages:
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
-  js-yaml@3.15.0:
-    resolution: {integrity: sha512-ttBQIIQPDeLjpPOohtUdXuXUVoA2uIB6fEH9HyJ7234s5mBJ5wTx20njxplLZQgLaOfpmPQA7X2t5AX6tIPbog==}
+  js-yaml@3.15.1:
+    resolution: {integrity: sha512-S99WuO3HlhO3XN41EtYUNl9zzXjoJx7QvmipxsJVxtCBT0YHEFy+iOJhjSvrmV12nYhWpZaM8lPHkJm0yUMbag==}
     hasBin: true
 
   js-yaml@4.3.0:
@@ -1205,8 +1205,8 @@ packages:
   mdurl@2.0.0:
     resolution: {integrity: sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w==}
 
-  media-typer@1.1.0:
-    resolution: {integrity: sha512-aisnrDP4GNe06UcKFnV5bfMNPBUw4jsLGaWwWfnH3v02GnBuXX2MCVn5RbrWo0j3pczUilYblq7fQ7Nw2t5XKw==}
+  media-typer@1.1.1:
+    resolution: {integrity: sha512-yz3xRaG20c6/BOzvYoDaGtPmGscs7YivItZEEqe6GbwNfHuxu9YNmvnEkMzKldAGY4/80pRcQRZSEnhquk9XuQ==}
     engines: {node: '>= 0.8'}
 
   merge-descriptors@2.0.0:
@@ -2113,7 +2113,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@qiita/qiita-cli@1.9.1':
+  '@qiita/qiita-cli@1.10.0':
     dependencies:
       arg: 5.0.2
       boxen: 8.0.1
@@ -2966,7 +2966,7 @@ snapshots:
 
   gray-matter@4.0.3:
     dependencies:
-      js-yaml: 3.15.0
+      js-yaml: 3.15.1
       kind-of: 6.0.3
       section-matter: 1.0.0
       strip-bom-string: 1.0.0
@@ -3243,7 +3243,7 @@ snapshots:
 
   js-tokens@4.0.0: {}
 
-  js-yaml@3.15.0:
+  js-yaml@3.15.1:
     dependencies:
       argparse: 1.0.10
       esprima: 4.0.1
@@ -3443,7 +3443,7 @@ snapshots:
 
   mdurl@2.0.0: {}
 
-  media-typer@1.1.0: {}
+  media-typer@1.1.1: {}
 
   merge-descriptors@2.0.0: {}
 
@@ -3826,7 +3826,7 @@ snapshots:
     dependencies:
       commandpost: 1.4.0
       diff: 4.0.4
-      js-yaml: 3.15.0
+      js-yaml: 3.15.1
 
   property-information@5.6.0:
     dependencies:
@@ -4442,7 +4442,7 @@ snapshots:
   type-is@2.1.0:
     dependencies:
       content-type: 2.0.0
-      media-typer: 1.1.0
+      media-typer: 1.1.1
       mime-types: 3.0.2
 
   typed-array-buffer@1.0.3:
