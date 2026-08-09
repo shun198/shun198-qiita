@@ -7,7 +7,7 @@ tags:
   - openidconnect
   - GitHubActions
 private: false
-updated_at: '2026-08-10T07:49:18+09:00'
+updated_at: '2026-08-10T07:59:47+09:00'
 id: a7ae37e0da3eba2c4387
 organization_url_name: null
 slide: false

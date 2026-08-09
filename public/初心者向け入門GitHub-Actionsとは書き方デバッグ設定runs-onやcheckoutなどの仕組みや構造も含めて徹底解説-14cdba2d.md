@@ -5,7 +5,7 @@ tags:
   - GitHub
   - GitHubActions
 private: false
-updated_at: '2026-08-10T07:49:18+09:00'
+updated_at: '2026-08-10T07:59:47+09:00'
 id: 14cdba2d8e58ab96cf95
 organization_url_name: null
 slide: false
