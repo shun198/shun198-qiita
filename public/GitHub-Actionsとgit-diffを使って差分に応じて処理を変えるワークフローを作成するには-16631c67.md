@@ -12,8 +12,8 @@ id: 16631c6720ec7c2b1a26
 organization_url_name: null
 slide: false
 ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
+posting_campaign_uuid: 16baee61b1d8bd4aac5a
+agreed_posting_campaign_term: true
 ---
 ## 概要
 GitHub Actionsを使って例えばModelを追加したときのみModelのテストも行いたいなど、gitを使って差分に応じてテストする項目を変更したい場合(実行時間を短縮したい)場面があるかと思うので今回はその方法について解説したいと思います
