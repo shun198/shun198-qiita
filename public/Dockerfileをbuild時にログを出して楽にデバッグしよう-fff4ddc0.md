@@ -19,7 +19,7 @@ agreed_posting_campaign_term: false
 ## Docker imageをbuildするとき
 Pythonのimageを例に出します
 ```Dockerfile
-FROM python:3.10
+FROM python:3.14
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
@@ -63,7 +63,7 @@ docker compose build --progress=plain
 とLinuxの`ls`コマンドと組み合わせて使うとデバッグが容易になります
 
 ```Dockerfile
-FROM python:3.10
+FROM python:3.14
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1

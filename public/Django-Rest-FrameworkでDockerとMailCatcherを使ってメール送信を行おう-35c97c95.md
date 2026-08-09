@@ -410,8 +410,6 @@ https://mailcatcher.me/
 
 https://book-reviews.blog/send-email-on-local-development-environment-on-Django/
 
-https://tech.respect-pal.jp/mail_debug_with_mailcatcher/
-
 https://qiita.com/pocari/items/de0436c39ffc65647cf0
 
 https://hub.docker.com/r/sj26/mailcatcher

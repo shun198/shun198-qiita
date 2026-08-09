@@ -391,5 +391,3 @@ https://qiita.com/takatakaryoryo/items/ba4ab40b79b24ca4548d
 https://stackoverflow.com/questions/67361936/exec-user-process-caused-exec-format-error-in-aws-fargate-service
 
 https://eset-info.canon-its.jp/malware_info/special/detail/201021.html
-
-https://wa3.i-3-i.info/word1755.html

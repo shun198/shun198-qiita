@@ -261,5 +261,3 @@ https://github.com/modelcontextprotocol/typescript-sdk
 https://zenn.dev/layerx/articles/7e9f87fca65e94
 
 https://developers.play.jp/entry/2025/06/20/191042
-
-https://zenn.dev/takuya77088/articles/f7149723b3b2f2

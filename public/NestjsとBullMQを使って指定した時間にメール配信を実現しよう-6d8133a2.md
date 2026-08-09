@@ -285,7 +285,7 @@ processor側で指定した時間になったらメールを配信するロジ�
 Processorデコレータを使用してjob用のクラスだと明示し、processメソッドにjobのロジックを記載します
 OnWorkerEventのcompletedとfailedを使用してジョブが完了した時、失敗した時はログを出力するよう設定してます
 
-https://api.docs.bullmq.io/interfaces/v4.WorkerListener.html
+https://docs.bullmq.io/guide/events
 
 ```schedule.processor.ts
 import { OnWorkerEvent, Processor, WorkerHost } from '@nestjs/bullmq';
@@ -358,4 +358,4 @@ https://note.com/opst_mkrydik/n/n50c53c64bf59
 
 https://docs.bullmq.io/
 
-https://api.docs.bullmq.io/interfaces/v4.WorkerListener.html
+https://docs.bullmq.io/guide/events

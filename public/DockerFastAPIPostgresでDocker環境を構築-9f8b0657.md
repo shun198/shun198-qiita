@@ -78,10 +78,10 @@ authors = ["shun198"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11.8"
-fastapi = "^0.78.0"
-psycopg2 = "^2.9.9"
-uvicorn= "^0.17.6"
+python = "^3.14"
+fastapi = "^0.141.1"
+psycopg2 = "^2.9.10"
+uvicorn = "^0.52.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -93,7 +93,8 @@ build-backend = "poetry.core.masonry.api"
 
 ```Dockerfile:containers/fastapi/Dockerfile
 # FastAPIで使用するPythonのイメージを指定
-FROM tiangolo/uvicorn-gunicorn:python3.11
+# tiangolo/uvicorn-gunicornイメージは非推奨(deprecated)となったため、公式のPythonイメージを使用する
+FROM python:3.14-slim
 # PYTHONDONTWRITEBYTECODEとPYTHONUNBUFFEREDはオプション
 # pycファイル(および__pycache__)の生成を行わないようにする
 ENV PYTHONDONTWRITEBYTECODE=1

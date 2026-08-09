@@ -294,8 +294,6 @@ nameに"大阪"を入れても"オオサカ"を入れても該当するお客様
 ![スクリーンショット 2023-05-14 10.41.01.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/04a6308e-d8e0-ac33-1696-1cdfb0138e0d.png)
 
 ## 参考
-https://django.codor.co.jp/about-qobject
-
 https://stackoverflow.com/questions/57270470/django-filter-how-to-make-multiple-fields-search-with-django-filter
 
 https://docs.djangoproject.com/en/4.2/topics/db/queries/

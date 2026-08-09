@@ -299,7 +299,7 @@ jobs:
       - name: Create documentation
         run: poetry run pdoc -o docs application/tests/
       - name: Upload Documents
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           # 絶対パスを指定
           path: application/docs/
@@ -317,7 +317,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 ```
 
 ### 実行する際のブランチの指定
@@ -355,7 +355,7 @@ PoetryのCacheの使い方などについて詳細に知りたい方は以下の
 
 https://qiita.com/shun198/items/65025b5cc5729b4217e1
 
-また、actions/upload-pages-artifact@v3を使用する際のdocsフォルダのパスは絶対パスにしてください
+また、actions/upload-pages-artifact@v5を使用する際のdocsフォルダのパスは絶対パスにしてください
 公式が出しているこのアクションを使うことでdocsフォルダ内のファイル群はartifactとしてGitHub Actions内で保存され、GitHub Pagesにアップロードできるようになります
 
 ```github/workflows/docs.yml
@@ -382,7 +382,7 @@ jobs:
       - name: Create documentation
         run: poetry run pdoc -o docs application/tests/
       - name: Upload Documents
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           # 絶対パスを指定
           path: application/docs/
