@@ -12,8 +12,8 @@
   },
   "devDependencies": {
     "@qiita/qiita-cli": "^1.10.0",
-    "markdownlint-cli2": "^0.23.1",
-    "textlint": "^15.7.1",
+    "markdownlint-cli2": "^0.23.2",
+    "textlint": "^15.8.0",
     "textlint-rule-preset-ja-technical-writing": "^12.0.2"
   },
   "volta": {

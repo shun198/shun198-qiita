@@ -7,7 +7,7 @@ tags:
   - storybook
   - copilot
 private: false
-updated_at: '2025-08-18T07:38:38+09:00'
+updated_at: '2026-08-10T07:49:19+09:00'
 id: c5ebff43a411bf0d26ab
 organization_url_name: null
 slide: false
