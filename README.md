@@ -68,12 +68,6 @@ CI=true pnpm exec textlint "public/<file>.md"
 - 認証情報ファイルはコミットしない
 - 既存記事のFront Matterにある `id` は絶対に更新しない
 
-## Agent Skills
-
-このリポジトリで共通利用するAgent Skillは、`.agents/skills/`を正本として管理します。
-Skillごとにディレクトリを作成し、frontmatter付きの`SKILL.md`を配置してください。
-エージェント別のディレクトリへ同じSkillを複製しないでください。
-
 ## CI
 
 - `lint.yml`: markdownlint + textlint
