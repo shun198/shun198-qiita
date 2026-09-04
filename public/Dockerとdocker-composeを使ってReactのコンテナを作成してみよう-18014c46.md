@@ -17,7 +17,7 @@ agreed_posting_campaign_term: false
 ---
 ## はじめに
 - Dockerfile
-- docker-compose.yml
+- compose.yaml
 - .gitignore
 
 を作成します
@@ -27,7 +27,7 @@ tree
 .
 ├── .gitignore
 ├── Dockerfile
-└── docker-compose.yml
+└── compose.yaml
 ```
 
 ## 必要なファイルの作成
@@ -42,8 +42,8 @@ COPY ./app/package*.json /code
 RUN npm install
 ```
 
-### docker-compose.yml
-```yml:docker-compose.yml
+### compose.yaml
+```yml:compose.yaml
 services:
   # サービス名はfront
   front:
@@ -109,10 +109,10 @@ tree
 │   ├── package.json
 │   ├── public
 │   └── src
-└── docker-compose.yml
+└── compose.yaml
 ```
 
-このようなログが出ますが、docker-compose.ymlのcommandにすでに記載されているので`docker compose up -d`を実行すれば下記のコマンドは実行されます
+このようなログが出ますが、compose.yamlのcommandにすでに記載されているので`docker compose up -d`を実行すれば下記のコマンドは実行されます
 ```terminal
 We suggest that you begin by typing:
 
@@ -162,3 +162,5 @@ https://zenn.dev/rihito/articles/96dfad8d4990f9
 https://nekorokkekun.hatenablog.com/entry/2019/08/30/175407
 
 https://ja.reactjs.org/docs/create-a-new-react-app.html
+
+https://docs.docker.com/engine/storage/bind-mounts/

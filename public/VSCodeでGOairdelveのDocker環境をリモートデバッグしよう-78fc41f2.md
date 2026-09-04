@@ -47,7 +47,7 @@ tree
 │   │   └── entrypoint.sh
 │   └── postgres
 │       └── Dockerfile
-└── docker-compose.yml
+└── compose.yaml
 ```
 
 ## Dockerfileの作成
@@ -86,10 +86,10 @@ PostgresのDockerfileを作成します
 FROM postgres:16.2
 ```
 
-## docker-compose.ymlの作成
-docker-compose.ymlを作成します
+## compose.yamlの作成
+compose.yamlを作成します
 
-```yaml:docker-compose.yaml
+```yaml:compose.yaml
 services:
   app:
     container_name: golang_clean_architecture_app

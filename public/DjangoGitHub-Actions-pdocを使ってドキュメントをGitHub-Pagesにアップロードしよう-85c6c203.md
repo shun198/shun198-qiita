@@ -110,9 +110,9 @@ poetry run pdoc -o docs application/tests
 本来はこのコマンドを実行すればdocsフォルダ内にapplication/tests内のソースコードが全てhtmlとして出力されますが以下のエラーが出力されるかと思います
 
 ```
-  File "/root/.cache/pypoetry/virtualenvs/api-MATOk_fk-py3.11/lib/python3.11/site-packages/django/apps/registry.py", line 260, in get_containing_app_config
+  File "/root/.cache/pypoetry/virtualenvs/api-MATOk_fk-py3.14/lib/python3.14/site-packages/django/apps/registry.py", line 260, in get_containing_app_config
     self.check_apps_ready()
-  File "/root/.cache/pypoetry/virtualenvs/api-MATOk_fk-py3.11/lib/python3.11/site-packages/django/apps/registry.py", line 138, in check_apps_ready
+  File "/root/.cache/pypoetry/virtualenvs/api-MATOk_fk-py3.14/lib/python3.14/site-packages/django/apps/registry.py", line 138, in check_apps_ready
     raise AppRegistryNotReady("Apps aren't loaded yet.")
 django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
 ```
@@ -285,11 +285,11 @@ jobs:
         working-directory: application
     steps:
       - name: Chekcout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Install poetry
         run: pipx install poetry
       - name: Use cache dependencies
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
           python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"
@@ -368,11 +368,11 @@ jobs:
         working-directory: application
     steps:
       - name: Chekcout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Install poetry
         run: pipx install poetry
       - name: Use cache dependencies
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
           python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"

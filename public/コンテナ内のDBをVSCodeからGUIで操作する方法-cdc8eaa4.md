@@ -57,7 +57,7 @@ https://qiita.com/shun198/items/9e4fcb4479385217c323
 |-----|-----|
 |  Connection name  | 任意の名前で大丈夫です  | 
 | Server Address | DBのコンテナ名を指定します |
-| Port | docker-compose.ymlで指定したポート番号を入力します |
+| Port | compose.yamlで指定したポート番号を入力します |
 | Database | .envに記載しているDB名 |
 | Username | .envに記載しているユーザ名 |
 | Password | .envに記載しているパスワード |

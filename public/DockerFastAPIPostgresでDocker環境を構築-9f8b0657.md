@@ -46,7 +46,7 @@ tree
 │       └── Dockerfile
 ├── .gitignore
 ├── .env
-└── docker-compose.yml
+└── compose.yaml
 
 ```
 
@@ -55,7 +55,7 @@ tree
 - FastAPIのDockerfile
 - PostgresのDockerfile
 - .env
-- docker-compose.yml
+- compose.yaml
 
 の順に作成していきます
 
@@ -63,9 +63,8 @@ tree
 Poetryを使ったPythonのパッケージの管理をする際にpyproject.tomlファイルが必要になります
 今回は
 - python
-- fastapi
+- `fastapi[standard]`
 - psycopg2
-- uvicorn
 
 が必要なので以下のように記載します
 
@@ -79,9 +78,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.14"
-fastapi = "^0.141.1"
-psycopg2 = "^2.9.10"
-uvicorn = "^0.52.0"
+fastapi = { version = "0.141.1", extras = ["standard"] }
+psycopg2 = "^2.9.12"
 
 [build-system]
 requires = ["poetry-core"]
@@ -101,12 +99,14 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 # コンテナのワークディレクトリを/codeに指定
 WORKDIR /code
-# ローカルのapplication/pyproject.tomlをコンテナの/codeフォルダ直下に置く
-COPY application/pyproject.toml /code/
+# ローカルの依存関係定義をコンテナの/codeフォルダ直下に置く
+COPY application/pyproject.toml application/poetry.lock /code/
 # コンテナ内でpipのアップグレードとPoetryのインストールを行う
-RUN pip install --upgrade pip && pip install poetry
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir poetry==2.4.2 \
+    && poetry config virtualenvs.create false
 # コンテナ内でPoetry内のパッケージをインストール
-RUN poetry install
+RUN poetry install --only main --no-root
 # ソースコードをマウント先にコピー
 COPY application/ /code/
 ```
@@ -126,9 +126,9 @@ POSTGRES_HOST=db
 POSTGRES_PORT=5432
 ```
 
-### docker-compose.yml
+### compose.yaml
 
-```docker-compose.yml
+```compose.yaml
 services:
   db:
     container_name: db
@@ -158,7 +158,7 @@ services:
       - ./application:/code
     ports:
       - "8000:8000"
-    command: poetry run uvicorn main:app --reload --host 0.0.0.0 --port 8000
+    command: fastapi dev main.py --host 0.0.0.0 --port 8000
     env_file:
       - .env
     depends_on:
@@ -207,6 +207,8 @@ async def health_check():
 ![スクリーンショット 2024-03-29 15.24.10.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/0862d163-27f2-e4b2-2f4b-cd2687c2209f.png)
 
 ## 参考
+https://fastapi.tiangolo.com/deployment/docker/
+
 https://qiita.com/kurodenwa/items/653c7b74f2f8ba5b7c0d
 
 https://sqripts.com/2022/06/16/20408/

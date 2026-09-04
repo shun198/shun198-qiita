@@ -63,7 +63,7 @@ Celeryを使う際にブローカーを指定する必要がありますが
 │    │   └── Dockerfile
 │    └── localstack
 │        └── entrypoint.sh
-└── docker-compose.yml                                 
+└── compose.yaml
 ```
 
 ## そもそもCeleryって何？
@@ -93,7 +93,7 @@ Celeryを使用する際に以下の用語について知る必要がありま�
 - DjangoのDockerfile
 - pyproject.toml
 - entrypoint.sh
-- docker-compose.yml
+- compose.yaml
 - settings.py
 - .env
 - tasks.py
@@ -151,7 +151,7 @@ QUEUE_NAME_TO_CREATE=$SQS_QUEUE_NAME
 awslocal --endpoint-url=http://${LOCALSTACK_HOST}:4566 sqs create-queue --queue-name ${QUEUE_NAME_TO_CREATE} --region ${AWS_REGION}
 ```
 
-### docker-compose.yml
+### compose.yaml
 - 今回使うAWS SQSをエミュレートするLocalStack
 - Celery
 - Celery Beat
@@ -171,7 +171,7 @@ Django、MySQLのコンテナの作成方法について詳細に知りたい方
 
 https://qiita.com/shun198/items/f6864ef381ed658b5aba
 
-```docker-compose.yml
+```compose.yaml
 services:
   db:
     container_name: mysql
@@ -430,5 +430,3 @@ https://docs.localstack.cloud/getting-started/installation/#docker-compose
 https://stackoverflow.com/questions/68131349/automatically-create-sqs-queue-using-localstack-and-docker-compose
 
 https://stackoverflow.com/questions/43062120/how-i-can-specify-sqs-queue-name-in-celery
-
-

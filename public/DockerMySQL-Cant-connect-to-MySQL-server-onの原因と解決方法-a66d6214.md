@@ -22,9 +22,9 @@ agreed_posting_campaign_term: false
 - Django
 - MySQL
  
-のdocker-compose.ymlを例に出します
+のcompose.yamlを例に出します
 
-```docker-compose.yml
+```compose.yaml
 services:
   db:
     container_name: mysql
@@ -60,7 +60,7 @@ services:
 
 dbのインストラクションにdepends_onを記載することでdb(MySQL)のコンテナが起動した後にapp(今回の例だとDjango)のコンテナが起動します。
 
-```docker-compose.yml
+```compose.yaml
 depends_on:
   - db
 ```
@@ -81,7 +81,7 @@ Can't connect to MySQL server on
 appのコンテナだけdocker restartして再起動したら既にMySQLが起動しているので接続できます
 しかし、dbより先にappが起動するたび再起動するのは面倒です
 
-そこでdocker-compose.ymlに
+そこでcompose.yamlに
 - healthcheck
 - depends onのcondition
 
@@ -91,7 +91,7 @@ appのコンテナだけdocker restartして再起動したら既にMySQLが起�
 
 ### healthcheck
 MySQLadminでコンテナ自身へpingを送るよう設定します
-```docker-compose.yml
+```compose.yaml
 db:
     healthcheck:
       test: mysqladmin ping -h 127.0.0.1 -u$$MYSQL_USER -p$$MYSQL_PASSWORD
@@ -112,7 +112,7 @@ db:
 
 ### condition
 dbのコンテナのhealthcheckが通ったら起動するよう設定します
-```docker-compose.yml
+```compose.yaml
 app:
     depends_on:
       db:
@@ -127,7 +127,7 @@ depends_onのconditionの種類は以下の通りです
 |service_completed_successfully|depends_onに指定したコンテナが正常終了したら起動する|
 
 以上の2つを入れると以下の通りになります
-```docker-compose.yml
+```compose.yaml
 services:
   db:
     container_name: mysql
@@ -188,7 +188,7 @@ http://127.0.0.1:8000　
 ![スクリーンショット 2022-08-17 21.10.44.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/ba5f46c3-2f7d-5fd9-3a21-9294b85be146.png)
 :::
 
-## docker-compose.ymlに記載したhealthcheckのインストラクション以外の方法(wait-for-it.sh)
+## compose.yamlに記載したhealthcheckのインストラクション以外の方法(wait-for-it.sh)
 公式が推奨されているwait-for-it.shを使ってhealthcheckと同様の挙動を再現することができます
 
 https://github.com/vishnubob/wait-for-it

@@ -64,9 +64,9 @@ https://github.com/fescobar/allure-docker-service
 
 https://github.com/fescobar/allure-docker-service-ui
 
-docker-compose.ymlに以下を記載します
+compose.yamlに以下を記載します
 
-```docker-compose.yml
+```compose.yaml
 services:
   allure:
     container_name: allure
@@ -101,7 +101,7 @@ services:
 >The /app/allure-results directory is inside of the container. You MUST NOT change this directory, otherwise, the container won't detect the new changes.
 The /app/default-reports directory is inside of the container. You MUST NOT change this directory, otherwise, the history reports won't be stored.
 
-docker-compose.ymlを作成後、
+compose.yamlを作成後、
 ```
 docker compose up -d
 ```
@@ -486,11 +486,11 @@ jobs:
           --health-retries 5
     steps:
       - name: Chekcout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Install poetry
         run: pipx install poetry
       - name: Use cache dependencies
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version-file: pyproject.toml
           cache: 'poetry'
@@ -503,7 +503,7 @@ jobs:
       - name: Run Pytest
         run: poetry run pytest --alluredir=allure-results
       - name: Build test report
-        uses: simple-elf/allure-report-action@v1.7
+        uses: simple-elf/allure-report-action@v1.15
         with:
           allure_results: allure-results
       - name: Upload Documents
@@ -515,7 +515,7 @@ jobs:
 ```
 
 ### 生成したレポートをGitHub Pagesへアップロードするワークフローの作成
-`dawidd6/action-download-artifact@v3`を使用し、test.ymlで生成したArtifactをダウンロードします
+`dawidd6/action-download-artifact@v24`を使用し、test.ymlで生成したArtifactをダウンロードします
 
 https://github.com/dawidd6/action-download-artifact
 
@@ -523,7 +523,7 @@ https://github.com/dawidd6/action-download-artifact
 
 > Let's suppose you have a workflow with a job in it that at the end uploads an artifact using actions/upload-artifact action and you want to download this artifact in another workflow that is run after the first one. Official actions/download-artifact does not allow this. That's why I decided to create this action. By knowing only the workflow name and commit SHA or other details, you can download the previously uploaded artifact from different workflow associated with that commit or other criteria and use it.
 
-`dawidd6/action-download-artifact@v3`を使って`artifact.tar`ファイルをダウンロードした後、deploy-to-github-pages.yml内に`artifact.tar`ファイルをArtifactとしてアップロードします
+`dawidd6/action-download-artifact@v24`を使って`artifact.tar`ファイルをダウンロードした後、deploy-to-github-pages.yml内に`artifact.tar`ファイルをArtifactとしてアップロードします
 その後、公式の`deploy-pages`を使用してGitHub Pagesへデプロイします
 
 ```deploy-to-github-pages.yml
@@ -546,7 +546,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Download Artifact
-        uses: dawidd6/action-download-artifact@v3
+        uses: dawidd6/action-download-artifact@v24
         with:
           name: github-pages
           workflow: test.yml

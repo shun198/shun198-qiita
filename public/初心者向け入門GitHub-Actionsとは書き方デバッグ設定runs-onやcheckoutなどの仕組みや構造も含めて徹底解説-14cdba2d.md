@@ -119,20 +119,20 @@ runs-on: ubuntu-latest
 ### uses
 
 第三者もしくはGitHubが作成したActionsをyml内に記載することで実行することもできます
-よく使われているのがGitHubが用意している`actions/checkout@v6`です
+よく使われているのがGitHubが用意している`actions/checkout@v7`です
 
 https://github.com/actions/checkout
 
 ```yml:.github/workflows/checkout.yml
   - name: Checkout
-    uses: actions/checkout@v6
+    uses: actions/checkout@v7
 ```
 
 usesに見たことない文字列が表示されていることが多いのでそういう時は下記のmarketplaceから検索してみましょう
 
 https://github.com/marketplace?type=actions
 
-#### actions/checkout@v6って何してるの？
+#### actions/checkout@v7って何してるの？
 興味のある方だけ見ていただければ幸いです
 簡単なActionを作ってみたので挙動を確認してみましょう
 今までのおさらいで
@@ -145,7 +145,7 @@ https://github.com/marketplace?type=actions
 リモートリポジトリへpushすると
 
 - (チェックアウト前の)ファイル構成とパスを確認するコマンドを実行
-- usesを使ってactions/checkout@v6を実行
+- usesを使ってactions/checkout@v7を実行
 - (チェックアウト後の)ファイル構成とパスを確認するコマンドを実行
 
 するという流れになっています
@@ -165,7 +165,7 @@ jobs:
       - name: show current directory before checkout
         run: pwd
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Inspect files after checkout
         run: ls -la
       - name: show current directory after checkout
@@ -184,12 +184,12 @@ runs-onで指定したUbuntuが選択されていることが確認できます
 Run lsb_release -a
 No LSB modules are available.
 Distributor ID:	Ubuntu
-Description:	Ubuntu 20.04.5 LTS
-Release:	20.04
-Codename:	focal
+Description:	Ubuntu 24.04.3 LTS
+Release:	24.04
+Codename:	noble
 ```
 
-次に`actions/checkout@v6`を実行する前のファイル構成とパスを確認します
+次に`actions/checkout@v7`を実行する前のファイル構成とパスを確認します
 ```yml:.github/workflows/linux-command.yml
   - name: Inspect files before checkout
     run: ls -la
@@ -216,14 +216,14 @@ GITHUB_WORKSPACE=/home/runner/work/<リポジトリ名>/<リポジトリ名>
 
 `/home/runner/work/`までは一緒ですがその後はWorkflowを実行するリポジトリ名がディレクトリ名として指定されます
 
-`actions/checkout@v6`を実行します
+`actions/checkout@v7`を実行します
 ```yml:.github/workflows/linux-command.yml
   - name: Checkout
-    uses: actions/checkout@v6
+    uses: actions/checkout@v7
 ```
 
 ```terminal:logs
-Run actions/checkout@v6
+Run actions/checkout@v7
 Syncing repository: shun198/***-<リポジトリ名>
 Getting Git version info
 Temporarily overriding HOME='/home/runner/work/_temp/da727d01-5e2c-459c-b8db-380fb0265762' before making global git config changes
@@ -249,7 +249,7 @@ Checking out the ref
 しています。要するにランナー内にリモートリポジトリにあるソースコードをクローンに限りなく近い形(厳密には違う)で複製していることになります。
 クローンだとデフォルトのブランチ(main、develop)のソースコードしか抽出できず、作業する際に使うfeatureブランチのソースコードだけテストできないからfetchとcheckoutをしているのだと筆者は考えています
 これについて詳しい方がいましたらぜひご教授いただけると幸いです
-`actions/checkout@v6`の詳細を知りたい方は実際にログを確認してみてください
+`actions/checkout@v7`の詳細を知りたい方は実際にログを確認してみてください
 
 実行した後のファイル構成、パス、ブランチ一覧を確認します
 ```yml:.github/workflows/linux-command.yml
@@ -277,7 +277,7 @@ drwxr-xr-x  3 runner docker 4096 Oct  9 22:02 .github
 drwxr-xr-x  2 runner docker 4096 Oct  9 22:02 .vscode
 -rw-r--r--  1 runner docker 4664 Oct  9 22:02 README.md
 drwxr-xr-x  5 runner docker 4096 Oct  9 22:02 containers
--rw-r--r--  1 runner docker 1836 Oct  9 22:02 docker-compose.yml
+-rw-r--r--  1 runner docker 1836 Oct  9 22:02 compose.yaml
 -rwxr-xr-x  1 runner docker  126 Oct  9 22:02 entrypoint.sh
 -rwxr-xr-x  1 runner docker  661 Oct  9 22:02 manage.py
 drwxr-xr-x  3 runner docker 4096 Oct  9 22:02 application
@@ -304,12 +304,12 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 ```
 
-`actions/checkout@v6`の説明は以上です
+`actions/checkout@v7`の説明は以上です
 
 ### steps
 図でも説明した通り一つのjobsは1つ以上のstepsで構成されており、stepsの中にrunコマンドが1つ以上構成されています
@@ -321,7 +321,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 ```
 
 ### run
@@ -496,9 +496,9 @@ GitHub Actionsの公式もしくは各言語の公式が出しているactionを
 
 ```yaml:.github/workflows/setup-python.yml
 steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
 
-    - uses: actions/setup-python@v6
+    - uses: actions/setup-python@v7
       with:
         python-version: '3.14' 
     - run: python my_script.py
@@ -509,10 +509,10 @@ Cacheを使うことで2回目以降ワークフローを実行する際にpoetr
 
 ```yaml:.github/workflows/setup-python.yml
 steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: Install poetry
       run: pipx install poetry
-    - uses: actions/setup-python@v6
+    - uses: actions/setup-python@v7
       with:
         python-version: '3.14'
         cache: 'poetry'
@@ -521,7 +521,7 @@ steps:
 
 また、python-version-fileのオプションを使うことでpyproject.toml内に記載されたPythonのversionを自動的に適用させることもできます
 ```yml
-    - uses: actions/setup-python@v6
+    - uses: actions/setup-python@v7
       with:
         python-version-file: "pyproject.toml"
         cache: 'poetry'
@@ -534,13 +534,13 @@ https://github.com/actions/setup-python
 
 #### Node.js
 公式が出しているNode.jsのsetup用のactionです
-Nodeのversionについては16,18,20をサポートしています
+Nodeのversionは現行のLTSを指定します。この例では24を使っています
 以下がnpmを使ってCacheを使うときのワークフロー例です
 
 ```yaml:.github/workflows/setup-node.yml
 steps:
-    - uses: actions/checkout@v6
-    - uses: actions/setup-node@v6
+    - uses: actions/checkout@v7
+    - uses: actions/setup-node@v7
       with:
         node-version: 24
         cache: 'npm'
@@ -551,13 +551,13 @@ steps:
 npm以外にyarnを使ったCacheのワークフローも実装できます
 ```yaml:.github/workflows/setup-node.yml
 steps:
-    - uses: actions/checkout@v6
-    - uses: actions/setup-node@v6
+    - uses: actions/checkout@v7
+    - uses: actions/setup-node@v7
       with:
         node-version: 24
         cache: 'yarn'
-        cache-dependency-path: '**/package-lock.json'
-    - run: npm ci
+        cache-dependency-path: '**/yarn.lock'
+    - run: yarn install --frozen-lockfile
 ```
 
 また、node-version-fileのオプションを使うことでpackage.json内に記載されたNodeのversionを自動的に適用させることもできます
@@ -566,8 +566,8 @@ steps:
 
 ```yaml:.github/workflows/setup-node.yml
 steps:
-    - uses: actions/checkout@v6
-    - uses: actions/setup-node@v6
+    - uses: actions/checkout@v7
+    - uses: actions/setup-node@v7
       with:
         node-version-file: 'package.json'
     - run: npm ci
@@ -639,7 +639,7 @@ jobs:
       contents: read
     steps:
     - name: Checkout
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
     - name: Configure AWS credentials from Test account
       uses: aws-actions/configure-aws-credentials@v6
       with:
@@ -727,7 +727,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Install swagger-cli
         run: npm install -g swagger-cli
       - name: Generate Swagger UI
@@ -809,7 +809,7 @@ jobs:
     strategy:
       matrix:
         python-version: [3.10.5, 3.10.6, 3.10.7]
-        os: [ubuntu-latest, ubuntu-20.04]
+        os: [ubuntu-latest, ubuntu-22.04]
 ```
 
 Matrixで定義したバージョンを適用させたい処理には以下のように記載します
@@ -843,7 +843,7 @@ jobs:
     strategy:
       matrix:
         python-version: [3.10.5, 3.10.6, 3.10.7]
-        os: [ubuntu-latest, ubuntu-20.04]
+        os: [ubuntu-latest, ubuntu-22.04]
     runs-on: ${{ matrix.os }}
     defaults:
       run:
@@ -865,13 +865,13 @@ jobs:
           --health-retries 5
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Grant privileges to user
         run: mysql --protocol=tcp -h 127.0.0.1 -P 3306 -u root -p$MYSQL_ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'%'; FLUSH PRIVILEGES;"
       - name: Install poetry
         run: pipx install poetry
       - name: Use cache dependencies
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'poetry'
@@ -891,12 +891,12 @@ jobs:
 #### 特定のバージョンのみ追加したいとき
 例えば
 - Python 3.10.8
-- Ubuntu 18.04
+- Ubuntu 24.04
 
 だけ追加で検証したいときは`include`を使用します
 2つとも配列に入れてしまうと
 - Python 3.10.8
-- Ubuntu 20.04 と latest
+- Ubuntu 22.04 と latest
 
 など、実行しなくてもいいバージョンのJobまで実行されてしまいます
 そのため、今回みたいなケースでは`include`を使用します
@@ -905,16 +905,16 @@ jobs:
     strategy:
       matrix:
         python-version: [3.10.5, 3.10.6, 3.10.7]
-        os: [ubuntu-latest, ubuntu-20.04]
-        # includeを使って python-version: 3.10.8 と ubuntu-18.04 のみ追加
+        os: [ubuntu-latest, ubuntu-22.04]
+        # includeを使って python-version: 3.10.8 と ubuntu-24.04 のみ追加
         include:
           - python-version: 3.10.8
-            os: ubuntu-18.04
+            os: ubuntu-24.04
 ```
 
 以下のように
 - Python 3.10.8
-- Ubuntu 18.04
+- Ubuntu 24.04
 
 のJobのみ追加されていることが確認できます
 
@@ -924,7 +924,7 @@ jobs:
 特定のバージョンのみ除外するときはincludeとは逆にexcludeを使用します
 今回は
 - Python 3.10.5
-- Ubuntu 20.04
+- Ubuntu 22.04
 
 のJobのみ実行しないようにします
 
@@ -932,16 +932,16 @@ jobs:
     strategy:
       matrix:
         python-version: [3.10.5, 3.10.6, 3.10.7]
-        os: [ubuntu-latest, ubuntu-20.04]
-        # includeを使って python-version: 3.10.5 と ubuntu-20.04 のみ除外
+        os: [ubuntu-latest, ubuntu-22.04]
+        # excludeを使って python-version: 3.10.5 と ubuntu-22.04 のみ除外
         exclude:
           - python-version: 3.10.5
-            os: ubuntu-20.04
+            os: ubuntu-22.04
 ```
 
 以下のように
 - Python 3.10.5
-- Ubuntu 20.04
+- Ubuntu 22.04
 
 が実行されていないことが確認できます
 
@@ -991,7 +991,7 @@ runs:
   using: 'composite'
   steps:
       - name: Setup NodeJS
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version-file: ${{ inputs.working-directory }}/package.json
       - name: Install dependencies
@@ -1094,7 +1094,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Setup Node.js
         uses: ./.github/actions/set-up-node
         with:
@@ -1126,7 +1126,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Check out
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Setup Node.js
         uses: ./.github/actions/set-up-node
         with:
@@ -1202,7 +1202,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v6
         with:
@@ -1210,7 +1210,7 @@ jobs:
           role-session-name: deploy_role_session
           aws-region: ${{ env.REGION_NAME }}
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version-file: ${{ env.WORKING_DIRECTORY }}/package.json
       - name: Build and Export

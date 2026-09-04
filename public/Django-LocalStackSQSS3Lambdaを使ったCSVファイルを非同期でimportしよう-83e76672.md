@@ -78,13 +78,13 @@ DjangoのCeleryを使用すれば同様のことができますが
 │   │   ├── entrypoint.sh
 │   │   ├── function.py
 │   │   └── role.json
-└── docker-compose.yml
+└── compose.yaml
 ```
 
 ## LocalStackの設定
 ローカル上で非同期処理を再現するためのLocalStackの設定を行います
 
-### docker-compose.yml
+### compose.yaml
 LocalStackではready.d配下にエントリーポイントとなるシェルスクリプトなどを配置すると起動時に実行される仕様なので下記のようにvolumeを定義します
 
 ```
@@ -110,7 +110,7 @@ You can hook into each of these lifecycle phases using custom shell or Python sc
         └── start.d          <-- executed when localstack starts up
 ```
 
-```docker-compose.yml
+```compose.yaml
 services:
   db:
     container_name: db
@@ -416,7 +416,7 @@ def lambda_handler(event, context):
 ## Djangoの設定
 ### settings.py
 settings.pyにS3とSQSの設定を行います
-LocalStackを使用する際はAWSのシークレットキーとアクセスキーがいるのでdocker-compose.yml内に書いたLocalStackの環境変数と同じものを記載します
+LocalStackを使用する際はAWSのシークレットキーとアクセスキーがいるのでcompose.yaml内に書いたLocalStackの環境変数と同じものを記載します
 逆にAWS上ではシークレットキーとアクセスキーではなく、IAMロールを使って実行するので下記のようにローカルとAWSではSQS_CLIENTの設定が違います
 
 ```settings.py

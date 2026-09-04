@@ -371,7 +371,7 @@ https://qiita.com/shun198/items/637c05e0701114ae5b3d
 
 ```
 python manage.py debugsqlshell
-Python 3.11.3 (main, Apr 12 2023, 14:31:14) [GCC 10.2.1 20210110] on linux
+Python 3.14.7 (main, ...) [GCC ...] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 (InteractiveConsole)
 >>> from application.models import Customer
@@ -415,5 +415,7 @@ https://qiita.com/knitbow/items/be26d0406fa922186bf7
 https://www.javadrive.jp/mysql/function/index35.html
 
 https://docs.djangoproject.com/en/1.8/ref/models/database-functions/
+
+https://docs.djangoproject.com/en/6.0/topics/db/aggregation/
 
 https://www.northtorch.co.jp/archives/1308

@@ -94,7 +94,7 @@ jobs:
           --health-retries 5
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Check for model changes
@@ -112,7 +112,7 @@ jobs:
       # Pythonのセットアップを実行
       # 2回目以降のテスト実行時はrunner内にPoetryのCacheを生成してPoetryのセットアップを高速化
       - name: Use cache dependencies
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
           python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"
@@ -133,7 +133,7 @@ jobs:
           set -o pipefail
           poetry run pytest --junitxml=pytest.xml -x -n auto --cov --no-cov-on-fail --suppress-no-test-exit-code | tee pytest-coverage.txt
       - name: Pytest coverage comment
-        uses: MishaKav/pytest-coverage-comment@main
+        uses: MishaKav/pytest-coverage-comment@v1.12.2
         with:
           pytest-coverage-path: ${{ env.WORKING_DIRECTORY }}/pytest-coverage.txt
           junitxml-path: ${{ env.WORKING_DIRECTORY }}/pytest.xml
@@ -154,7 +154,7 @@ Use '--' to separate paths from revisions, like this:
 
 ```yaml
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 ```

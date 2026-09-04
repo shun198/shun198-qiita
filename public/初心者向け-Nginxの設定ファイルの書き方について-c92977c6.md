@@ -37,25 +37,25 @@ Webアプリケーション開発でNginxをWebサーバとして使用してい
 今回説明するNginxはクライアントからの通信をプロキシし、バックエンドのAPIサーバに送信するプロキシサーバの役割を担います
 
 ## ローカル環境
-ローカル環境ではDockerfileと一緒にdocker-compose.ymlも使用するので
-- docker-compose.yml
+ローカル環境ではDockerfileと一緒にcompose.yamlも使用するので
+- compose.yaml
 - Dockerfile
 - nginx.conf
 
 の順に解説していきます
 
-### docker-compose.yml
+### compose.yaml
 以下が
 - Django
 - MySQL
 - Nginx
 - Node.js
 
-用のdocker-compose.ymlです
+用のcompose.yamlです
 ローカル環境ではNginxを使ってフロントエンドとバックエンドを連携させる際にDockerのnetworkを使います
 今回はtestnetというネットワークを作成します
 
-```docker-compose.yml
+```compose.yaml
 services:
   app:
     container_name: app
@@ -176,7 +176,7 @@ upstreamディレクティブを使用して
 host.docker.internal
 ```
 はDockerの機能の1つでこれを使用するとIPアドレスを指定せずにコンテナからホスト(Mac)に簡単にアクセスできます
-docker-compose.ymlのポートでフロントエンドは3000、バックエンドは8000にしてるのでこちらも同様にポート番号をそろえます
+compose.yamlのポートでフロントエンドは3000、バックエンドは8000にしてるのでこちらも同様にポート番号をそろえます
 
 ```nginx.conf
 upstream front {
@@ -242,7 +242,7 @@ Since version 1.3.13, nginx implements special mode of operation that allows set
 As noted above, hop-by-hop headers including “Upgrade” and “Connection” are not passed from a client to proxied server, therefore in order for the proxied server to know about the client’s intention to switch a protocol to WebSocket, these headers have to be passed explicitly
 
 ## 本番環境
-本番環境ではdocker-compose.ymlを使わずにECS Fargateを使用するので
+本番環境ではcompose.yamlを使わずにECS Fargateを使用するので
 - NginxのDockerfile
 - nginx.conf
 

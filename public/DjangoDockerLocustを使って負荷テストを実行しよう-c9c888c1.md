@@ -57,20 +57,20 @@ tree
 │   │   └── entrypoint.sh
 │   └── postgres
 │       └── Dockerfile
-├── docker-compose.yml
+├── compose.yaml
 └── static
 ```
 
 ## 実装
 以下のファイルを作成します
-- docker-compose.yml
+- compose.yaml
 - application/models.py
 - application/serializers.py
 - application/views.py
 - application/locust.py
 
 ### Docker環境の作成
-今回はdocker-compose.ymlを使って負荷テスト用のDocker環境を作成します
+今回はcompose.yamlを使って負荷テスト用のDocker環境を作成します
 locustfile.pyをlocust用のworkerとmaster用コンテナにマウントするよう設定します
 また、locustのコンテナ内でDjangoのAPIを実行したいので以下のように
 ```
@@ -79,7 +79,7 @@ locustfile.pyをlocust用のworkerとmaster用コンテナにマウントする�
 とホストを設定します
 今回は本番を想定してGunicornを使ってアプリケーションを起動します
 
-```docker-compose.yml
+```compose.yaml
 services:
   db:
     container_name: db

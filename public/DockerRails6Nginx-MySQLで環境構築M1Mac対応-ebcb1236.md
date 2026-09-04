@@ -23,8 +23,8 @@ agreed_posting_campaign_term: false
 - アプリケーションサーバはPuma
 - WebサーバはNginx
 - DB側のコンテナ名はmysql、Rails側のコンテナ名はapp、Nginx側はwebにします
-- 開発用はdocker-compose.yml(Rails+MySQL)として作成します
-- 本番用はdocker-compose.prod.yml(Rails+MySQL+Nginx)として作成します
+- 開発用はcompose.yaml(Rails+MySQL)として作成します
+- 本番用はcompose.prod.yaml(Rails+MySQL+Nginx)として作成します
 
 ## はじめに
 プロジェクトを作成するディレクトリを作成します
@@ -48,8 +48,8 @@ containersフォルダを作成し、その中にRails、MySQL、Nginxのフォ�
 │   │       └── default.conf
 │   └── rails
 │       └── Dockerfile
-├── docker-compose.prod.yml
-└── docker-compose.yml
+├── compose.prod.yaml
+└── compose.yaml
 ```
 
 ## 作成するファイル
@@ -59,8 +59,8 @@ containersフォルダを作成し、その中にRails、MySQL、Nginxのフォ�
 - my.cnf(MySQL用の設定ファイル)
 - init.sql(MySQLのユーザに権限を付与)
 - default.conf(Nginx用の設定ファイル)
-- docker-compose.yml(開発用)
-- docker-compose.prod.yml(本番用)
+- compose.yaml(開発用)
+- compose.prod.yaml(本番用)
 - Gemfile
 - Gemfile.lock
 - .env(環境変数の設定ファイル)
@@ -70,7 +70,7 @@ containersフォルダを作成し、その中にRails、MySQL、Nginxのフォ�
 ## そもそもなんで開発用と本番用に分けるの？
 Rails+MySQL+Nignxの構成で開発する場合、Nginxは静的ファイルを表示させる機能しかないため、ControllerやModelの変更を反映させるには都度コンテナを再起動させる必要があります(要するにホットリロードができないため、開発効率が悪い)
 そのため、開発はRails+MySQLのコンテナで行い、本番環境ではNginxのポートから画面を確認する運用になるかと思います
-本記事では開発用、本番用のdocker-compose.ymlの書き方もあわせて解説します
+本記事では開発用、本番用のcompose.yamlの書き方もあわせて解説します
 
 ## 各ファイルに必要なコードを記入しよう
 ### Dockerfile
@@ -171,8 +171,8 @@ server {
 }
 ```
 
-### docker-compose.yml(開発用)
-```docker-compose.yml
+### compose.yaml(開発用)
+```compose.yaml
 # db(MySQL),app(Rails)のコンテナを作成
 services:
   db:
@@ -229,8 +229,8 @@ volumes:
   bundle:
 ```
 
-### docker-compose.yml(本番用)
-```docker-compose.prod.yml
+### compose.yaml(本番用)
+```compose.prod.yaml
 services:
   db:
     container_name: mysql
@@ -295,7 +295,7 @@ gem 'rails', '6.1.3'
 ```
 
 ### .env
-MySQLのrootユーザのパスワードなどをdocker-compose.ymlやRailsのdatabase.ymlに書くのは危険なので.envファイルを使います
+MySQLのrootユーザのパスワードなどをcompose.yamlやRailsのdatabase.ymlに書くのは危険なので.envファイルを使います
 .gitignore(後述)があることで.envファイルはGitHubに上がることはありません
 今回は以下のような内容にします
 ```.env
@@ -311,8 +311,8 @@ MYSQL_PASSWORD=rails
 ```
 
 ## imageのビルド、Railsの画面表示まで行おう
-今回はNginxのポートにアクセスしてRailsの画面を表示させたいのでdocker-compose.prod.yml(本番用)を使います
-開発する場合はコマンドで指定しているファイルをdocker-compose.ymlに置き換えて、3000番ポートにアクセスしてください
+今回はNginxのポートにアクセスしてRailsの画面を表示させたいのでcompose.prod.yaml(本番用)を使います
+開発する場合はコマンドで指定しているファイルをcompose.yamlに置き換えて、3000番ポートにアクセスしてください
 
 ## docker-composeでDocker imageを作成しよう(初回)
 プロジェクトを新規作成する際は以下のコマンドを実行します
@@ -354,8 +354,8 @@ docker compose run app rails new . --force --database=mysql
 ├── test
 ├── tmp
 ├── vendor
-├── docker-compose.prod.yml
-└── docker-compose.yml
+├── compose.prod.yaml
+└── compose.yaml
 ```
 
 ### database.yml
@@ -395,7 +395,7 @@ rails newで.gitignoreが自動生成されましたが、.envが記載されて
 コンテナをデタッチモードで起動する
 デタッチモード起動することでコンテナの中に入らずにバックグラウンドで起動させることができます
 ```terminal:terminal
-docker compose -f docker-compose.prod.yml up -d
+docker compose -f compose.prod.yaml up -d
 ```
 
 ### 127.0.0.1/80にアクセスしてみよう
@@ -405,7 +405,7 @@ docker compose -f docker-compose.prod.yml up -d
 
 ![スクリーンショット 2022-09-18 22.54.44.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/57c7c9b1-3ba5-3ae1-67c4-0aa049c509f3.png)
 
-### `docker compose -f docker-compose.prod.yml up -d`しても接続できない時
+### `docker compose -f compose.prod.yaml up -d`しても接続できない時
 #### failed (111: Connection refused) while connecting to upstream
 Nginxのdefault.confを見直す必要があります
 ```containers/nginx/conf.d/default.conf

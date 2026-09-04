@@ -141,7 +141,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Set Environment Variables
         uses: ./.github/actions/set-up-env
       - name: Setup Poetry
@@ -222,7 +222,7 @@ jobs:
           --health-retries 5
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Set Environment Variables
         uses: ./.github/actions/set-up-env
       - name: Grant privileges to user
@@ -240,7 +240,7 @@ jobs:
           set -o pipefail
           poetry run pytest --junitxml=pytest.xml -x -n auto --cov --no-cov-on-fail --suppress-no-test-exit-code | tee pytest-coverage.txt
       - name: Pytest coverage comment
-        uses: MishaKav/pytest-coverage-comment@main
+        uses: MishaKav/pytest-coverage-comment@v1.12.2
         with:
           pytest-coverage-path: ${{ env.WORKING_DIRECTORY }}/pytest-coverage.txt
           junitxml-path: ${{ env.WORKING_DIRECTORY }}/pytest.xml

@@ -49,11 +49,11 @@ tree
 │   │   ├── urls.py
 │   │   └── wsgi.py
 │   └── pyproject.toml
-└── docker-compose.yml
+└── compose.yaml
 ```
 
 以下のファイルを作成・編集します
-- docker-compose.yml
+- compose.yaml
 - settings.py
 - models.py
 - fixtures.py
@@ -67,7 +67,7 @@ SERVICESにSNSを追加し、今回は
 
 の環境変数をlocalstackにします
 
-```docker-compose.yml
+```compose.yaml
   localstack:
     image: localstack/localstack
     container_name: localstack

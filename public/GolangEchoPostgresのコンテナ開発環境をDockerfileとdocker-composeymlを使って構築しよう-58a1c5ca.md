@@ -1,5 +1,5 @@
 ---
-title: Golang+Echo+Postgresのコンテナ開発環境をDockerfileとdocker-compose.ymlを使って構築しよう！
+title: Golang+Echo+Postgresのコンテナ開発環境をDockerfileとcompose.yamlを使って構築しよう！
 tags:
   - Go
   - PostgreSQL
@@ -35,7 +35,7 @@ GolangのWebフレームワークであるEchoとPostgresのコンテナ開発�
 │   │   └── Dockerfile
 │   └── postgres
 │       └── Dockerfile
-└── docker-compose.yml
+└── compose.yaml
 ```
 
 ## 初期設定
@@ -133,9 +133,9 @@ FROM postgres:16.2
 
 ```
 
-## docker-compose.ymlの作成
+## compose.yamlの作成
 GolangとPostgres両方のコンテナを起動できるようにします
-```docker-compose.yml
+```compose.yaml
 services:
   app:
     container_name: app

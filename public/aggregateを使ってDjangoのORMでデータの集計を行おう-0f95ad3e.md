@@ -135,7 +135,7 @@ https://qiita.com/shun198/items/637c05e0701114ae5b3d
 以下のコマンドを実行するとShellが起動します
 ```
 python manage.py debugsqlshell
-Python 3.11.2 (main, Mar 14 2023, 02:02:39) [GCC 10.2.1 20210110] on linux
+Python 3.14.7 (main, ...) [GCC ...] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 (InteractiveConsole)
 ```

@@ -53,7 +53,7 @@ tree
 │   │   └── Dockerfile
 │   └── postgres
 │       └── Dockerfile
-└── docker-compose.yml
+└── compose.yaml
 ```
 
 ## Dockerfileの作成
@@ -86,9 +86,9 @@ FROM postgres:16.2
 
 ```
 
-## docker-compose.ymlの作成
+## compose.yamlの作成
 GoとPostgresをdocker-composeを使って起動させます
-```docker-compose.yml
+```compose.yaml
 services:
   app:
     container_name: app

@@ -51,7 +51,7 @@ tree
 │   │   ├── urls.py
 │   │   └── wsgi.py
 │   └── pyproject.toml
-└── docker-compose.yml
+└── compose.yaml
 ```
 
 ## 初期設定

@@ -15,7 +15,7 @@ posting_campaign_uuid: null
 agreed_posting_campaign_term: false
 ---
 ## 前提
-- docker-compose.ymlを使用
+- compose.yamlを使用
 - ある程度Dockerの知識を持っていること
 - メール送信する際にSwaggerを使用します
 
@@ -34,7 +34,7 @@ MailCatcherのイメージを指定して
 - Webブラウザで閲覧する用の1080番ポート
  
 の2種類のポートを解放します
-```yml:docker-compose.yml
+```yml:compose.yaml
   mail:
     container_name: mail
     image: schickling/mailcatcher

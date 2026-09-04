@@ -21,7 +21,7 @@ VSCodeのブレークポイントやウォッチが使えるとかなり開発�
 
 ## 前提
 - Nest.jsのプロジェクトを作成済み
-- Dockerfileおよびdocker-compose.ymlを作成済み
+- Dockerfileおよびcompose.yamlを作成済み
 
 ## ディレクトリ構成
 ```
@@ -43,11 +43,11 @@ VSCodeのブレークポイントやウォッチが使えるとかなり開発�
 │   │   └── entrypoint.sh
 │   └── postgres
 │       └── Dockerfile
-└── docker-compose.yml
+└── compose.yaml
 ```
 
 ## 実装
-- docker-compose.yml
+- compose.yaml
 - entrypoint.sh
 - package.json
 - devcontainer.json
@@ -55,10 +55,10 @@ VSCodeのブレークポイントやウォッチが使えるとかなり開発�
 
 の2種類のファイルを作成します
 
-### docker-compose.yml
+### compose.yaml
 リモートデバッグする際にデバッグ用のポート(今回は9229)を開放します
 
-```yaml:docker-compose.yml
+```yaml:compose.yaml
 services:
   db:
     container_name: db
@@ -133,7 +133,7 @@ Remote Containersを使用するために作成します
 {
 	"name": "Existing Docker Compose (Extend)",
 	"dockerComposeFile": [
-		"../docker-compose.yml"
+		"../compose.yaml"
 	],
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"

@@ -52,7 +52,7 @@ jobs:
     strategy:
       matrix:
         python-version: [3.10.5, 3.10.6, 3.10.7]
-        os: [ubuntu-latest, ubuntu-20.04]
+        os: [ubuntu-latest, ubuntu-22.04]
 ```
 
 Job内でMatrixで定義したバージョンを適用させたい処理には以下のように記載します
@@ -106,7 +106,7 @@ jobs:
     strategy:
       matrix:
         python-version: [3.10.5, 3.10.6, 3.10.7]
-        os: [ubuntu-latest, ubuntu-20.04]
+        os: [ubuntu-latest, ubuntu-22.04]
     runs-on: ${{ matrix.os }}
     defaults:
       run:
@@ -128,13 +128,13 @@ jobs:
           --health-retries 5
     steps:
       - name: Chekcout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Grant privileges to user
         run: mysql --protocol=tcp -h 127.0.0.1 -P 3306 -u root -p$MYSQL_ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'%'; FLUSH PRIVILEGES;"
       - name: Install poetry
         run: pipx install poetry
       - name: Use cache dependencies
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'poetry'
@@ -177,12 +177,12 @@ DATABASES = {
 ## 特定のバージョンのみ追加したいとき
 例えば
 - Python 3.10.8
-- Ubuntu 18.04
+- Ubuntu 24.04
 
 だけ追加で検証したいときは`include`を使用します
 2つとも配列に入れてしまうと
 - Python 3.10.8
-- Ubuntu 20.04 と latest
+- Ubuntu 22.04 と latest
 
 など、実行しなくてもいいバージョンのJobまで実行されてしまいます
 そのため、今回みたいなケースでは`include`を使用します
@@ -191,16 +191,16 @@ DATABASES = {
     strategy:
       matrix:
         python-version: [3.10.5, 3.10.6, 3.10.7]
-        os: [ubuntu-latest, ubuntu-20.04]
-        # includeを使って python-version: 3.10.8 と ubuntu-18.04 のみ追加
+        os: [ubuntu-latest, ubuntu-22.04]
+        # includeを使って python-version: 3.10.8 と ubuntu-24.04 のみ追加
         include:
           - python-version: 3.10.8
-            os: ubuntu-18.04
+            os: ubuntu-24.04
 ```
 
 以下のように
 - Python 3.10.8
-- Ubuntu 18.04
+- Ubuntu 24.04
 
 のJobのみ追加されていることが確認できました
 
@@ -210,7 +210,7 @@ DATABASES = {
 特定のバージョンのみ除外するときはincludeとは逆にexcludeを使用します
 今回は
 - Python 3.10.5
-- Ubuntu 20.04
+- Ubuntu 22.04
 
 のJobのみ実行しないようにします
 
@@ -218,16 +218,16 @@ DATABASES = {
     strategy:
       matrix:
         python-version: [3.10.5, 3.10.6, 3.10.7]
-        os: [ubuntu-latest, ubuntu-20.04]
-        # includeを使って python-version: 3.10.5 と ubuntu-20.04 のみ除外
+        os: [ubuntu-latest, ubuntu-22.04]
+        # excludeを使って python-version: 3.10.5 と ubuntu-22.04 のみ除外
         exclude:
           - python-version: 3.10.5
-            os: ubuntu-20.04
+            os: ubuntu-22.04
 ```
 
 以下のように
 - Python 3.10.5
-- Ubuntu 20.04
+- Ubuntu 22.04
 
 が実行されていないことが確認できました
 ![スクリーンショット 2023-02-12 12.17.24.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/031b2b15-cd47-9b2a-8535-35971fbe9cc9.png)

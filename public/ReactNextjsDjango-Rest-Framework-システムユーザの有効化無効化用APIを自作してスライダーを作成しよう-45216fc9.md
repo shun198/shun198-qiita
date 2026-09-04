@@ -24,7 +24,7 @@ React/Next.jsを使って画面を作成し、Django Rest Frameworkを使ってA
 ## 前提
 - Django、React(Next.js)のプロジェクトを作成済み
 - Material UIとTailwind CSSを使用しますが今回は説明しません
-- docker-compose.ymlとnginx.confを使用します。ソースコードは添付しますが詳細な説明は別記事のリンクを貼るのでそちらを参照してください
+- compose.yamlとnginx.confを使用します。ソースコードは添付しますが詳細な説明は別記事のリンクを貼るのでそちらを参照してください
 
 また、ログイン機能の続きとして記事を執筆しているのでまだ実装していない方は以下の記事を参考にしてください
 
@@ -72,7 +72,7 @@ tree
 │   └── postgres
 │       ├── Dockerfile
 │       └── init.sql
-├── docker-compose.yml
+├── compose.yaml
 ├── frontend
 │   ├── README.md
 │   ├── package-lock.json
@@ -95,7 +95,7 @@ https://qiita.com/shun198/items/ee93c50eac2f7c77e443
 
 https://qiita.com/shun198/items/c92977c6cd31eb2187fc
 
-```docker-compose.yml
+```compose.yaml
 services:
   db:
     container_name: db

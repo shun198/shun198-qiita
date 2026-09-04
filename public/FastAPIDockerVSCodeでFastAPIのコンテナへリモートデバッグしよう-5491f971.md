@@ -25,14 +25,14 @@ VSCodeのブレークポイントやウォッチが使えるとかなり開発�
 - VSCodeをインストール済み
 - Dockerをインストール済み
 - Remote Containersを使用します
-- Dockerfileおよびdocker-compose.ymlはある程度読める方が望ましい
+- Dockerfileおよびcompose.yamlはある程度読める方が望ましい
 - ブレークポイント、ウォッチの解説はしません
 
 ## コンテナイメージを作成しよう
 Remote Containersを使うには該当コンテナのイメージをbuildする必要があります
 docker-composeの構成は以下のように設定し、デバッグ用の8080番ポートを開放します
 
-```yaml:docker-compose.yml
+```yaml:compose.yaml
 services:
   db:
     container_name: db
@@ -93,7 +93,7 @@ Remotes Containerのインストールができたら左下の緑色のマーク
 
 コンテナ名を選択すると`.devcontainer`フォルダが作成され、その中に
 - devcontainer.json
-- docker-compose.yml
+- compose.yaml
 
 が作成されます。`devcontainer.json`に必要な情報を入力していきます
 
@@ -102,14 +102,14 @@ Remotes Containerのインストールができたら左下の緑色のマーク
     // 任意の名前を設定
     "name": "fastapi container",
 
-    // docker-compose.ymlのパスを指定
+    // compose.yamlのパスを指定
     // 今回は.devcontainersフォルダと同じディレクトリ階層に作成したので以下のように記載しています
-    "dockerComposeFile": ["../docker-compose.yml"],
+    "dockerComposeFile": ["../compose.yaml"],
 
-    // docker-compose.ymlに記載されているコンテナのサービス名を記入
+    // compose.yamlに記載されているコンテナのサービス名を記入
     "service": "app",
 
-    // docker-compose.ymlに記載されているWORKDIRを指定
+    // compose.yamlに記載されているWORKDIRを指定
     "workspaceFolder": "/workspace"
 
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -217,8 +217,8 @@ poetry env info
 Virtualenv
 Python:         3.11.9
 Implementation: CPython
-Path:           /root/.cache/pypoetry/virtualenvs/fastapi-tutorial-MATOk_fk-py3.11
-Executable:     /root/.cache/pypoetry/virtualenvs/fastapi-tutorial-MATOk_fk-py3.11/bin/python
+Path:           /root/.cache/pypoetry/virtualenvs/fastapi-tutorial-MATOk_fk-py3.14
+Executable:     /root/.cache/pypoetry/virtualenvs/fastapi-tutorial-MATOk_fk-py3.14/bin/python
 Valid:          True
 
 Base
@@ -226,7 +226,7 @@ Platform:   linux
 OS:         posix
 Python:     3.11.9
 Path:       /usr/local
-Executable: /usr/local/bin/python3.11
+Executable: /usr/local/bin/python3.14
 ```
 
 VirualenvのExecutableのパスをコピーし、VSCodeのコマンドパレットからインタプリンタをVirtualenvのExecutableのパスを設定します

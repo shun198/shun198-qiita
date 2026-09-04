@@ -89,7 +89,7 @@ https://docs.npmjs.com/cli/v8/commands/npm-ci
 setup-nodeでも同様のことができます
 ```yml
     - name: Cache Dependencies
-      uses: actions/setup-node@v6
+      uses: actions/setup-node@v7
       with:
         node-version: '24'
         cache: 'npm'

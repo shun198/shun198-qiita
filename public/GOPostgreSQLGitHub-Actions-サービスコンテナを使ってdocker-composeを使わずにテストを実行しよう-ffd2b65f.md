@@ -68,7 +68,7 @@ jobs:
     # 今回はapplication/内にgo.modを含めたGOのソースコードが含まれているため、指定する
     defaults:
       run:
-        working-directory: {{ env.WORKING_DIRECTORY }}
+        working-directory: ${{ env.WORKING_DIRECTORY }}
     # Postgresのサービスコンテナを設定
     services:
       db:
@@ -88,11 +88,11 @@ jobs:
           --health-retries 5
     steps:
       - name: Chekcout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       # GOのセットアップを実行
       # 2回目以降のテスト実行時はrunner内にCacheを生成してGOのセットアップを高速化
       - name: Setup Go
-        uses: actions/setup-go@v6
+        uses: actions/setup-go@v7
         with:
           go-version: '1.20'
           cache: true
@@ -159,7 +159,7 @@ if: |
 ```yml:.github/workflows/test.yml
     defaults:
       run:
-        working-directory: {{ env.WORKING_DIRECTORY }}
+        working-directory: ${{ env.WORKING_DIRECTORY }}
 ```
 
 ### Postgres用のサービスコンテナの設定
@@ -233,7 +233,7 @@ cache-dependency-path: ${{ env.WORKING_DIRECTORY }}/go.sum
       # GOのセットアップを実行
       # 2回目以降のテスト実行時はrunner内にCacheを生成してGOのセットアップを高速化
       - name: Setup Go
-        uses: actions/setup-go@v6
+        uses: actions/setup-go@v7
         with:
           go-version: '1.20'
           cache: true
