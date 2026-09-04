@@ -7,7 +7,7 @@ tags:
   - GitHubActions
   - Poetry
 private: false
-updated_at: '2026-07-05T22:24:13+09:00'
+updated_at: '2026-08-10T07:59:47+09:00'
 id: d03eef4acbb8d8980d1a
 organization_url_name: null
 slide: false
@@ -395,8 +395,6 @@ PRを作成したらワークフローが実行されます
 ![スクリーンショット 2023-07-05 8.16.11.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/314d773c-ad88-509e-17e0-9222db52f2bc.png)
 
 ## 参考
-https://blog.norio.io/it/ci-cd/use-ephemeral-mysql-in-github-actions-workflow/
-
 https://www.miracleave.co.jp/contents/1538/github-actions-ci/
 
 https://www.hacksoft.io/blog/github-actions-in-action-setting-up-django-and-postgres

@@ -7,7 +7,7 @@ tags:
   - storybook
   - copilot
 private: false
-updated_at: '2025-08-18T07:38:38+09:00'
+updated_at: '2026-08-10T07:59:47+09:00'
 id: c5ebff43a411bf0d26ab
 organization_url_name: null
 slide: false
@@ -261,5 +261,3 @@ https://github.com/modelcontextprotocol/typescript-sdk
 https://zenn.dev/layerx/articles/7e9f87fca65e94
 
 https://developers.play.jp/entry/2025/06/20/191042
-
-https://zenn.dev/takuya77088/articles/f7149723b3b2f2

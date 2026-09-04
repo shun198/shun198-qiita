@@ -7,7 +7,7 @@ tags:
   - openidconnect
   - GitHubActions
 private: false
-updated_at: '2026-07-05T22:24:14+09:00'
+updated_at: '2026-08-10T07:59:47+09:00'
 id: a7ae37e0da3eba2c4387
 organization_url_name: null
 slide: false
@@ -279,7 +279,7 @@ jobs:
       - name: Setup NodeJS
         uses: actions/setup-node@v7
         with:
-          node-version: '16'
+          node-version: '24'
       - name: Cache NodeJS
         uses: actions/cache@v6
         with:

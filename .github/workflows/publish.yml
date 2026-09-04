@@ -20,10 +20,47 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v7.0.0
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
-      - uses: increments/qiita-cli/actions/publish@v1.9.0
+
+      # Keep Node/qiita-cli install aligned with package.json so Dependabot
+      # npm updates apply here without racing the composite action's bare git push.
+      - uses: actions/setup-node@v7.0.0
         with:
-          qiita-token: ${{ secrets.QIITA_TOKEN }}
-          root: "."
+          node-version: "22.23.1"
+
+      - name: Install qiita-cli
+        run: |
+          VERSION="$(node -p "require('./package.json').devDependencies['@qiita/qiita-cli'].replace(/^[^0-9]*/, '')")"
+          npm install -g "@qiita/qiita-cli@${VERSION}"
+
+      - name: Publish articles
+        run: qiita publish --all --root .
+        env:
+          QIITA_TOKEN: ${{ secrets.QIITA_TOKEN }}
+
+      - name: Commit and push metadata updates
+        run: |
+          set -euo pipefail
+          git add ./public/*
+          if git diff --staged --exit-code --quiet; then
+            echo "No metadata changes to commit"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Updated by qiita-cli"
+
+          branch="${GITHUB_REF_NAME}"
+          for attempt in 1 2 3 4; do
+            if git push origin "HEAD:${branch}"; then
+              exit 0
+            fi
+            echo "Push rejected (attempt ${attempt}); rebasing onto origin/${branch}"
+            git fetch origin "${branch}"
+            git rebase "origin/${branch}"
+            sleep $((attempt * 2))
+          done
+          echo "Failed to push after retries" >&2
+          exit 1

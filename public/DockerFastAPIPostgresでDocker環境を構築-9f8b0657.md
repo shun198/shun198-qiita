@@ -7,7 +7,7 @@ tags:
   - FastAPI
   - uvicorn
 private: false
-updated_at: '2026-07-05T22:24:13+09:00'
+updated_at: '2026-08-10T07:59:47+09:00'
 id: 9f8b0657cf5eed1af4f3
 organization_url_name: null
 slide: false
@@ -91,6 +91,7 @@ build-backend = "poetry.core.masonry.api"
 
 ```Dockerfile:containers/fastapi/Dockerfile
 # FastAPIで使用するPythonのイメージを指定
+# tiangolo/uvicorn-gunicornイメージは非推奨(deprecated)となったため、公式のPythonイメージを使用する
 FROM python:3.14-slim
 # PYTHONDONTWRITEBYTECODEとPYTHONUNBUFFEREDはオプション
 # pycファイル(および__pycache__)の生成を行わないようにする

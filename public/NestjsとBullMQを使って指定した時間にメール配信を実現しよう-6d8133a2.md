@@ -7,7 +7,7 @@ tags:
   - NestJS
   - bullmq
 private: false
-updated_at: '2026-04-19T11:36:31+09:00'
+updated_at: '2026-08-10T07:59:47+09:00'
 id: 6d8133a28b6f30e62cea
 organization_url_name: null
 slide: false
@@ -287,6 +287,8 @@ OnWorkerEventのcompletedとfailedを使用してジョブが完了した時、�
 
 https://docs.bullmq.io/guide/workers
 
+https://docs.bullmq.io/guide/events
+
 ```schedule.processor.ts
 import { OnWorkerEvent, Processor, WorkerHost } from '@nestjs/bullmq';
 import { Injectable, Logger } from '@nestjs/common';
@@ -359,3 +361,5 @@ https://note.com/opst_mkrydik/n/n50c53c64bf59
 https://docs.bullmq.io/
 
 https://docs.bullmq.io/guide/workers
+
+https://docs.bullmq.io/guide/events

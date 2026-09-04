@@ -7,7 +7,7 @@ tags:
   - docker-compose
   - LocalStack
 private: false
-updated_at: '2026-07-05T22:24:13+09:00'
+updated_at: '2026-08-10T07:59:47+09:00'
 id: 74883e06d3a8d2bc98c3
 organization_url_name: null
 slide: false
@@ -104,7 +104,7 @@ DjangoのDockerfileを作成します
 今回はPoetryを使用します
 
 ```Dockerfile:containers/django/Dockerfile
-FROM python:3.10
+FROM python:3.14
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
@@ -126,7 +126,7 @@ Celeryを使って定期実行処理をする際は
 
 ```application/pyproject.toml
 [tool.poetry.dependencies]
-python = ">=3.9,<3.11"
+python = "^3.14"
 Django = "^4.1.2"
 mysqlclient = "^2.1.1"
 celery = "^5.2.7"

@@ -7,7 +7,7 @@ tags:
   - Terraform
   - main.tf
 private: false
-updated_at: '2025-03-02T09:50:46+09:00'
+updated_at: '2026-08-10T07:59:47+09:00'
 id: c13529253cea5b4f41d3
 organization_url_name: null
 slide: false
@@ -97,7 +97,7 @@ terraform {
   }
 
   # Terraformのバージョン制約
-  required_version = ">= 1.2.0"
+  required_version = ">= 1.15.0"
 }
 
 # ------------------------------

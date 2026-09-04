@@ -12,8 +12,8 @@ id: f218686e22488a5427a3
 organization_url_name: null
 slide: false
 ignorePublish: false
-posting_campaign_uuid: null
-agreed_posting_campaign_term: false
+posting_campaign_uuid: 16baee61b1d8bd4aac5a
+agreed_posting_campaign_term: true
 ---
 ## 概要
 LambdaとSecrets Managerを使うと秘匿情報のキーローテーションを実現できます

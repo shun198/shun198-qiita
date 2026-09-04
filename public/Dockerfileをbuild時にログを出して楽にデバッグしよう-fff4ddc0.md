@@ -5,7 +5,7 @@ tags:
   - Linuxコマンド
   - docker-compose
 private: false
-updated_at: '2026-07-05T22:24:13+09:00'
+updated_at: '2026-08-10T07:49:18+09:00'
 id: fff4ddc0d7ae53665c2c
 organization_url_name: null
 slide: false
@@ -19,7 +19,7 @@ agreed_posting_campaign_term: false
 ## Docker imageをbuildするとき
 Pythonのimageを例に出します
 ```Dockerfile
-FROM python:3.10
+FROM python:3.14
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
@@ -63,7 +63,7 @@ docker compose build --progress=plain
 とLinuxの`ls`コマンドと組み合わせて使うとデバッグが容易になります
 
 ```Dockerfile
-FROM python:3.10
+FROM python:3.14
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
