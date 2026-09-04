@@ -226,7 +226,7 @@ jobs:
         uses: actions/setup-python@v7
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
-          python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"
+          python-version-file: "${{ env.LAMBDA_WORKING_DIRECTORY }}/pyproject.toml"
           cache: 'poetry'
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v6
@@ -288,7 +288,7 @@ JWTトークンを使って認証を行いますがGitHub Actionsのid-tokenの�
         uses: actions/setup-python@v7
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
-          python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"
+          python-version-file: "${{ env.LAMBDA_WORKING_DIRECTORY }}/pyproject.toml"
           cache: 'poetry'
 ```
 
@@ -312,7 +312,7 @@ role-to-assumeに自身で作成されたIAM Roleを記載します
 ```
 
 ### Zipファイルの作成
-必要な外部パッケージをrequirementx.txtに出力し、requirements.txt内のパッケージをインストールします
+必要な外部パッケージをrequirements.txtに出力し、requirements.txt内のパッケージをインストールします
 LambdaにアップロードするZipファイル内で不要になるファイルを削除した後に指定した名前のZipファイルに圧縮します
 
 ```yml

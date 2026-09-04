@@ -184,9 +184,9 @@ runs-onで指定したUbuntuが選択されていることが確認できます
 Run lsb_release -a
 No LSB modules are available.
 Distributor ID:	Ubuntu
-Description:	Ubuntu 22.04.5 LTS
-Release:	20.04
-Codename:	focal
+Description:	Ubuntu 24.04.3 LTS
+Release:	24.04
+Codename:	noble
 ```
 
 次に`actions/checkout@v7`を実行する前のファイル構成とパスを確認します
@@ -534,7 +534,7 @@ https://github.com/actions/setup-python
 
 #### Node.js
 公式が出しているNode.jsのsetup用のactionです
-Nodeのversionについては16,18,20をサポートしています
+Nodeのversionは現行のLTSを指定します。この例では24を使っています
 以下がnpmを使ってCacheを使うときのワークフロー例です
 
 ```yaml:.github/workflows/setup-node.yml
@@ -556,8 +556,8 @@ steps:
       with:
         node-version: 24
         cache: 'yarn'
-        cache-dependency-path: '**/package-lock.json'
-    - run: npm ci
+        cache-dependency-path: '**/yarn.lock'
+    - run: yarn install --frozen-lockfile
 ```
 
 また、node-version-fileのオプションを使うことでpackage.json内に記載されたNodeのversionを自動的に適用させることもできます

@@ -278,7 +278,7 @@ get_dbメソッドを使ってDBのセッションを作成し、使用後に接
 レスポンスを作成する前に実行されるのは以下の箇所です
 
 ```python
-    db = DBSession()
+    db = SessionLocal()
     try:
         yield db
 ```

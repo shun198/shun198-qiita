@@ -192,13 +192,13 @@ def login_for_access_token(
         user.username,
         user.id,
         "access",
-        timedelta(minutes=int(ACCESS_TOKEN_EXPIRE_MINUTES)),
+        timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES),
     )
     refresh_token = create_jwt_token(
         user.username,
         user.id,
         "refresh",
-        timedelta(days=int(REFRESH_TOKEN_EXPIRE_DAYS)),
+        timedelta(days=REFRESH_TOKEN_EXPIRE_DAYS),
     )
 
     return {"access_token": access_token, "refresh_token": refresh_token, "token_type": "bearer"}
@@ -228,6 +228,7 @@ def authenticate_user(username: str, password: str, db):
 ### 現在のログインユーザの確認
 
 認証が必要なAPIに対して該当するユーザが存在するか確認するメソッドを作成します。
+`decode_token`と`oauth2_scheme`の定義は、後述の実装一覧にまとめています。
 
 ```routers/auth.py
 def get_current_user(
