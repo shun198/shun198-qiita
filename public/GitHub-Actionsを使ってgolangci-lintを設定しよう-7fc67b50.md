@@ -65,9 +65,9 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Setup Golang
-        uses: actions/setup-go@v6
+        uses: actions/setup-go@v7
         with:
           go-version-file: ${{ env.WORKING_DIRECTORY }}/go.mod
           cache: true
@@ -93,7 +93,7 @@ https://github.com/actions/setup-go
 
 ```yml
       - name: Setup Golang
-        uses: actions/setup-go@v6
+        uses: actions/setup-go@v7
         with:
           go-version-file: ${{ env.WORKING_DIRECTORY }}/go.mod
           cache: true

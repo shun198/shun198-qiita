@@ -124,14 +124,14 @@ jobs:
           --health-retries 5
     steps:
       - name: Chekcout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       # Poetryのインストール
       - name: Install poetry
         run: pipx install poetry
       # Pythonのセットアップを実行
       # 2回目以降のテスト実行時はrunner内にPoetryのCacheを生成してPoetryのセットアップを高速化
       - name: Use cache dependencies
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
           python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"
@@ -150,7 +150,7 @@ jobs:
           poetry run pytest --junitxml=pytest.xml -x -n auto --cov --no-cov-on-fail | tee pytest-coverage.txt
       # カバレッジをPRに表示
       - name: Pytest coverage comment
-        uses: MishaKav/pytest-coverage-comment@main
+        uses: MishaKav/pytest-coverage-comment@v1.12.2
         with:
           pytest-coverage-path: ${{ env.WORKING_DIRECTORY }}/pytest-coverage.txt
           junitxml-path: ${{ env.WORKING_DIRECTORY }}/pytest.xml
@@ -291,7 +291,7 @@ cache: 'poetry'
       # 2回目以降のテスト実行時はrunner内にPoetryのCacheを生成
       # Poetryのセットアップを高速化
       - name: Use cache dependencies
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
           python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"
@@ -352,7 +352,7 @@ https://pypi.org/project/pytest-xdist/
 ```yml:.github/workflows/test.yml
       # カバレッジをPRに表示
       - name: Pytest coverage comment
-        uses: MishaKav/pytest-coverage-comment@main
+        uses: MishaKav/pytest-coverage-comment@v1.12.2
         with:
           # パスは今回はカレントディレクトリではなく、applicationを指定
           pytest-coverage-path: ${{ env.WORKING_DIRECTORY }}/pytest-coverage.txt

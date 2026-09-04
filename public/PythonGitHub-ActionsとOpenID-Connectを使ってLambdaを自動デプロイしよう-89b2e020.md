@@ -217,13 +217,13 @@ jobs:
         working-directory: ${{ env.LAMBDA_WORKING_DIRECTORY }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       # Poetryのインストール
       - name: Install poetry
         run: pipx install poetry
-      # Python3.11を使用したいので設定
+      # Python 3.14を使用するための設定
       - name: Setup Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
           python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"
@@ -253,7 +253,7 @@ jobs:
         run: |
           aws lambda create-function \
           --function-name ${{ env.FUNCTION_NAME }} \
-          --runtime python3.11 \
+          --runtime python3.14 \
           --handler lambda_function.lambda_handler \
           --zip-file fileb://lambda.zip \
           --timeout 60 \
@@ -283,9 +283,9 @@ JWTトークンを使って認証を行いますがGitHub Actionsのid-tokenの�
       # Poetryのインストール
       - name: Install poetry
         run: pipx install poetry
-      # Python3.11を使用したいので設定
+      # Python 3.14を使用するための設定
       - name: Setup Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           # pyproject.tomlからPythonのversionを指定(絶対パス)
           python-version-file: "${{ env.WORKING_DIRECTORY }}/pyproject.toml"
@@ -366,7 +366,7 @@ continue-on-error: true
         run: |
           aws lambda create-function \
           --function-name ${{ env.FUNCTION_NAME }} \
-          --runtime python3.11 \
+          --runtime python3.14 \
           --handler lambda_function.lambda_handler \
           --zip-file fileb://lambda.zip \
           --timeout 60 \
@@ -443,5 +443,4 @@ https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/lambda-api-permissions-ref.ht
 https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/lambda-intro-execution-role.html#permissions-executionrole-console
 
 https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda/client/create_function.html
-
 

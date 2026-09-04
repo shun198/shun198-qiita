@@ -31,11 +31,11 @@ Django Debug Toolbarを使うと実行されたSQL、シグナル、APIの実行
 pip install django-debug-toolbar
 ```
 
-### docker-compose.ymlの作成
-Debug Toolbarの静的ファイルを共有できるようdocker-compose.ymlのNginxに設定を行います
+### compose.yamlの作成
+Debug Toolbarの静的ファイルを共有できるようcompose.yamlのNginxに設定を行います
 その際はstaticのvolumeを作成します
 
-```docker-compose.yml
+```compose.yaml
 services:
   db:
     container_name: db

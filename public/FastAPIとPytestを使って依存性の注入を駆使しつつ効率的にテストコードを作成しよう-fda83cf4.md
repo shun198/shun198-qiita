@@ -27,7 +27,7 @@ https://qiita.com/shun198/items/92c4c8eda8a66e78b400
 ## テスト用DBの作成
 DB用のコンテナを作成し、初回起動時にinit.sqlを実行してテスト用DBとユーザを作成するように設定します
 
-```docker-compose.yml
+```compose.yaml
 services:
   db:
     container_name: db
@@ -96,14 +96,15 @@ GRANT ALL PRIVILEGES ON SCHEMA public TO test_user;
 テスト用DBのsqlalchemyの設定は間違えないようにしましょう
 
 ```tests/utils.py
-import bcrypt
 from database import Base
 from models import Users
+from pwdlib import PasswordHash
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
 TEST_SQLALCHEMY_DATABASE_URL = "postgresql://test_user:password@db:5432/test_db"
+password_hash = PasswordHash.recommended()
 
 test_engine = create_engine(TEST_SQLALCHEMY_DATABASE_URL, poolclass=StaticPool)
 
@@ -127,9 +128,7 @@ def override_get_current_user():
         username="test_user_admin_01",
         first_name="user_admin_01",
         last_name="test",
-        password=bcrypt.hashpw(("test").encode("utf-8"), bcrypt.gensalt()).decode(
-            "utf-8"
-        ),
+        password=password_hash.hash("test"),
         is_active=True,
         is_admin=True,
         phone_number="08011112222",
@@ -365,4 +364,3 @@ FastAPIでテストする際は依存性の注入を比較的少ない記述量�
 https://fastapi.tiangolo.com/advanced/testing-dependencies/
 
 https://fastapi.tiangolo.com/ja/tutorial/testing/
-

@@ -43,7 +43,7 @@ tree
 │       └── Dockerfile
 ├── .gitignore
 ├── .env
-└── docker-compose.yml
+└── compose.yaml
 
 ```
 
@@ -52,7 +52,7 @@ tree
 - FlaskのDockerfile
 - PostgresのDockerfile
 - .env
-- docker-compose.yml
+- compose.yaml
 - entrypoint.sh
 
 の順に作成していきます
@@ -114,9 +114,9 @@ POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 ```
 
-### docker-compose.yml
+### compose.yaml
 
-```docker-compose.yml
+```compose.yaml
 services:
   db:
     container_name: db

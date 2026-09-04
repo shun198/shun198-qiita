@@ -21,8 +21,8 @@ agreed_posting_campaign_term: false
 - アプリケーションサーバはGunicorn
 - WebサーバはNginx
 - DB側のコンテナ名はmysql、django側のコンテナ名はapp、nginx側はwebにします
-- 開発用はdocker-compose.yml(Django+MySQL)として作成します
-- 本番用はdocker-compose.prod.yml(Django+MySQL+Nginx)として作成します
+- 開発用はcompose.yaml(Django+MySQL)として作成します
+- 本番用はcompose.prod.yaml(Django+MySQL+Nginx)として作成します
 - 作成するプロジェクト名はdjangopjにしていますが別のプロジェクト名で作成する際はdjangopjと置き換えて作成してください
 
 ## 概要
@@ -65,8 +65,8 @@ tree
 ├── .env
 ├── .env.prod
 ├── entrypoint.sh
-├── docker-compose.prod.yml
-├── docker-compose.yml
+├── compose.prod.yaml
+├── compose.yaml
 └── requirements.txt
 ```
 
@@ -77,8 +77,8 @@ tree
 - my.cnf(MySQL用の設定ファイル)
 - init.sql(MySQLのユーザに権限を付与)
 - default.conf(Nginx用の設定ファイル)
-- docker-compose.yml(開発用)
-- docker-compose.prod.yml(本番用)
+- compose.yaml(開発用)
+- compose.prod.yaml(本番用)
 - requirements.txt(ざっくり言うとRailsでいうGemfileにあたる)
 - .env(開発用の環境変数の設定ファイル)
 - .env.prod(本番用の環境変数の設定ファイル)
@@ -90,7 +90,7 @@ tree
 ## そもそもなんで開発用と本番用に分けるの？
 Django+MySQL+Nignxの構成で開発する場合、Nginxは静的ファイルを表示させる機能しかないため、ViewやModelの変更を反映させるには都度コンテナを再起動させる必要があります(要するにホットリロードができないため、開発効率が悪い)
 そのため、開発はDjango+MySQLのコンテナで行い、本番環境ではNginxのポートから画面を確認する運用になるかと思います
-実際は本番環境ではAWSのECSやFargateなどを使用しますが本記事ではローカル上で使用する開発用、本番用のDockerfileとdocker-compose.ymlの書き方もあわせて解説します
+実際は本番環境ではAWSのECSやFargateなどを使用しますが本記事ではローカル上で使用する開発用、本番用のDockerfileとcompose.yamlの書き方もあわせて解説します
 
 ## 各ファイルに必要なコードを記入しよう
 ### Dockerfile(Django)
@@ -196,8 +196,8 @@ server {
 }
 ```
 
-### docker-compose.yml(開発用)
-```docker-compose.yml
+### compose.yaml(開発用)
+```compose.yaml
 # db(MySQL),app(Django)のコンテナを作成
 services:
   db:
@@ -262,8 +262,8 @@ volumes:
   static:
 ```
 
-### docker-compose.prod.yml(本番用)
-```docker-compose.prod.yml
+### compose.prod.yaml(本番用)
+```compose.prod.yaml
 # db(MySQL),app(Django),web(Nginx)のコンテナを作成
 services:
   db:
@@ -338,7 +338,7 @@ gunicorn>=19.9.0,<20.0
 ```
 
 ### .env(開発用)
-MySQLのrootユーザのパスワードなどをdocker-compose.ymlやDjangoのsettings.pyに書くのは危険なので.envファイルを使います
+MySQLのrootユーザのパスワードなどをcompose.yamlやDjangoのsettings.pyに書くのは危険なので.envファイルを使います
 今回は開発用のためDEBUG=Trueにする必要があります
 .gitignore(後述)があることで.envファイルはGitHubに上がることはありません
 今回は以下のような内容にします
@@ -373,7 +373,7 @@ DEBUG=False
 
 ### entrypoint.sh
 Djangoのマイグレーションや管理者画面、Django Rest Frameworkの静的ファイルを集めるコマンドを定義します
-また、開発環境、本番環境では使うコマンドが違うので1つのシェルスクリプトに記載すると同じような記述をdocker-compose.ymlに書かなくてもいい上に可読性が上がります
+また、開発環境、本番環境では使うコマンドが違うので1つのシェルスクリプトに記載すると同じような記述をcompose.yamlに書かなくてもいい上に可読性が上がります
 ```
 #!/bin/sh
 ```
@@ -421,14 +421,14 @@ migrations/
 https://github.com/github/gitignore
 
 ## imageのビルド、Djangoの画面表示まで行おう
-今回はNginxのポートにアクセスしてDjangoの画面を表示させたいのでdocker-compose.prod.yml(本番用)を使います
-開発する場合はコマンドで指定しているファイルをdocker-compose.ymlに置き換えて、8000番ポートにアクセスしてください
+今回はNginxのポートにアクセスしてDjangoの画面を表示させたいのでcompose.prod.yaml(本番用)を使います
+開発する場合はコマンドで指定しているファイルをcompose.yamlに置き換えて、8000番ポートにアクセスしてください
 
 ### docker-composeでDocker imageを作成しよう(初回)
 プロジェクトを新規作成する際はプロジェクト名と作成するディレクトリを指定して以下のコマンドを実行します
 今回はdjangopjのプロジェクトをカレントディレクトリに作成します
 ```terminal:terminal
-docker compose -f docker-compose.prod.yml run app django-admin startproject djangopj .
+docker compose -f compose.prod.yaml run app django-admin startproject djangopj .
 ```
 
 実行するとローカルのディレクトリ構成は以下のようになります
@@ -456,8 +456,8 @@ tree
 ├── .env
 ├── .env.prod
 ├── .gitignore
-├── docker-compose.prod.yml
-├── docker-compose.yml
+├── compose.prod.yaml
+├── compose.yaml
 ├── entrypoint.sh
 ├── manage.py
 ├── requirements.txt
@@ -467,7 +467,7 @@ tree
 ### すでにプロジェクトがある場合
 GitHubにあるソースコードをcloneする場合など、プロジェクトが作成済みの時は以下のコマンドを実行します
 ```
-docker compose -f docker-compose.prod.yml build
+docker compose -f compose.prod.yaml build
 ```
 
 ### settings.pyのDATABASESを変更
@@ -529,7 +529,7 @@ STATIC_URL = "/static/"
 コンテナをデタッチモードで起動する
 デタッチモード起動することでコンテナの中に入らずにバックグラウンドで起動させることができます
 ```terminal:terminal
-docker compose -f docker-compose.prod.yml up -d
+docker compose -f compose.prod.yaml up -d
 ```
 
 ### 127.0.0.1:80にアクセスしてみよう
@@ -558,15 +558,15 @@ DEBUG=Trueに設定した場合は下記の画像が表示されます
 
 上記のような画面が表示されない場合は初回起動時にMySQL側のコンテナがうまく立ち上がってない可能性があるので
 ```terminal
-docker compose -f docker-compose.prod.yml down
+docker compose -f compose.prod.yaml down
 ```
 でコンテナを停止させた後に
 ```terminal
-docker compose -f docker-compose.prod.yml up -d
+docker compose -f compose.prod.yaml up -d
 ```
 でコンテナをもう一度立ち上げてみてください
 
-### もう一度`docker compose -f docker-compose.prod.yml up -d`しても接続できない時
+### もう一度`docker compose -f compose.prod.yaml up -d`しても接続できない時
 #### failed (111: Connection refused) while connecting to upstream
 Nginxのdefault.confを見直す必要があります
 ```containers/nginx/conf.d/default.conf
@@ -616,8 +616,8 @@ tree
 ├── .env
 ├── .env.prod
 ├── entrypoint.sh
-├── docker-compose.prod.yml
-├── docker-compose.yml
+├── compose.prod.yaml
+├── compose.yaml
 └── pyproject.toml
 ```
 
@@ -663,7 +663,7 @@ RUN chmod 755 entrypoint.sh
 ### 新規プロジェクトの作成
 新規プロジェクトを作成する際は以下のコマンドを入力します
 ```
-docker compose -f docker-compose.prod.yml run app poetry run django-admin startproject djangopj .
+docker compose -f compose.prod.yaml run app poetry run django-admin startproject djangopj .
 ```
 
 以下のようになれば成功です
@@ -690,8 +690,8 @@ tree
 ├── .env
 ├── .env.prod
 ├── .gitignore
-├── docker-compose.prod.yml
-├── docker-compose.yml
+├── compose.prod.yaml
+├── compose.yaml
 ├── entrypoint.sh
 ├── manage.py
 ├── poetry.lock
@@ -756,8 +756,8 @@ tree
 ├── .env
 ├── .env.prod
 ├── .gitignore
-├── docker-compose.prod.yml
-├── docker-compose.yml
+├── compose.prod.yaml
+├── compose.yaml
 ├── entrypoint.sh
 ├── manage.py
 ├── poetry.lock
@@ -792,7 +792,7 @@ django_settings = DjangoSettings()
 以下のようにdjango_settingsをimportすると環境変数を設定できます
 エディタの補完機能を使えば該当する環境変数をタイポなしで設定できるので開発が捗ります
 また、上記のようにデフォルト値を設定できますが、
-docker-compose.ymlでMySQLのコンテナを起動させるときにMySQLの環境変数が必要です
+compose.yamlでMySQLのコンテナを起動させるときにMySQLの環境変数が必要です
 ```.env
 MYSQL_ROOT_PASSWORD=root
 MYSQL_DATABASE=django-db

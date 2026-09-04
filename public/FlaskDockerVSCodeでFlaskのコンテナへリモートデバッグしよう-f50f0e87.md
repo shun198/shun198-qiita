@@ -25,14 +25,14 @@ VSCodeのブレークポイントやウォッチが使えるとかなり開発�
 - VSCodeをインストール済み
 - Dockerをインストール済み
 - Remote Containersを使用します
-- Dockerfileおよびdocker-compose.ymlはある程度読める方が望ましい
+- Dockerfileおよびcompose.yamlはある程度読める方が望ましい
 - ブレークポイント、ウォッチの解説はしません
 
 ## コンテナイメージを作成しよう
 Remote Containersを使うには該当コンテナのイメージをbuildする必要があります
 docker-composeの構成は以下のように設定し、デバッグ用の8080番ポートを開放します
 
-```yaml:docker-compose.yml
+```yaml:compose.yaml
 services:
   db:
     container_name: db
@@ -93,7 +93,7 @@ Remotes Containerのインストールができたら左下の緑色のマーク
 
 コンテナ名を選択すると`.devcontainer`フォルダが作成され、その中に
 - devcontainer.json
-- docker-compose.yml
+- compose.yaml
 
 が作成されます。`devcontainer.json`に必要な情報を入力していきます
 
@@ -103,7 +103,7 @@ Remotes Containerのインストールができたら左下の緑色のマーク
 {
 	"name": "flask container",
 	"dockerComposeFile": [
-		"../docker-compose.yml"
+		"../compose.yaml"
 	],
     "service": "app",
 	"workspaceFolder": "/code"

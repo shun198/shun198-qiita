@@ -16,7 +16,7 @@ posting_campaign_uuid: null
 agreed_posting_campaign_term: false
 ---
 ## 前提
-- docker-compose.ymlを使用
+- compose.yamlを使用
 - ある程度Dockerの知識を持っていること
 - メール送信する際にSwaggerを使用します
 
@@ -35,7 +35,7 @@ MailCatcherのイメージを指定して
 - Webブラウザで閲覧する用の1080番ポート
  
 の2種類のポートを解放します
-```yml:docker-compose.yml
+```yml:compose.yaml
   mail:
     container_name: mail
     image: schickling/mailcatcher
@@ -409,8 +409,6 @@ https://qiita.com/shun198/items/23c6baa450ba37a5fd66
 https://mailcatcher.me/
 
 https://book-reviews.blog/send-email-on-local-development-environment-on-Django/
-
-https://tech.respect-pal.jp/mail_debug_with_mailcatcher/
 
 https://qiita.com/pocari/items/de0436c39ffc65647cf0
 

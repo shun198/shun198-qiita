@@ -27,13 +27,13 @@ agreed_posting_campaign_term: false
 - Flaskのバージョン3を使用
 
 ## Flask-SQLAlchemyを使ったアプリケーションとDBの接続設定
-docker-compose.ymlにアプリケーションとDBの設定を記載します
+compose.yamlにアプリケーションとDBの設定を記載します
 
 今回はFlask-SQLAlchemyについての記事なので詳細は説明しませんが、気になる方は以下の記事を参考にしてみてください
 
 https://qiita.com/shun198/items/8c76a92a75c2adc16ca5
 
-```docker-compose.yml
+```compose.yaml
 services:
   db:
     container_name: db

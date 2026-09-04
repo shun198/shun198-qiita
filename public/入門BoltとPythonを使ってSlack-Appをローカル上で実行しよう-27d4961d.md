@@ -20,7 +20,7 @@ BoltとPythonを使ってSlack Appをローカル上で実行する方法につ�
 
 ## 前提
 - Pythonを使用
-- Docker、docker-compose.ymlを使用
+- Docker、compose.yamlを使用
 - Poetryを使用
 - Slackのワークスペースを作成済み
 
@@ -39,7 +39,7 @@ tree
 ├── containers
 │   └── python
 │       └── Dockerfile
-└── docker-compose.yml
+└── compose.yaml
 ```
 
 ## Slack Appの作成
@@ -120,7 +120,7 @@ RUN poetry install
 ```
 
 Dockerfileを簡単に起動できるようdocker-composeを作成します
-```docker-compose.yml
+```compose.yaml
 services:
   app:
     container_name: app

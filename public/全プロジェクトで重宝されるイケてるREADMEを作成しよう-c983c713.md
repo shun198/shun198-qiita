@@ -177,12 +177,12 @@ READMEはあくまでプロジェクトの概要と開発環境の構築方法�
 | make app | アプリケーション のコンテナへ入る | docker exec -it app bash |
 | make db | データベースのコンテナへ入る | docker exec -it db bash |
 | make pdoc | pdoc ドキュメントの作成 | docker compose exec app env CI_MAKING_DOCS=1 poetry run pdoc -o docs application |
-| make init | Terraform の初期化 | docker compose -f infra/docker-compose.yml run --rm terraform init |
-| make fmt | Terraform の設定ファイルをフォーマット | docker compose -f infra/docker-compose.yml run --rm terraform fmt |
-| make validate | Terraform の構成ファイルが正常であることを確認 | docker compose -f infra/docker-compose.yml run --rm terraform validate |
-| make show | 現在のリソースの状態を参照 | docker compose -f infra/docker-compose.yml run --rm terraform show |
-| make apply | Terraform の内容を適用 | docker compose -f infra/docker-compose.yml run --rm terraform apply |
-| make destroy | Terraform で構成されたリソースを削除 | docker compose -f infra/docker-compose.yml run --rm terraform destroy |
+| make init | Terraform の初期化 | docker compose -f infra/compose.yaml run --rm terraform init |
+| make fmt | Terraform の設定ファイルをフォーマット | docker compose -f infra/compose.yaml run --rm terraform fmt |
+| make validate | Terraform の構成ファイルが正常であることを確認 | docker compose -f infra/compose.yaml run --rm terraform validate |
+| make show | 現在のリソースの状態を参照 | docker compose -f infra/compose.yaml run --rm terraform show |
+| make apply | Terraform の内容を適用 | docker compose -f infra/compose.yaml run --rm terraform apply |
+| make destroy | Terraform で構成されたリソースを削除 | docker compose -f infra/compose.yaml run --rm terraform destroy |
 
 ### トラブルシューティング
 仮に手順通りに環境構築したつもりでもできていない場合はトラブルシューティング欄を設けています
@@ -339,7 +339,7 @@ React、DRF、Terraform を勉強する際に使用できるテンプレート
 │   ├── front
 │   ├── mysql
 │   └── nginx
-├── docker-compose.yml
+├── compose.yaml
 ├── frontend
 │   ├── .gitignore
 │   ├── README.md
@@ -357,7 +357,7 @@ React、DRF、Terraform を勉強する際に使用できるテンプレート
 │   └── tsconfig.json
 └── infra
     ├── .gitignore
-    ├── docker-compose.yml
+    ├── compose.yaml
     ├── main.tf
     ├── network.tf
     └── variables.tf
@@ -435,12 +435,12 @@ make down
 | make app            | アプリケーション のコンテナへ入る                                       | docker exec -it app bash                                                                   |
 | make db             | データベースのコンテナへ入る                                            | docker exec -it db bash                                                                    |
 | make pdoc           | pdoc ドキュメントの作成                                                 | docker compose exec app env CI_MAKING_DOCS=1 poetry run pdoc -o docs application           |
-| make init           | Terraform の初期化                                                      | docker compose -f infra/docker-compose.yml run --rm terraform init                         |
-| make fmt            | Terraform の設定ファイルをフォーマット                                  | docker compose -f infra/docker-compose.yml run --rm terraform fmt                          |
-| make validate       | Terraform の構成ファイルが正常であることを確認                          | docker compose -f infra/docker-compose.yml run --rm terraform validate                     |
-| make show           | 現在のリソースの状態を参照                                              | docker compose -f infra/docker-compose.yml run --rm terraform show                         |
-| make apply          | Terraform の内容を適用                                                  | docker compose -f infra/docker-compose.yml run --rm terraform apply                        |
-| make destroy        | Terraform で構成されたリソースを削除                                    | docker compose -f infra/docker-compose.yml run --rm terraform destroy                      |
+| make init           | Terraform の初期化                                                      | docker compose -f infra/compose.yaml run --rm terraform init                         |
+| make fmt            | Terraform の設定ファイルをフォーマット                                  | docker compose -f infra/compose.yaml run --rm terraform fmt                          |
+| make validate       | Terraform の構成ファイルが正常であることを確認                          | docker compose -f infra/compose.yaml run --rm terraform validate                     |
+| make show           | 現在のリソースの状態を参照                                              | docker compose -f infra/compose.yaml run --rm terraform show                         |
+| make apply          | Terraform の内容を適用                                                  | docker compose -f infra/compose.yaml run --rm terraform apply                        |
+| make destroy        | Terraform で構成されたリソースを削除                                    | docker compose -f infra/compose.yaml run --rm terraform destroy                      |
 
 ### リモートデバッグの方法
 

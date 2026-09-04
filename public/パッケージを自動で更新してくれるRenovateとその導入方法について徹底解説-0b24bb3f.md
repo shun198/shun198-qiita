@@ -68,7 +68,7 @@ Renovateが自動にPRを作成し、以下のように対象のパッケージ�
 
 ![スクリーンショット 2024-01-23 11.03.39.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/625980/0151c284-db24-c63c-fa04-e311982a05df.png)
 
-今回はDockerfile、docker-compose.yml、GitHub Actions内の
+今回はDockerfile、compose.yaml、GitHub Actions内の
 - Python
 - Postgres
 

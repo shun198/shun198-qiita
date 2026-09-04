@@ -21,7 +21,7 @@ Docker環境でGormを使ってデータベースへの接続とマイグレー�
 ## 前提
 - WebフレームワークはGin、DBはPostgresを使用
 - GormとPostgresのドライバーをインストール済み
-- Docker環境を構築している前提で解説するので今回はDockerfileとdocker-compose.ymlの書き方については解説しませんのでご了承ください
+- Docker環境を構築している前提で解説するので今回はDockerfileとcompose.yamlの書き方については解説しませんのでご了承ください
 
 
 ## ディレクトリ構成
@@ -45,13 +45,13 @@ Docker環境でGormを使ってデータベースへの接続とマイグレー�
 │   │   └── Dockerfile
 │   └── postgres
 │       └── Dockerfile
-└── docker-compose.yml
+└── compose.yaml
 ```
 
 ## Docker環境の構築
 GolangとPostgresのコンテナを用意します
 
-```docker-compose.yml
+```compose.yaml
 services:
   app:
     container_name: app
@@ -148,7 +148,7 @@ func main() {
 ## データベースへの接続とMigrationの実行
 Postgresのコンテナへ接続するよう設定します
 以下のようにdsnにDBへ接続するための情報を代入します
-コンテナを使用するときのホストはdocker-compose.ymlで設定したdbを使用しています
+コンテナを使用するときのホストはcompose.yamlで設定したdbを使用しています
 
 ```go
 dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s",

@@ -106,7 +106,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       # https://github.com/google-github-actions/auth
       - name: Authenticate to Google Cloud with Workload Identity
         uses: google-github-actions/auth@v3

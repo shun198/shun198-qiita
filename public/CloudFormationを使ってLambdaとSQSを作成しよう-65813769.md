@@ -276,8 +276,8 @@ Parameters:
     Description: "Enter the Lambda function runtime."
     Type: String
     AllowedValues:
-      - python3.11
-    Default: python3.11
+      - python3.14
+    Default: python3.14
   QueueArn:
     Description: "Enter the SQS queue ARN (ex: arn:aws:sqs:<aws_region>:<aws_account_id>:shun198-dev-sqs.fifo)"
     Type: String

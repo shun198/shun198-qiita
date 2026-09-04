@@ -26,7 +26,7 @@ Djangoのアプリケーション内でログインユーザの
 
 ## 前提
 - 通常はconf.yml内にlogの設定を記載しますが、今回はpyproject.toml内に記載します
-- tomllibを使うため、python3.11を使用
+- Python 3.14を使用
 - プロジェクトとアプリケーションを作成済み
 
 本記事では
@@ -301,7 +301,7 @@ class ConfFile:
 ```
 
 ### tomllib
-Python 3.11から新しく標準ライブラリに追加された、pyproject.tomlの内容をパースするライブラリです
+Python 3.14では標準ライブラリとして利用できる、pyproject.tomlの内容をパースするライブラリです
 
 https://docs.python.org/ja/dev/library/tomllib.html
 

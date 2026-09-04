@@ -59,7 +59,7 @@ tree
 ```
 
 以下のファイルを実装します
-- docker-compose.yml
+- compose.yaml
 - email.module.ts
 - email.service.ts
 - welcome.hbs
@@ -70,7 +70,7 @@ tree
 - user.controller.ts
 
 ## 実装
-### docker-compose.yml
+### compose.yaml
 Mailサーバ用のコンテナを作成する際にMailCatcherを使用します
 
 #### mailcatcherとは
@@ -88,7 +88,7 @@ MailCatcherのイメージを指定して
  
 の2種類のポートを解放します
 
-```docker-compose.yml
+```compose.yaml
 services:
   mail:
     container_name: mail

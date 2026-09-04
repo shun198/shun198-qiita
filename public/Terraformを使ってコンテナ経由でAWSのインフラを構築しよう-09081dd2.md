@@ -20,7 +20,7 @@ agreed_posting_campaign_term: false
 - AWSのアカウントを作成済み
 - AWS Vaultをインストールおよび設定済み
 
-AWS Valutをまだインストールおよび設定できてない方は以下の公式ドキュメントと記事を参考にしてください
+AWS Vaultをまだインストールおよび設定できていない方は以下の公式ドキュメントと記事を参考にしてください
 
 https://github.com/99designs/aws-vault
 
@@ -37,7 +37,7 @@ tree
 .
 ├── .gitignore
 └── infra
-    ├── docker-compose.yml
+    ├── compose.yaml
     └── main.tf
 ```
 
@@ -46,18 +46,18 @@ tree
 
 https://github.com/github/gitignore/blob/main/Terraform.gitignore
 
-### infra/docker-compose.yml
-以下のようにdocker-compose.ymlを記載します
+### infra/compose.yaml
+以下のようにcompose.yamlを記載します
 
-使用するimageは`hashicorp/terraform:1.15.7`です
+Terraform CLIのCommunity版にはLTSチャンネルがないため、公式配布ページの最新安定版である`hashicorp/terraform:1.16.0`を使用します。
 
 https://hub.docker.com/r/hashicorp/terraform/tags
 
-```docker-compose.yml
+```compose.yaml
 services:
   terraform:
     container_name: terraform
-    image: hashicorp/terraform:1.15.7
+    image: hashicorp/terraform:1.16.0
     # M1チップでも動くように
     platform: linux/x86_64
     volumes:
@@ -81,16 +81,16 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.16"
+      version = "~> 6.62.0"
     }
   }
 
-  required_version = ">= 1.15.0"
+  required_version = "~> 1.16.0"
 }
 
 provider "aws" {
   #　東京リージョンを使用します
-  region  = "ap-northeast-1"
+  region = "ap-northeast-1"
 }
 
 resource "aws_instance" "app_server" {
@@ -114,7 +114,7 @@ aws-vault exec shun198 --duration=12h
 ### Terraformの初期設定
 以下のコマンドを実行してTerraformの初期設定を行います
 ```
-docker compose -f infra/docker-compose.yml run --rm terraform init
+docker compose -f infra/compose.yaml run --rm terraform init
 ```
 
 以下のログが出たら成功です
@@ -122,9 +122,9 @@ docker compose -f infra/docker-compose.yml run --rm terraform init
 Initializing the backend...
 
 Initializing provider plugins...
-- Finding hashicorp/aws versions matching "~> 4.16"...
-- Installing hashicorp/aws v4.48.0...
-- Installed hashicorp/aws v4.48.0 (signed by HashiCorp)
+- Finding hashicorp/aws versions matching "~> 6.62.0"...
+- Installing hashicorp/aws v6.62.0...
+- Installed hashicorp/aws v6.62.0 (signed by HashiCorp)
 
 Terraform has created a lock file .terraform.lock.hcl to record the provider
 selections it made above. Include this file in your version control repository
@@ -144,19 +144,19 @@ commands will detect it and remind you to do so if necessary.
 
 気になる方はterraform fmtコマンドを実行してmain.tfのフォーマットを修正しましょう
 ```
-docker compose -f infra/docker-compose.yml run --rm terraform fmt
+docker compose -f infra/compose.yaml run --rm terraform fmt
 main.tf
 ```
 
 main.tfが有効かどうかvalidateコマンドで確認します
 ```
-docker compose -f infra/docker-compose.yml run --rm terraform validate
+docker compose -f infra/compose.yaml run --rm terraform validate
 Success! The configuration is valid.
 ```
 
 AWSに適用される変更を`plan`コマンドで確認します
 ```
-docker compose -f infra/docker-compose.yml run --rm terraform plan
+docker compose -f infra/compose.yaml run --rm terraform plan
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
@@ -167,7 +167,7 @@ Terraform will perform the following actions:
 AWSに`main.tf`の設定を適用します
 今回は`-auto-approve`を実行してyesを自動的に入力します
 ```
-docker compose -f infra/docker-compose.yml run --rm terraform apply -auto-approve
+docker compose -f infra/compose.yaml run --rm terraform apply -auto-approve
 ```
 
 以下のログが出たら成功です
@@ -188,7 +188,7 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ## 作成したインフラを削除しよう
 EC2インスタンスを削除します
 ```
-docker compose -f infra/docker-compose.yml run --rm terraform destroy
+docker compose -f infra/compose.yaml run --rm terraform destroy
 ```
 
 yesを入力します
@@ -221,14 +221,14 @@ Destroy complete! Resources: 1 destroyed.
 ```
 make fmt
 ```
-と打ったたけで
+と入力するだけで
 ```
-docker compose -f infra/docker-compose.yml run --rm terraform fmt
+docker compose -f infra/compose.yaml run --rm terraform fmt
 ```
 を打ったことになるのでとても楽になります
 
 ```Makefile
-RUN_TERRAFORM = docker compose -f infra/docker-compose.yml run --rm terraform
+RUN_TERRAFORM = docker compose -f infra/compose.yaml run --rm terraform
 IAM_USER = shun198
 DURATION = 12h
 
@@ -271,7 +271,9 @@ https://qiita.com/shun198/items/14cdba2d8e58ab96cf95
 https://qiita.com/shun198/items/ab6eca4bbe4d065abb8f
 
 ## 参考
-https://hub.docker.com/layers/hashicorp/terraform/1.3.6/images/sha256-df0e0dd569697f24e8c207c22dbf1ef3ff386af750e9727a8713d4031c450fa3?context=explore
+https://developer.hashicorp.com/terraform/install
+
+https://support.hashicorp.com/hc/en-us/articles/36257315779219-Subscribe-to-HashiCorp-Release-Updates
 
 https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-build
 

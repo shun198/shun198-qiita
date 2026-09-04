@@ -15,7 +15,7 @@ posting_campaign_uuid: null
 agreed_posting_campaign_term: false
 ---
 ## 概要
-Apache Kafkaを使ったイベント駆動開発（Event-Driven Development）の方法についてPython、Kafka、docker-compose.ymlを交えて解説します
+Apache Kafkaを使ったイベント駆動開発（Event-Driven Development）の方法についてPython、Kafka、compose.yamlを交えて解説します
 構成としては以下のとおりです
 - Producer
     - Brokerへイベントを送信するPythonのバッチ
@@ -55,7 +55,7 @@ KafkaはTopic単位でメッセージのやり取りを行っており、送信�
 - kafka-ui
     - ローカル上でメッセージ、TopicなどをGUI上で見るために使用(必須ではない)
 
-```docker-compose.yml
+```compose.yaml
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.9.0

@@ -31,7 +31,7 @@ https://qiita.com/shun198/items/d95001f94aecfc01be92
 ```
 tree
 .
-├── docker-compose.yaml
+├── compose.yaml
 ├── app.module.ts
 ├── main.ts
 ├── dto
@@ -51,7 +51,7 @@ tree
 ## コンテナ環境の用意
 MailCatcherとRedis用のコンテナを用意します
 
-```yaml:docker-compose.yaml
+```yaml:compose.yaml
 services:
   mail:
     container_name: mail
@@ -285,7 +285,7 @@ processor側で指定した時間になったらメールを配信するロジ�
 Processorデコレータを使用してjob用のクラスだと明示し、processメソッドにjobのロジックを記載します
 OnWorkerEventのcompletedとfailedを使用してジョブが完了した時、失敗した時はログを出力するよう設定してます
 
-https://api.docs.bullmq.io/interfaces/v4.WorkerListener.html
+https://docs.bullmq.io/guide/workers
 
 ```schedule.processor.ts
 import { OnWorkerEvent, Processor, WorkerHost } from '@nestjs/bullmq';
@@ -358,4 +358,4 @@ https://note.com/opst_mkrydik/n/n50c53c64bf59
 
 https://docs.bullmq.io/
 
-https://api.docs.bullmq.io/interfaces/v4.WorkerListener.html
+https://docs.bullmq.io/guide/workers

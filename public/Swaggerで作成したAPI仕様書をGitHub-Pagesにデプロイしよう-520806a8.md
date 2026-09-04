@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Chekcout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Install swagger-cli
         run: npm install -g swagger-cli
       - name: Generate Swagger UI
@@ -64,7 +64,7 @@ jobs:
           output: swagger-ui
           spec-file: doc/openapi.yml
       - name: Upload Documents
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           # 絶対パスを指定
           path: swagger-ui
@@ -82,7 +82,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 ```
 
 ## GitHub Pagesの設定

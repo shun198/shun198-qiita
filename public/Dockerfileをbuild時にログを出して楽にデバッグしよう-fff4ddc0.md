@@ -99,8 +99,8 @@ docker compose build --progress=plain
 #23 0.541 drwxr-xr-x  3 root root  4096 Nov 30 07:53 <プロジェクト名>
 #23 0.541 drwxr-xr-x  5 root root  4096 Nov 30 07:53 containers
 #23 0.541 drwxr-xr-x 10 root root  4096 Nov 30 07:53 <アプリケーション名>
-#23 0.541 -rw-r--r--  1 root root  1085 Nov  8 02:53 docker-compose.prod.yml
-#23 0.541 -rw-r--r--  1 root root  1339 Nov 16 00:59 docker-compose.yml
+#23 0.541 -rw-r--r--  1 root root  1085 Nov  8 02:53 compose.prod.yaml
+#23 0.541 -rw-r--r--  1 root root  1339 Nov 16 00:59 compose.yaml
 #23 0.541 -rw-r--r--  1 root root   282 Nov 17 08:07 entrypoint.bash
 #23 0.541 -rwxr-xr-x  1 root root   683 Nov 13 23:06 manage.py
 #23 0.541 -rw-r--r--  1 root root 76266 Nov 29 02:02 poetry.lock

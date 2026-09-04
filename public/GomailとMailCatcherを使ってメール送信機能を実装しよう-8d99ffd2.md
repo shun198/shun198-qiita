@@ -20,7 +20,7 @@ GomailとMailCatcherのコンテナを使ってローカル上でメール送信
 ## 前提
 - フレームワークはGinを使用
 - 本記事はローカル環境でメール送信機能を試す方法について記載していますので本番環境では別のツールを使用してください
-- docker-compose.ymlを使ってMailCatcherを構築します
+- compose.yamlを使ってMailCatcherを構築します
 
 ## ディレクトリ構成
 ```
@@ -43,7 +43,7 @@ tree
 │   │   └── Dockerfile
 │   └── postgres
 │       └── Dockerfile
-└── docker-compose.yml
+└── compose.yaml
 ```
 
 ## MailCatcherとは
@@ -61,7 +61,7 @@ MailCatcherのイメージを指定して
  
 の2種類のポートを解放します
 
-```docker-compose.yml
+```compose.yaml
   mail:
     container_name: mail
     image: schickling/mailcatcher

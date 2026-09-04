@@ -27,7 +27,7 @@ secretsとstringをimportし、メソッドを実行します
 
 ```
 poetry run python manage.py debugsqlshell
-Python 3.11.2 (main, Mar 23 2023, 14:09:52) [GCC 10.2.1 20210110] on linux
+Python 3.14.7 (main, ...) [GCC ...] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 (InteractiveConsole)
 >>> import string

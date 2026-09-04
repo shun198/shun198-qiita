@@ -76,9 +76,8 @@ postgres=# select * from django_session;
 ## 参考
 https://www.engilaboo.com/definitely-understand-cookie-session/
 
-https://yutaro-blog.net/2021/08/27/session-cookie/
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies
 
 https://gmotech.jp/semlabo/webmarketing/blog/cookie/
 
 https://gc-seo.jp/journal/session/
-

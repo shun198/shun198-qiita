@@ -66,7 +66,7 @@ tree
 │   │   ├── urls.py
 │   │   └── wsgi.py
 │   └── pyproject.toml
-└── docker-compose.yml
+└── compose.yaml
 
 ```
 

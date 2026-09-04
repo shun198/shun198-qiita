@@ -56,7 +56,7 @@ MailCatcherという仮想のSMTPサーバの設定を行います
 
 https://qiita.com/shun198/items/35c97c95079ecbe80e9d
 
-```docker-compose.yml
+```compose.yaml
 services:
   db:
     container_name: db

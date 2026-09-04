@@ -19,15 +19,15 @@ AWSのマネージドサービスをローカル上で実行できるツール�
 LocalStackを使うことでAWSのマネージドサービスを使う前に開発・テストができるため、AWSのコストを節約することができます
 
 ## LocalStack用のコンテナの準備
-LocalStackを使う際は基本的にDockerfileもしくはdocker-compose.ymlでLocalStack用のコンテナを作成し、開発・テストを行います
-今回は手軽に使用できるdocker-compose.ymlを使用します
+LocalStackを使う際は基本的にDockerfileもしくはcompose.yamlでLocalStack用のコンテナを作成し、開発・テストを行います
+今回は手軽に使用できるcompose.yamlを使用します
 
 ### ファイル構成
 ```
 tree
 .
 ├── .env
-└── docker-compose.yml
+└── compose.yaml
 ```
 
 LocalStackを使用するには
@@ -43,7 +43,7 @@ AWS_ACCESS_KEY_ID=localstack
 AWS_SECRET_ACCESS_KEY=localstack
 ```
 
-```docker-compose.yml
+```compose.yaml
 services:
   localstack:
     image: localstack/localstack

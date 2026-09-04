@@ -246,7 +246,7 @@ commit履歴を見て追加、変更されたテンプレートファイルの�
 
 ```yaml
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 ```
@@ -264,7 +264,7 @@ diffコマンドを使って変更されたテンプレート数を検知して�
 変更されたテンプレートの数が1つ以上の場合はGitHub ActionsとAWS間で認証設定を行います
 ```yaml
       - name: configure aws credentials
-        if: ${{ steps.templates.outputs.changed_templates > 0 }};
+        if: ${{ steps.templates.outputs.changed_templates > 0 }}
         uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ secrets.UPLOAD_TEMPLATE_ROLE }}
@@ -275,7 +275,7 @@ diffコマンドを使って変更されたテンプレート数を検知して�
 
 ```yaml
       - name: Upload to S3
-        if: ${{ steps.templates.outputs.changed_templates > 0 }};
+        if: ${{ steps.templates.outputs.changed_templates > 0 }}
         run: |
           templates=$(git diff HEAD^ --name-status | grep ${{ env.WORKING_DIRECTORY }}/ | grep "^M\|^A" | cut -f2)
           for template in $templates; do
@@ -309,7 +309,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Check how many templates changed
@@ -318,13 +318,13 @@ jobs:
           changed_templates=$(git diff HEAD^ --name-only | grep -c ${{ env.WORKING_DIRECTORY }}/)
           echo changed_templates=$changed_templates >> "$GITHUB_OUTPUT"
       - name: configure aws credentials
-        if: ${{ steps.templates.outputs.changed_templates > 0 }};
+        if: ${{ steps.templates.outputs.changed_templates > 0 }}
         uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ secrets.UPLOAD_TEMPLATE_ROLE }}
           aws-region: ${{ env.REGION_NAME }}
       - name: Upload to S3
-        if: ${{ steps.templates.outputs.changed_templates > 0 }};
+        if: ${{ steps.templates.outputs.changed_templates > 0 }}
         run: |
           templates=$(git diff HEAD^ --name-status | grep ${{ env.WORKING_DIRECTORY }}/ | grep "^M\|^A" | cut -f2)
           for template in $templates; do

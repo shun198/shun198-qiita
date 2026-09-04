@@ -54,7 +54,7 @@ StorybookをGitHub Pagesにデプロイするワークフローを作成しま�
 まず、Node.jsのセットアップを行います
 ```yaml
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version-file: ${{ env.WORKING_DIRECTORY }}/package.json
           cache: 'npm'
@@ -92,9 +92,9 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Chekcout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version-file: ${{ env.WORKING_DIRECTORY }}/package.json
           cache: 'npm'
@@ -104,7 +104,7 @@ jobs:
       - name: Build storybook
         run: npm run build-storybook
       - name: Upload Documents
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           # 絶対パスを指定
           path: ${{ env.WORKING_DIRECTORY }}/storybook-static
@@ -122,7 +122,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
 ```
 

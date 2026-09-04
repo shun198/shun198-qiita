@@ -243,9 +243,8 @@ mysql> select * from Author;
 ## 参考
 https://stackoverflow.com/questions/8197961/specifying-manytomany-fields-in-django-fixtures
 
-https://blog.narito.ninja/detail/103
+https://docs.djangoproject.com/ja/6.0/topics/db/fixtures/
 
 https://qiita.com/acecrc/items/5e1368af4277daccaf63
 
 https://houdoukyokucho.com/2021/01/06/post-2758/
-

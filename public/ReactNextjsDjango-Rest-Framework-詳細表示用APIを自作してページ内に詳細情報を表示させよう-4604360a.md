@@ -70,7 +70,7 @@ tree
 │   └── postgres
 │       ├── Dockerfile
 │       └── init.sql
-├── docker-compose.yml
+├── compose.yaml
 ├── frontend
 │   ├── README.md
 │   ├── package-lock.json

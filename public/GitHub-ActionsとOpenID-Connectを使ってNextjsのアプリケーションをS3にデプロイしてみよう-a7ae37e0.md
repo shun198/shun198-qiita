@@ -269,7 +269,7 @@ jobs:
         working-directory: frontend
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v6
         with:
@@ -277,11 +277,11 @@ jobs:
           role-session-name: samplerolesession
           aws-region: ${{ env.REGION_NAME }}
       - name: Setup NodeJS
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '16'
       - name: Cache NodeJS
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: '**/node_modules'
           key: node-modules-${{ hashFiles('**/package-lock.json') }}

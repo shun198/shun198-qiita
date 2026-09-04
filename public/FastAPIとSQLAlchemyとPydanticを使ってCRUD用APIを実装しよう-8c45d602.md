@@ -28,7 +28,7 @@ agreed_posting_campaign_term: false
 - 今回はFastAPIとPostgres用のコンテナを使用します
 - SQLAlchemyのバージョン2以上を使用
 - Pydanticのバージョン2以上を使用
-- FastAPIのバージョン0.95.0を使用
+- FastAPIのバージョン0.141.1を使用
 
 ## ディレクトリ構成
 ```
@@ -48,7 +48,7 @@ agreed_posting_campaign_term: false
 │   └── postgres
 │       ├── Dockerfile
 │       └── init.sql
-└── docker-compose.yml
+└── compose.yaml
 ```
 
 - database.py
@@ -146,7 +146,7 @@ TodoModelはAPIでPostやPutする際のリクエストのバリデーション�
 TodoResponseはAPIのレスポンスで出力したいフィールドを定義する際に使用します
 
 ```schemas.py
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class TodoModel(BaseModel):
@@ -157,6 +157,8 @@ class TodoModel(BaseModel):
 
 
 class TodoResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int = Field()
     title: str = Field(min_length=3)
     description: str = Field(min_length=3, max_length=100)
@@ -169,13 +171,13 @@ class TodoResponse(BaseModel):
 DBの接続設定、modelの定義、バリデーションの設定が完了したのでAPIの実装に入ります
 
 ```main.py
-from typing import Annotated, List
+from typing import Annotated
 
 from database import SessionLocal, engine
 from fastapi import Depends, FastAPI, HTTPException, status
 from models import Base, Todos
 from schemas import TodoModel, TodoResponse
-from sqlalchemy import select, update
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 app = FastAPI()
@@ -186,7 +188,7 @@ Base.metadata.create_all(bind=engine)
 
 
 # https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-with-yield/?h=get_db
-async def get_db():
+def get_db():
     db = SessionLocal()
     try:
         yield db
@@ -200,8 +202,8 @@ db_dependency = Annotated[Session, Depends(get_db)]
 
 # https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-with-yield/?h=get_db#sub-dependencies-with-yield
 # https://github.com/fastapi/fastapi/pull/9298
-# FastAPI0.95.0以降の機能
-@app.get("/api/todos", response_model=List[TodoResponse])
+# FastAPI 0.141.1で動作確認
+@app.get("/api/todos", response_model=list[TodoResponse])
 def read_todos(db: db_dependency):
     # https://docs.sqlalchemy.org/en/20/orm/quickstart.html#simple-select
     # https://docs.sqlalchemy.org/en/20/orm/session_api.html#sqlalchemy.orm.Session.scalars
@@ -236,23 +238,22 @@ def create_todo(db: db_dependency, todo_model: TodoModel):
     return todo
 
 
-@app.put("/todo/{todo_id}", response_model=TodoResponse)
-async def update_todo(db: db_dependency, todo_model: TodoModel, todo_id: int):
+@app.put("/api/todos/{todo_id}", response_model=TodoResponse)
+def update_todo(db: db_dependency, todo_model: TodoModel, todo_id: int):
     todo = db.get(Todos, todo_id)
     if not todo:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="Todo not found"
         )
-    # https://docs.sqlalchemy.org/en/20/core/dml.html#sqlalchemy.sql.expression.update
-    db.execute(
-        update(Todos).where(Todos.id == todo_id).values(**todo_model.model_dump())
-    )
+    for key, value in todo_model.model_dump().items():
+        setattr(todo, key, value)
     db.commit()
+    db.refresh(todo)
     return todo
 
 
-@app.delete("/todo/{todo_id}", status_code=status.HTTP_204_NO_CONTENT)
-async def delete_todo(db: db_dependency, todo_id: int):
+@app.delete("/api/todos/{todo_id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_todo(db: db_dependency, todo_id: int):
     todo = db.get(Todos, todo_id)
     if not todo:
         raise HTTPException(
@@ -294,7 +295,7 @@ get_dbメソッドを使ってDBのセッションを作成し、使用後に接
 https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-with-yield/?h=get_db
 
 ```python
-async def get_db():
+def get_db():
     db = SessionLocal()
     try:
         yield db
@@ -319,9 +320,9 @@ scalarsを使ってTodosのインスタンスをレスポンスとして返し�
 https://docs.sqlalchemy.org/en/20/orm/quickstart.html#simple-select
 
 https://docs.sqlalchemy.org/en/20/orm/session_api.html#sqlalchemy.orm.Session.scalars
-    
+
 ```python
-@app.get("/api/todos", response_model=List[TodoResponse])
+@app.get("/api/todos", response_model=list[TodoResponse])
 def read_todos(db: db_dependency):
     todos = db.scalars(select(Todos).order_by(Todos.id)).all()
     return todos
@@ -378,28 +379,27 @@ def create_todo(db: db_dependency, todo_model: TodoModel):
 存在する場合は`model_dump()`で全てのfieldに更新をかけてtodoのインスタンスを返します
 
 ```python
-@app.put("/todo/{todo_id}", response_model=TodoResponse)
-async def update_todo(db: db_dependency, todo_model: TodoModel, todo_id: int):
+@app.put("/api/todos/{todo_id}", response_model=TodoResponse)
+def update_todo(db: db_dependency, todo_model: TodoModel, todo_id: int):
     todo = db.get(Todos, todo_id)
     if not todo:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="Todo not found"
         )
-    # https://docs.sqlalchemy.org/en/20/core/dml.html#sqlalchemy.sql.expression.update
-    db.execute(
-        update(Todos).where(Todos.id == todo_id).values(**todo_model.model_dump())
-    )
+    for key, value in todo_model.model_dump().items():
+        setattr(todo, key, value)
     db.commit()
+    db.refresh(todo)
     return todo
 ```
 
 削除用APIを作成します
 該当するidのTodoがなければ404を返します
-存在する場合はセッション内から削除し、`commit()`でTodoの内容をDBからdeleteしまs
+存在する場合はセッション内から削除し、`commit()`でTodoの内容をDBからdeleteします
 
 ```python
-@app.delete("/todo/{todo_id}", status_code=status.HTTP_204_NO_CONTENT)
-async def delete_todo(db: db_dependency, todo_id: int):
+@app.delete("/api/todos/{todo_id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_todo(db: db_dependency, todo_id: int):
     todo = db.get(Todos, todo_id)
     if not todo:
         raise HTTPException(

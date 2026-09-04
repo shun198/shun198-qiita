@@ -31,13 +31,13 @@ tree
     │   └── settings.py # Djangoの設定ファイル
 ├── doc
 │   └── openapi.yml
-└── docker-compose.yml
+└── compose.yaml
 ```
 
 ### Swagger用のコンテナの設定
-今回はdocker-compose.ymlを使ってSwaggerのコンテナを作成します
+今回はcompose.yamlを使ってSwaggerのコンテナを作成します
 
-```docker-compose.yml
+```compose.yaml
   # swaggerの設定
   doc:
     image: swaggerapi/swagger-ui

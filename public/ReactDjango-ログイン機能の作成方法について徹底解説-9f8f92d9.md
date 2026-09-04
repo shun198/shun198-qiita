@@ -76,7 +76,7 @@ tree
 │   └── postgres
 │       ├── Dockerfile
 │       └── init.sql
-├── docker-compose.yml
+├── compose.yaml
 ├── frontend
 │   ├── README.md
 │   ├── package-lock.json
@@ -91,7 +91,7 @@ tree
 ```
 
 今回解説するのは以下のファイルです
-- docker-compose.yml
+- compose.yaml
 - nginx.conf
 - settings/base.py
 - settings/local.py
@@ -102,7 +102,7 @@ tree
 
 ## Dockerの設定
 フロントエンドとバックエンドの疎通ができるよう
-- docker-compose.yml
+- compose.yaml
 - nginx.conf
 
 の作成を行います
@@ -114,7 +114,7 @@ https://qiita.com/shun198/items/ee93c50eac2f7c77e443
 
 https://qiita.com/shun198/items/c92977c6cd31eb2187fc
 
-```docker-compose.yml
+```compose.yaml
 services:
   db:
     container_name: db
@@ -397,7 +397,7 @@ function Login() {
   });
 
   const onSubmit = async (data) => {
-    // Nginxとdocker-compose.ymlで設定したAPIのパス
+    // Nginxとcompose.yamlで設定したAPIのパス
     // http://localhost/back/api/login/
     const apiUrl = process.env.NEXT_PUBLIC_RESTAPI_URL + 'http://localhost/back/api/login/';
     const csrftoken = Cookies.get('csrftoken') || '';
@@ -482,7 +482,7 @@ Content-Typeはapplication/jsonにします
 リクエスト時のBODYはJSONにします
 
 ```react
-    // Nginxとdocker-compose.ymlで設定したAPIのパス
+    // Nginxとcompose.yamlで設定したAPIのパス
     // http://localhost/back/api/login/
     const apiUrl = process.env.NEXT_PUBLIC_RESTAPI_URL + '/api/login/';
     const csrftoken = Cookies.get('csrftoken') || '';
