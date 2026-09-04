@@ -6,7 +6,7 @@ tags:
   - Renovate
   - Poetry
 private: false
-updated_at: '2024-03-23T08:07:46+09:00'
+updated_at: '2026-09-05T08:55:29+09:00'
 id: 0b24bb3f1660fb726ddb
 organization_url_name: null
 slide: false

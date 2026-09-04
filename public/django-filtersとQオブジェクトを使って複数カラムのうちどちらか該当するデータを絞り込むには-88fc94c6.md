@@ -6,7 +6,7 @@ tags:
   - django-rest-framework
   - django-filter
 private: false
-updated_at: '2026-08-10T07:49:18+09:00'
+updated_at: '2026-09-05T08:55:28+09:00'
 id: 88fc94c6afc8dd37a8ea
 organization_url_name: null
 slide: false

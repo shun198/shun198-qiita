@@ -5,7 +5,7 @@ tags:
   - GitHubActions
   - Playwright
 private: false
-updated_at: '2026-06-21T14:01:44+09:00'
+updated_at: '2026-09-05T08:55:29+09:00'
 id: b7f856b55f872f5913f5
 organization_url_name: null
 slide: false

@@ -6,7 +6,7 @@ tags:
   - Jest
   - GitHubActions
 private: false
-updated_at: '2026-07-05T22:24:13+09:00'
+updated_at: '2026-09-05T08:55:28+09:00'
 id: 86668be6a90634f9480c
 organization_url_name: null
 slide: false

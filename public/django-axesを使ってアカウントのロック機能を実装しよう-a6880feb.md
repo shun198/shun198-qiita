@@ -5,7 +5,7 @@ tags:
   - django-rest-framework
   - axes
 private: false
-updated_at: '2024-01-23T18:06:26+09:00'
+updated_at: '2026-09-05T08:55:29+09:00'
 id: a6880feb82b7adaf68e5
 organization_url_name: null
 slide: false

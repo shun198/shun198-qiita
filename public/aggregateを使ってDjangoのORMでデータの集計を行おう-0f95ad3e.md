@@ -5,7 +5,7 @@ tags:
   - ORM
   - aggregate
 private: false
-updated_at: '2026-07-05T22:24:13+09:00'
+updated_at: '2026-09-05T08:55:29+09:00'
 id: 0f95ad3e106c791fff3b
 organization_url_name: null
 slide: false

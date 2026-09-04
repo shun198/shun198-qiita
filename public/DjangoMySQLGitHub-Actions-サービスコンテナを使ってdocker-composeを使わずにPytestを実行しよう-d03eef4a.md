@@ -7,7 +7,7 @@ tags:
   - GitHubActions
   - Poetry
 private: false
-updated_at: '2026-08-10T07:59:47+09:00'
+updated_at: '2026-09-05T08:55:27+09:00'
 id: d03eef4acbb8d8980d1a
 organization_url_name: null
 slide: false

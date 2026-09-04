@@ -5,7 +5,7 @@ tags:
   - GitHubActions
   - golangci-lint
 private: false
-updated_at: '2026-07-05T22:24:13+09:00'
+updated_at: '2026-09-05T08:55:27+09:00'
 id: 7fc67b50b409d70a576c
 organization_url_name: null
 slide: false

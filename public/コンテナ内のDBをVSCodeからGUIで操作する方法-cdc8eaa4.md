@@ -6,7 +6,7 @@ tags:
   - VSCode
   - MySQL8.0
 private: false
-updated_at: '2023-07-28T11:31:16+09:00'
+updated_at: '2026-09-05T08:55:28+09:00'
 id: cdc8eaa457c1dc202e1b
 organization_url_name: null
 slide: false

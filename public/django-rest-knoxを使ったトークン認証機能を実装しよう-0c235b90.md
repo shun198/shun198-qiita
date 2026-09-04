@@ -5,7 +5,7 @@ tags:
   - django-rest-framework
   - django-rest-knox
 private: false
-updated_at: '2024-01-23T15:42:57+09:00'
+updated_at: '2026-09-05T08:55:28+09:00'
 id: 0c235b90df96c894b5f0
 organization_url_name: null
 slide: false

@@ -4,10 +4,10 @@ tags:
   - OAuth
   - sqlalchemy
   - JWT
-  - Argon2
+  - argon2
   - FastAPI
 private: false
-updated_at: '2025-04-29T11:51:25+09:00'
+updated_at: '2026-09-05T08:55:28+09:00'
 id: 92c4c8eda8a66e78b400
 organization_url_name: null
 slide: false
