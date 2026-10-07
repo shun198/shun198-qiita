@@ -7,7 +7,7 @@ tags:
   - ECS
   - CodePipeline
 private: false
-updated_at: '2024-01-31T14:49:01+09:00'
+updated_at: '2026-10-07T20:32:52+09:00'
 id: d9e8ee7372c3ccaddfeb
 organization_url_name: null
 slide: false
