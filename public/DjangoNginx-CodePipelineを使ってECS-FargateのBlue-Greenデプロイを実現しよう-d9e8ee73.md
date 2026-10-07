@@ -650,8 +650,6 @@ https://dev.classmethod.jp/articles/aws-codebuild-now-supports-parallel-and-coor
 
 https://qiita.com/Ichi0124/items/880a509852e0121df1d0
 
-https://qiita.com/ramunauna/items/114ffb3b5532cdb7fd2d
-
 https://gb-j.com/column/codebuild/
 
 https://docs.aws.amazon.com/ja_jp/codepipeline/latest/userguide/file-reference.html#file-reference-ecs-bluegreen
